@@ -5,19 +5,20 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
+      <!-- <img src="{{ asset('images/hero1.jpeg') }}" class="img" alt=""> -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-                <p>Selamat Datang di</p>
+          <div class="col-lg-6 col-md-12">
+            <div class="hero-content " data-aos="fade-up" data-aos-delay="200">
+              <p>Selamat Datang di</p>
               <h2>Pondok Pesantren Zuhriyah</h2>
               <div class="hero-btns">
                 <a href="/pendaftaran" class="btn btn-primary">Daftar</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 b-img">
-            <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
+          <div class="col-lg-6 col-md-12   b-img">
+            <div class="hero-image " data-aos="zoom-out" data-aos-delay="300">
               <img src="{{ asset('images/gambar-3.jpg') }}" alt="Consulting Services" class="img-fluid">
             </div>
           </div>

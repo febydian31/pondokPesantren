@@ -80,13 +80,26 @@
 
   </footer>
 
+  <!-- active nav menu  -->
+   <script>
+    // Mendapatkan semua link navbar
+    const navbarLinks = document.querySelectorAll('.navmenu a');
+    // Menambahkan kelas 'active' pada link yang sesuai dengan URL saat ini
+    navbarLinks.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+  </script>
+   <!-- end nav mneu -->
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
+  <!-- vidio JS Files -->
    <script>
   const video = document.getElementById('demo-video');
   const playBtn = document.getElementById('play-btn');
@@ -103,6 +116,8 @@
     playBtn.style.display = 'flex';
   });
 </script>
+<!-- vidio end  -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -47,9 +47,11 @@
 
 .dark-background {
     height: 100vh;
-    /* background-image: url('{{asset("images/logo.png")}}'); */
-    /* background-image: url('{{ asset("images/logo.png") }}');1 */
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+    /* background-image: url('{{ asset("images/gambar-3.jpg") }}'); */
+    /* background-image: url('images/gambar-3.jpg'); */
+    background-image: repeating-radial-gradient(circle at 0 0, #e0e0e0 0, #e0e0e0 1px, transparent 1px, transparent 20px),
+      repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 10px, transparent 10px, transparent 20px);
+    background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -867,11 +869,34 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  padding-top: 150px;
+  /* padding-top: 150px; */
   position: relative;
   background-color: var(--background-color);
   overflow: hidden;
-  padding-bottom: 120px;
+  /* padding-bottom: 120px; */
+}
+
+.hero .top {
+  position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255, 0, 0, 0.5);
+      color: white;
+      padding: 10px 15px;
+      font-weight: bold;
+      font-size: 18px;
+      z-index: 10; /* lebih besar, jadi di atas gambar */
+      border-radius: 5px;
+      pointer-events: none; 
+}
+
+.hero .img {
+  opacity: black 90%;
+  width: 100%;
+  /* height: auto; */
+      display: block;
+      z-index: 1;
+      position: relative;
 }
 
 .hero .hero-content h2 {
@@ -896,7 +921,7 @@ section,
 }
 
 .hero .hero-content p {
-  font-size: 1.1rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--default-color);
 }
@@ -970,24 +995,26 @@ section,
 
 .hero .hero-image {
   position: relative;
-  max-height: 400px;
-  max-width: 500px;
-  justify-content: center;
-  justify-items: center;
-  margin-left: 15px;
+
   border-radius: 10px;
   overflow: hidden;
-  /* margin-bottom: 20px; */
+  /* max-height: 65%;
+  max-width: 65%; */
+   display: block; /* Menghilangkan spasi di bawah gambar */
+            margin: 0 auto; /* Meratakan secara horizontal */
+            max-width: 70%; /* Agar gambar responsif */
+            height: auto; /* Mempertahankan rasio aspek */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hero .hero-image img {
   width: 100%;
+  
+  margin-top: 30px;
   height: auto;
-  justify-content: center;
-  justify-items: center;
   border-radius: 10px;
   transition: transform 0.5s ease;
+
 }
 
 .hero .hero-image img:hover {
@@ -3017,15 +3044,15 @@ border-radius: 3px solid;
 
 .top {
   margin-top: 75px;
-    /* max-height: 30px; */
-    background-color: #005751;
+  background-color: #005751;
 }
 .top-detail {
   margin-top: 75px;
-    /* max-height: 30px; */
-    background-color: #080e2e;
+  background-color: #080e2e;
 }
 
+
+/* detail artikel  */
 .detail-judul {
     background-color: #080e2e;
     color: white;
@@ -3037,6 +3064,43 @@ border-radius: 3px solid;
   color: white;
   font-weight: bold;
 }
+
+.isi_detail  .images {
+  text-align: center;
+  /* background-color: blue; */
+}
+.isi_detail  .images img {
+  border-radius: 10px;
+  width: 50%;
+  height: 50%;
+  /* margin-bottom: 20px; */
+}
+
+.isi_detail  .images span {
+  font-weight: 600;
+}
+
+.isi_detail  .images h3 {
+font-weight: 800;
+color: #005751;
+}
+
+.isi_detail  .images p {
+font-weight: 600;
+margin-bottom: 20px;
+}
+
+.isi_detail  .images .detail {
+align-items: start;
+  text-align: start;
+  padding: 40px;
+  /* background-color: red; */
+}
+
+/* end detail artikel  */
+
+
+
 .artikel {
     background-color: #005751;
     padding-top: 50px;
@@ -3136,10 +3200,15 @@ margin: 10px;
 }
 
 .donatur .donasi {
-  background-color: #005751;
+  background-color: var(--accent-color);
   color: white;
   width: fit-content;
   width: 100%;
+}
+
+.donatur button:hover {
+  background-color: var(--second-color);
+
 }
 /* end donatur  */
 
@@ -3198,6 +3267,8 @@ margin: 10px;
     border-radius: 6px;
     cursor: pointer;
     margin-top: 10px;
+    width: fit-content;
+  width: 100%;
   /* align-items: end; */
 }
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Consulting Bootstrap Template</title>
+  <title>Pondok Pesantren Zuhriyah</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -39,7 +39,7 @@
  <script>
   function openWhatsApp() {
     const phoneNumber = '6281290112969'; // Ganti dengan nomor WA tujuan
-    const message = encodeURIComponent('Halo, saya ingin konfirmasi Sudah melakukan Pembayaran untuk Donasi Pondok Pesantren Zuhriyah.');
+    const message = encodeURIComponent('konfirmasi Sudah melakukan Pembayaran untuk Donasi Pondok Pesantren Zuhriyah.');
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(url, '_blank');
   }
@@ -48,16 +48,14 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
          <img class="logo" src="{{ asset('images/logo.png') }}" alt="">
         <h5 class="sitename">Pondok Pesantren Zuhriyah</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/profile">Profile</a></li>
           <li><a href="/artikel">Artikel</a></li>
           <li><a href="/kegiatan">Kegiatan</a></li>
