@@ -1,9 +1,9 @@
+
 <x-navbar></x-navbar>
 
 
   <main class="main">
-
-    <!-- Hero Section -->
+      <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
       <!-- <img src="{{ asset('images/hero1.jpeg') }}" class="img" alt=""> -->
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -24,9 +24,100 @@
           </div>
         </div>
       </div>
-    </section><!-- /Hero Section -->
+    </section>
+    <!-- /Hero Section -->
 
-    <!-- About Section -->
+        <!-- artikel Section -->
+    <section id="services" class="program services section">
+      <!-- Section Title -->
+      <div class="container section-title judul-artikel" data-aos="fade-up">
+        <div><span>Pondok Pesantren Zuhriyah</span></div>
+      </div>
+        <!-- <div class="align-items-center">
+          <div class="video-section" data-aos="zoom-out" data-aos-delay="200">
+              <div class="container video-section">
+                <div class="video-wrapper">
+                  <video id="demo-video" preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail" >
+                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                  </video>
+                <div class="play-button" id="play-btn"></div>
+              </div>
+          </div>
+        </div> -->
+          
+            <div class="container video-section" data-aos="zoom-out" data-aos-delay="200">
+                <div class="video-wrapper">
+                  <video id="demo-video" preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail" >
+                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                  </video>
+                <div class="play-button" id="play-btn"></div>
+            </div>
+    </section>
+    <!-- /artikel Section -->
+
+    <!-- vidio Section -->
+    <!-- <section id="contact" class="vidio2">
+       <div class="lol">
+            <h3>Pondok Pesantren Zuhriyah</h3>
+            <div class="container video-section">
+                <div class="video-wrapper">
+                  <video id="demo-video" preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail" >
+                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                  </video>
+                <div class="play-button" id="play-btn"></div>
+            </div>
+        </div>
+       </div>
+      
+    </section> -->
+    <!-- /vidio Section -->
+
+    <!-- sumber dana Section -->
+    <section id="services" class=" sumber-dana services section">
+
+      <!-- Section Title -->
+      <div class="container section-title judul-artikel" data-aos="fade-up">
+        <div><span>Sumber Dana</span></div>
+      </div>
+      <!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card2"> 
+              <div class="icon"><i class="bi bi-building" title="People"></i></div>
+              <h3>Yayasan</h3>
+              <p>Donasi dari keluarga yasan PAPP Zuhriyah</p>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card2"> 
+              <div class="icon"><i class="bi bi-person-circle" title="People"></i></div>
+              <h3>Santri</h3>
+              <p>SPP dari santri regular tiap bulan dan usaha santri</p>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card2"> 
+              <div class="icon"><i class="bi bi-person-raised-hand" title="People"></i></div>
+              <h3>Donatur</h3>
+              <p>Donatur insidental baik dari CSR, para dermawan, maupun lembaga filantropi</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /sumber dana Section -->
+
+    <!-- profile Section -->
     <section id="about" class="about section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -75,11 +166,10 @@
       </div>
 
     </section>
-    <!-- /About Section -->
+    <!-- /profile Section -->
 
     <!-- artikel Section -->
     <section id="services" class=" services section">
-
       <!-- Section Title -->
       <div class="container section-title judul-artikel" data-aos="fade-up">
         <div><span>Artikel</span></div>
@@ -115,82 +205,14 @@
               <a href="service-details.html" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-
-          
         </div>
-
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="800">
-          <a href="#contact" class="btn btn-primary">Lihat Semua Artikel</a>
+          <a href="/artikel" class="btn btn-primary">Lihat Semua Artikel</a>
         </div>
-
       </div>
     </section>
     <!-- /artikel Section -->
-
-     <!-- sumber dana Section -->
-    <section id="services" class=" sumber-dana services section">
-
-      <!-- Section Title -->
-      <div class="container section-title judul-artikel" data-aos="fade-up">
-        <div><span>Sumber Dana</span></div>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card2"> 
-              <div class="icon"><i class="bi bi-building" title="People"></i></div>
-              <h3>Yayasan</h3>
-              <p>Donasi dari keluarga yasan PAPP Zuhriyah</p>
-              </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card2"> 
-              <div class="icon"><i class="bi bi-person-circle" title="People"></i></div>
-              <h3>Santri</h3>
-              <p>SPP dari santri regular tiap bulan dan usaha santri</p>
-              </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card2"> 
-              <div class="icon"><i class="bi bi-person-raised-hand" title="People"></i></div>
-              <h3>Donatur</h3>
-              <p>Donatur insidental baik dari CSR, para dermawan, maupun lembaga filantropi</p>
-              </div>
-          </div>
-          
-        </div>
-      </div>
-
-    </section>
-    <!-- /sumber dana Section -->
-
-      <!-- vidio Section -->
-    <section id="contact" class="vidio2">
-       <div class="lol">
-            <div class="container">
-                <h3>Pondok Pesantren Zuhriyah</h3>
-             </div>
-
-            <div class="container video-section">
-                <div class="video-wrapper">
-                  <video id="demo-video" preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail" >
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                  </video>
-                <div class="play-button" id="play-btn"></div>
-            </div>
-        </div>
-       </div>
-      
-    </section>
-    <!-- /vidio Section -->
-    
-
   </main>
+
 
   <x-footer></x-footer>

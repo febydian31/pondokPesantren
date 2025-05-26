@@ -9,33 +9,33 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/', function () {
-    return view('user/home');
+    return view('pages/home');
 });
 
 Route::get('/profile', function () {
-    return view('user/profile');
+    return view('pages/profile');
 });
 
 Route::get('/artikel', function () {
-    return view('user/artikel');
+    return view('pages/artikel');
 });
 Route::get('/detailArtikel', function () {
-    return view('user/detailArtikel');
+    return view('pages/detailArtikel');
 });
 
 
 Route::get('/kegiatan', function () {
-    return view('user/kegiatan');
+    return view('pages/kegiatan');
 });
 
 Route::get('/prestasi', function () {
-    return view('user/prestasi');
+    return view('pages/prestasi');
 });
 
 Route::get('/donatur', function () {
-    return view('user/donatur');
+    return view('pages/donatur');
 });
 
 Route::get('/pendaftaran', function () {
-    return view('user/Pendaftaran');
+    return view('pages/Pendaftaran');
 });

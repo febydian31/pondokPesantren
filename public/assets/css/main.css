@@ -163,14 +163,17 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: #ffffff
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
   z-index: 997;
+}
+#header {
+  background-color: #fff;
 }
 
 .header .logo {
@@ -514,17 +517,10 @@ h6 {
 
 /* vidio  */
 /* ------------------------------------------ */
-.vidio2 {
-  background-color: #080e2e;
-  /* max-height: 600px; */
-  padding: 50px;
-}
-.vidio2 h3 {
-  color: white;
-  margin-top: 15px;
-  margin-bottom: 20px;
-  text-align: center;
-}
+
+
+/* .vidio2 */
+
 .video-section {
     border-radius: 12px;
     box-shadow: #005751;
@@ -1371,6 +1367,21 @@ section,
   padding: 80px 0;
 }
 
+.programs {
+  background-color: #daedef;
+  
+}
+
+.services h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 40px;
+  margin-bottom: 60px;
+  margin-top: 70px;
+  /* background-color: red; */
+}
+
 .services .gambar {
    width: 100%;            /* Gambar selebar card */
    height: 300px;          /* Tinggi gambar tetap */
@@ -1388,7 +1399,7 @@ section,
 }
 
 .sumber-dana {
-  background-color: #daedef;
+  background-color: #fff;
 }
 
 
@@ -1616,6 +1627,49 @@ section,
   color: #003a36;
   
 }
+
+.services .pagination a{
+  margin-top: 25px;
+  color: #000;
+  font-weight: 500;
+}
+.services .pagination li a:hover{
+background-color: #005751;
+color: white;
+}
+.donatur .pagination a{
+  margin-top: 5px;
+  color: #000;
+  font-weight: 500;
+}
+.donatur .pagination li a:hover{
+background-color: #005751;
+color: white;
+}
+
+.services .table-responsive {
+  border-radius: 5px 5px 5px 5px;
+  /* max-width: 750px; */
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.donatur .table-responsive {
+  border-radius: 5px 5px 5px 5px;
+  /* max-width: 750px; */
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+
+
 /* end program unggulan  */
 
 /* pengurus  */

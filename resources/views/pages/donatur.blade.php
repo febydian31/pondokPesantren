@@ -10,7 +10,7 @@
     </section>
 
     <!-- sumber dana Section -->
-    <section id="services" class=" sumber-dana services section">
+    <section id="services" class="program sumber-dana services section">
 
       <!-- Section Title -->
       <div class="container section-title judul-artikel" data-aos="fade-up">
@@ -100,57 +100,54 @@
             <div class="form col-lg-6 col-md-6">
             <div class="wrap">
                 <div class="header-form">
-                    <div class="icon isi row">
-                        <div class="col-lg-6 col-md-12">
                             <h2>Data Donatur</h2>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <input type="text" class="form-control" id="" placeholder="Cari ..">
-                        </div>
-                    </div>
+                        
                 </div>
-                <div class="table-responsive data ">
-                    <table class="data">
-                        <thead>
-                            <tr>
-                            <th class="head" scope="col">Nama Donatur</th>
-                            <th class="head" scope="col">Tanggal</th>
-                            <th class="head" scope="col">Nominal</th>
-                            <th class="head" scope="col">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                            <tr>
-                                <td>wakhid</td>
-                                <td>12 maret 2000</td>
-                                <td>20000</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, maiores.</td>
-                                </tr>
-                            <tr>
-                            <tr>
-                                <td>wakhid</td>
-                                <td>12 maret 2000</td>
-                                <td>20000</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, maiores.</td>
-                                </tr>
-                            <tr>
-                            <tr>
-                                <td>wakhid</td>
-                                <td>12 maret 2000</td>
-                                <td>20000</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, maiores.</td>
-                                </tr>
-                            <tr>
-                            <tr>
-                                <td>wakhid</td>
-                                <td>12 maret 2000</td>
-                                <td>20000</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, maiores.</td>
-                                </tr>
-                            <tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Donatur</th>
+                <th scope="col">Tanggal</th>
+                <th scope="col">Nominal</th>
+                <th scope="col">Keterangan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hamba Allah</td>
+                <td>20 maret 2013</td>
+                <td>200.000</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, alias? Tenetur velit illo ipsum provident maiores! Laborum iusto natus nobis.</td>
+              </tr>
+              <tr>
+                <td>Hamba Allah</td>
+                <td>20 maret 2013</td>
+                <td>200.000</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, alias? Tenetur velit illo ipsum provident maiores! Laborum iusto natus nobis.</td>
+              </tr>
+              <tr>
+                <td>Hamba Allah</td>
+                <td>20 maret 2013</td>
+                <td>200.000</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, alias? Tenetur velit illo ipsum provident maiores! Laborum iusto natus nobis.</td>
+              </tr>
+            </tbody>
+          </table> 
+          <!-- <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav> -->
+        </div>
             </div>
             </div>
         </div>
