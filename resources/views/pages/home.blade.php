@@ -1,7 +1,5 @@
-
-<x-navbar></x-navbar>
-
-
+@extends('layouts.main')
+@section('content')
   <main class="main">
       <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
@@ -214,5 +212,4 @@
     <!-- /artikel Section -->
   </main>
 
-
-  <x-footer></x-footer>
+@endsection

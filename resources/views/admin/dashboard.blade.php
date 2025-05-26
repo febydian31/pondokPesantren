@@ -1,7 +1,5 @@
-<x-adminNavbar></x-adminNavbar>
-<x-adminSidebar></x-adminSidebar>
-<x-adminTopbar></x-adminTopbar>
-
+@extends('layouts.dashboardAdmin')
+@section('content')
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -329,4 +327,4 @@
                 </div>
                 <!-- /.container-fluid -->
 
-<x-adminFooter></x-adminFooter>
+ @endsection

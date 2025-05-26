@@ -1,12 +1,6 @@
-<x-navbar></x-navbar>
+@extends('layouts.main')
+@section('content')
 
-<!-- <section class="top">
-    <div class="artikel">
-        
-    </div>
-</section> -->
-
-<!-- Services Section -->
     <section id="services" class="services section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="judul ">
@@ -60,4 +54,4 @@
     </section>
     <!-- /Services Section -->
 
-<x-footer></x-footer>
+@endsection

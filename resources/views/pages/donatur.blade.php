@@ -1,4 +1,5 @@
-<x-navbar></x-navbar>
+@extends('layouts.main')
+@section('content')
 
     <section class="top">
         <div class="artikel">
@@ -153,4 +154,5 @@
         </div>
     </section>
 
-<x-footer></x-footer>
+    
+    @endsection

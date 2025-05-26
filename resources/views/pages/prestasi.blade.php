@@ -1,6 +1,5 @@
-<x-navbar></x-navbar>
-
-
+@extends('layouts.main')
+@section('content')
 
 <!-- Services Section -->
     <section id="services" class="programs services section">
@@ -105,4 +104,5 @@
     </section>
     <!-- /Services Section -->
 
-<x-footer></x-footer>
+    
+    @endsection

@@ -1,4 +1,5 @@
-<x-navbar></x-navbar>
+@extends('layouts.main')
+@section('content')
 
 <section class="top-detail">
     <div class="detail-judul">
@@ -27,5 +28,4 @@
       </div>
     </section>
     <!-- /Services Section -->
-
-<x-footer></x-footer>
+@endsection

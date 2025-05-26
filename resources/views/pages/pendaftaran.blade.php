@@ -1,4 +1,6 @@
-<x-navbar></x-navbar>
+@extends('layouts.main')
+@section('content')
+
 
     <section class="top">
         <div class="artikel">
@@ -128,10 +130,4 @@
 
     </section>
 
-                
-              
-                    <!-- <button type="button" id="nextBtn">Next</button> -->
-                    <!-- <button type="submit" id="submitBtn" style="display:none;">Submit</button> -->
-                    
-          
-<x-footer></x-footer>
+  @endsection
