@@ -56,12 +56,12 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/profile">Profile</a></li>
-          <li><a href="/artikel">Artikel</a></li>
-          <li><a href="/kegiatan">Kegiatan</a></li>
-          <li><a href="/prestasi">Prestasi</a></li>
-          <li><a href="/donatur">Donatur</a></li>
-          <li><a href="/pendaftaran">Pendaftaran</a></li>
+          <li><a href="/profilePage">Profile</a></li>
+          <li><a href="/artikelPage">Artikel</a></li>
+          <li><a href="/kegiatanPage">Kegiatan</a></li>
+          <li><a href="/prestasiPage">Prestasi</a></li>
+          <li><a href="/donaturPage">Donatur</a></li>
+          <li><a href="/pendaftaranPage">Pendaftaran</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
