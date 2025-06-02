@@ -4,38 +4,21 @@
     <section id="services" class="services section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="judul ">
-            <h1>Artikel</h1>
+          <h1>Artikel</h1>
         </div>
         <div class="row gy-4">
+          <a href="{{ route('artikel.create') }}" method="GET"></a>
+          @foreach ($allArtikel as $key => $r)
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-card">
-              <img class="gambar" src="{{ asset('images/logo.png') }}" alt="">
-              <span class="span">April 15, 2025</span>
-              <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, officiis?</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+              <img class="gambar" src="{{ asset('storage/' . $r->gambar) }}" alt="">
+              <span class="span">{{$r->tanggal}}</span>
+              <h3>{{$r->judul}}</h3>
+              <p>{{$r->content}}</p>
               <a href="/detailArtikel" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-              <img class="gambar" src="{{ asset('images/logo.png') }}" alt="">
-              <span class="span">April 15, 2025</span>
-              <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, officiis?</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-              <a href="service-details.html" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-              <img class="gambar" src="{{ asset('images/logo.png') }}" alt="">
-              <span class="span">April 15, 2025</span>
-              <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, officiis?</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-              <a href="service-details.html" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
+          @endforeach
         </div>
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">

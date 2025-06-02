@@ -9,81 +9,28 @@
         </div>
         <div class="table-responsive">
           <table class="table table-striped">
+            <a href="{{ route('prestasi.create') }}" method="GET"></a>
             <thead>
               <tr>
-                <th scope="col">NO</th>
-                <th scope="col">TAHUN</th>
-                <th scope="col">NAMA PRESTASI</th>
-                <th scope="col">TINGKAT</th>
-                <th scope="col">PENYELENGGARA</th>
-                <th scope="col">PERAIH</th>
+                <th scope="col">No</th>
+                <th scope="col">Tahun</th>
+                <th scope="col">Nama Prestasi</th>
+                <th scope="col">Tingkat</th>
+                <th scope="col">Penyelenggara</th>
+                <th scope="col">Peraih</th>
               </tr>
             </thead>
             <tbody>
+              @foreach ($allPrestasi as $key => $r)
               <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
+                  <td>{{$key + 1}}</td>
+                  <td>{{$r->tahun}}</td>
+                  <td>{{$r->prestasi}}</td>
+                  <td>{{$r->tingkat}}</td>
+                  <td>{{$r->penyelenggara}}</td>
+                  <td>{{$r->peraih}}</td>
               </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>2015</td>
-                <td>khatam alquran</td>
-                <td>provinsi</td>
-                <td>Lorem, ipsum dolor.</td>
-                <td>wakhid</td>
-              </tr>
+              @endforeach
             </tbody>
           </table> 
         </div>

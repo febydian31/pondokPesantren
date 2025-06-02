@@ -1,0 +1,101 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\donasi;
+use Illuminate\Http\Request;
+
+class DonasiController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $alldonasi = Donasi::all();
+        return view('donasi.index', compact('alldonasi'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $metode = ['bankTransfer', 'creditCard', 'eWalet'];
+        return view('donasi.create', compact('metode'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+
+        // validasi 
+        $validData = $request->validate([
+            'nama' => 'required|string',
+            'email' => 'required|email',
+            'noTelp' => 'required',
+            'nominal' => 'required',
+            'metodePembayaran' => 'required|string|in:bankTransfer,creditCard,eWalet',
+            'pesan' => 'required|string',
+        ]);
+
+        // simpan data 
+        Donasi::create($validData);
+
+        return redirect()->route('donasi.index');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Kegiatan $kegiatan)
+    {
+        return view('kegiatan.show', compact('kegiatan'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Kegiatan $kegiatan)
+    {
+        return view('kegiatan.edit', compact('kegiatan'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Kegiatan $kegiatan)
+    {
+         // validasi 
+        $validData = $request->validate([
+            'hari' => 'required',
+            'waktu' => 'required',
+            'kegiatan' => 'required',
+            'pembimbing' => 'required',
+            'lokasi' => 'required',
+            ], [
+            'hari.required' => 'judul harus di isi',
+            'waktu.required' => 'waktu harus di isi',
+            'kegiatan.required' => 'kegiatan harus di isi',
+            'pembimbing.required' => 'pembimbing harus di isi',
+            'lokasi.required' => 'lokasi harus di isi',
+        ]);
+
+        // simpan data 
+        $kegiatan->update($validData);
+
+        return redirect()->route('kegiatan.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Kegiatan $kegiatan)
+    {
+        $kegiatan->delete();
+
+        return redirect()->route('kegiatan.index');
+    }
+}

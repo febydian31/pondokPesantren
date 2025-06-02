@@ -62,38 +62,40 @@
                         </div>
                         <p>Kontribusi Anda membantu kami menyediakan pendidikan Islam yang berkualitas kepada para Santri.</p>
                     </div>
-                    <form>
+                    <form action="{{ route('donasi.store') }}" method="POST">
+                      @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
-                            <label for="inputPassword4">Nama *</label>
-                            <input type="text" class="form-control" id="" placeholder="Nama Legkap">
+                            <label for="inputPassword4">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Nama Legkap" required >
                             </div>
                             <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email *</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress">No Telp *</label>
-                            <input type="number" class="form-control" id="inputAddress" placeholder="No Telp">
+                            <label for="inputAddress">No Telp</label>
+                            <input type="number" class="form-control" id="noTelp" placeholder="No Telp" required>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress2">Nominal *</label>
-                            <input type="Number" class="form-control" id="inputAddress2" placeholder="Rp. ">
+                            <label for="inputAddress2">Nominal</label>
+                            <input type="Number" class="form-control" id="nominal" placeholder="Rp. " required>
                         </div>
-                        <div class="form-group">
-                            <label for="donation-amount">Metode Pembayaran *</label>
-                            <select class="form-select" aria-label="Default select example">
+                        <!-- <div class="form-group">
+                            <label for="donation-amount">Metode Pembayaran</label>
+                            <select class="form-select" aria-label="Default select example" required>
                                 <option selected>Bank Transfer</option>
                                 <option value="1">Credit Card</option>
                                 <option value="2">E-Wallet</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="donation-amount">Pesan</label>
-                            <textarea class="form-control" placeholder="Pesan" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <textarea class="form-control" placeholder="Pesan" id="pesan" style="height: 100px" required></textarea>
                         </div>
                         
+                        <!-- <button type="submit" class="donasi btn">Donasi</button> -->
                         <button type="submit" onclick="openWhatsApp()" class="donasi btn">Donasi</button>
                     </form>
                 </div>

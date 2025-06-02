@@ -45,9 +45,14 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/dashboard">
+                <a class="nav-link" href="/pendaftaran">
                     <i class="bi bi-book-half"></i>
-                    <span>Dashboard</span></a>
+                    <span>Pendaftaran</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/donasi">
+                    <i class="bi bi-book-half"></i>
+                    <span>Donasi</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/artikel">

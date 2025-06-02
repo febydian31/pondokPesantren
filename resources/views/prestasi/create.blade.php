@@ -41,8 +41,8 @@
                                        
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px; ">
-                                            <a href="/prestasi" class="button btn btn-info">Kembali</a>
-                                            <button class="btn btn-primary" type="submit">Kirim</button>
+                                    <a href="/prestasi" class="button btn btn-info">Kembali</a>
+                                    <button class="btn btn-primary" type="submit">Kirim</button>
                                 </div>
                             </div>
                     </div>

@@ -9,8 +9,10 @@
         </div>
         <div class="table-responsive">
           <table class="table table-striped">
+            <a href="{{ route('kegiatan.create') }}" method="GET"></a>
             <thead>
               <tr>
+                <th scope="col">No</th>
                 <th scope="col">Hari</th>
                 <th scope="col">Waktu</th>
                 <th scope="col">Kegiaan</th>
@@ -19,55 +21,16 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($allKegiatan as $key => $r)
               <tr>
-                <th scope="row">senin - -jumat</th>
-                <td>16.00 - 17.00</td>
-                <td>pengajian /tpa</td>
-                <td>wakhid hasim</td>
-                <td>masjid nurul huda</td>
+                <td>{{$key + 1}}</td>
+                  <td>{{$r->hari}}</td>
+                  <td>{{$r->waktu}}</td>
+                  <td>{{$r->kegiatan}}</td>
+                  <td>{{$r->pembimbing}}</td>
+                  <td>{{$r->lokasi}}</td>
               </tr>
-              <tr>
-                <th scope="row">senin - -jumat</th>
-                <td>16.00 - 17.00</td>
-                <td>pengajian /tpa</td>
-                <td>wakhid hasim</td>
-                <td>masjid nurul huda</td>
-              </tr>
-              <tr>
-                <th scope="row">senin - -jumat</th>
-                <td>16.00 - 17.00</td>
-                <td>pengajian /tpa</td>
-                <td>wakhid hasim</td>
-                <td>masjid nurul huda</td>
-              </tr>
-              <tr>
-                <th scope="row">senin - -jumat</th>
-                <td>16.00 - 17.00</td>
-                <td>pengajian /tpa</td>
-                <td>wakhid hasim</td>
-                <td>masjid nurul huda</td>
-              </tr>
-              <tr>
-                <th scope="row">senin - -jumat</th>
-                <td>16.00 - 17.00</td>
-                <td>pengajian /tpa</td>
-                <td>wakhid hasim</td>
-                <td>masjid nurul huda</td>
-              </tr>
-              <tr>
-                <th scope="row">senin - -jumat</th>
-                <td>16.00 - 17.00</td>
-                <td>pengajian /tpa</td>
-                <td>wakhid hasim</td>
-                <td>masjid nurul huda</td>
-              </tr>
-              <tr>
-                <th scope="row">senin - -jumat</th>
-                <td>16.00 - 17.00</td>
-                <td>pengajian /tpa</td>
-                <td>wakhid hasim</td>
-                <td>masjid nurul huda</td>
-              </tr>
+              @endforeach
             </tbody>
           </table> 
         </div>

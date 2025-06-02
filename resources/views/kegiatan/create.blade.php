@@ -7,15 +7,6 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Tambah Data</h1>
                     </div>
-                    @if ($errors->any())
-                        <div style="color:red;">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
 
                     <div class="card shadow mb-4"  style="max-width: 750px; margin: 30px auto;">
                         <div class="card-header py-3">
@@ -50,9 +41,9 @@
                                         </div>  
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px; ">
-                                            <a href="/kegiatan" class="button btn btn-info">Kembali</a>
-                                            <button class="btn btn-primary" type="submit">Kirim</button>
-                                        </div>
+                                    <a href="/kegiatan" class="button btn btn-info">Kembali</a>
+                                    <button class="btn btn-primary" type="submit">Kirim</button>
+                                </div>
                             </div>
                     </div>
 

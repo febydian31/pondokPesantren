@@ -31,7 +31,7 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
 
-        // Validasi input data
+       // Validasi input data
         $request->validate([
             'judul' => 'required|string|max:255',
             'tanggal' => 'required|string|max:255', 
@@ -76,28 +76,26 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, Artikel $artikel)
     { 
-        $request->validate([
+         $validated = $request->validate([
+            'tanggal' => 'required|date',
             'judul' => 'required|string|max:255',
             'content' => 'required|string',
-            'tanggal' => 'required|date',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB
         ]);
-        // Update field teks
-        $artikel->judul = $request->judul;
-        $artikel->content = $request->content;
-        $artikel->tanggal = $request->tanggal;
-        // Jika ada upload gambar baru
+        // Handle image upload if present
         if ($request->hasFile('gambar')) {
-            // Hapus gambar lama jika ada
-            if ($artikel->gambar && Storage::disk('public')->exists($artikel->gambar)) {
-                Storage::disk('public')->delete($artikel->gambar);
-            }
-            // Simpan gambar baru
-            $path = $request->file('gambar')->store('images', 'public');
-            $artikel->gambar = $path;
+            // Store the image in 'public/articles' folder
+            $imagePath = $request->file('gambar')->store('articles', 'public');
+            $validated['gambar'] = $imagePath;
+        } else {
+            $validated['gambar'] = null;
         }
-        $artikel->save();
-        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diperbarui!');
+        // Create the article
+
+        dd($request->gambar);
+        Article::create($validated);
+        // Redirect to articles list or wherever
+        return redirect()->route('artikel.index')->with('success', 'Article created successfully!');
     }
 
     /**
