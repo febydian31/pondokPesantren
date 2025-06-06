@@ -9,9 +9,6 @@
                     </div>
 
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Pendaftaran</h6>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -59,10 +56,10 @@
                                         <tr>
                                             <td>{{$key + 1}}</td>
                                             <td>{{$r->nama}}</td>
-                                            <td>{{$r->niInduk}}</td>
+                                            <td>{{$r->no_induk}}</td>
                                             <td>{{$r->NISN}}</td>
-                                            <td>{{$r->tanggalLahir}}</td>
-                                            <td>{{$r->jenisKelamin}}</td>
+                                            <td>{{$r->tanggal_lahir}}</td>
+                                            <td>{{$r->jenis_kelamin}}</td>
                                             <td>{{$r->alamat}}</td>
                                         </tr>
                                         @endforeach

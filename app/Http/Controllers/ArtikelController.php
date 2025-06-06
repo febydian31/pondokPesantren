@@ -30,30 +30,20 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-
-       // Validasi input data
-        $request->validate([
-            'judul' => 'required|string|max:255',
-            'tanggal' => 'required|string|max:255', 
-            'content' => 'required|string',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-        // Handle file upload
-        if ($request->hasFile('gambar')) {
-            $image = $request->file('gambar');
-            // Store in "public/images", returns path like "images/filename.jpg"
-            $path = $image->store('images', 'public');
-            // Save to database
-            $artikel = new Artikel();
-            $artikel->judul = $request->judul;
-            $artikel->tanggal = $request->tanggal;
-            $artikel->content = $request->content;
-            $artikel->gambar = $path;
-            $artikel->save();
-            return redirect()->route('artikel.index')->with('success', 'Artikel berhasil dibuat');
-        }
-       
-    }
+       $validated = $request->validate([
+           'tanggal' => 'required|date', // Validate the tanggal field
+           'judul' => 'required|string|max:255',
+           'content' => 'required|string',
+           'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+       ]);
+       if ($request->hasFile('gambar')) {
+           $path = $request->file('gambar')->store('images', 'public');
+           $validated['gambar'] = $path;
+       }
+       // Include tanggal in the create method
+       Artikel::create($validated);
+       return redirect()->route('artikel.index')->with('success', 'Article created successfully!');
+   }
 
     /**
      * Display the specified resource.
@@ -76,26 +66,28 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, Artikel $artikel)
     { 
-         $validated = $request->validate([
-            'tanggal' => 'required|date',
+        $request->validate([
             'judul' => 'required|string|max:255',
             'content' => 'required|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB
+            'tanggal' => 'required|date',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-        // Handle image upload if present
+        // Update field teks
+        $artikel->judul = $request->judul;
+        $artikel->content = $request->content;
+        $artikel->tanggal = $request->tanggal;
+        // Jika ada upload gambar baru
         if ($request->hasFile('gambar')) {
-            // Store the image in 'public/articles' folder
-            $imagePath = $request->file('gambar')->store('articles', 'public');
-            $validated['gambar'] = $imagePath;
-        } else {
-            $validated['gambar'] = null;
+            // Hapus gambar lama jika ada
+            if ($artikel->gambar && Storage::disk('public')->exists($artikel->gambar)) {
+                Storage::disk('public')->delete($artikel->gambar);
+            }
+            // Simpan gambar baru
+            $path = $request->file('gambar')->store('images', 'public');
+            $artikel->gambar = $path;
         }
-        // Create the article
-
-        dd($request->gambar);
-        Article::create($validated);
-        // Redirect to articles list or wherever
-        return redirect()->route('artikel.index')->with('success', 'Article created successfully!');
+        $artikel->save();
+        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diperbarui!');
     }
 
     /**

@@ -624,6 +624,11 @@ text-decoration: none;
   list-style-type: none;
 /* background-color: red; */
 }
+
+.footer .donasi a{
+  color: #daedef;
+
+}
 .footer ul li a {
   color: #daedef;
 }
@@ -1365,6 +1370,7 @@ section,
 --------------------------------------------------------------*/
 .services {
   padding: 80px 0;
+  min-height: 100vh
 }
 
 .programs {
@@ -1379,7 +1385,24 @@ section,
   margin: 40px;
   margin-bottom: 60px;
   margin-top: 70px;
-  /* background-color: red; */
+}
+
+.services h4 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  /* margin: 40px; */
+  /* margin-bottom: 60px; */
+  margin-top: 10px;
+}
+.services h5 {
+  margin: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  /* margin: 40px; */
+  /* margin-bottom: 60px; */
+  margin-top: 40px;
 }
 
 .services .gambar {
@@ -3141,13 +3164,13 @@ color: #005751;
 
 .isi_detail  .images p {
 font-weight: 600;
-margin-bottom: 20px;
+/* margin-bottom: 20px; */
 }
 
 .isi_detail  .images .detail {
 align-items: start;
   text-align: start;
-  padding: 40px;
+  /* padding: 40px; */
   /* background-color: red; */
 }
 

@@ -12,10 +12,6 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => 'admin', // Ganti dengan password yang diinginkan
-        ]);
+        //
     }
 }

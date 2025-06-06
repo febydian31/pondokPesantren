@@ -13,25 +13,26 @@ return new class extends Migration
     {
         Schema::create('pendaftarans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 250);
-            $table->integer('noInduk');
-            $table->integer('NISN');
-            $table->date('tanggalLahir');
-            $table->string('jenisKelamin', 250);
-            $table->string('alamat', 250);
-            // $table->string('namaAyah', 250);
-            // $table->string('namaIbu', 250);
-            // $table->string('pekerjaanAyah', 250);
-            // $table->string('pekerjaanIbu', 250);
-            // $table->string('alamataIbu', 250);
-            // $table->string('alamataAyah', 250);
-            // $table->integer('noTelp');
-            // $table->string('jenjangPendidikan', 250);
-            // $table->boolean('akte')->default(false);
-            // $table->boolean('kk')->default(false);
-            // $table->boolean('ijazah')->default(false);
-            // $table->boolean('ktp')->default(false);
-            // $table->boolean('bpjs')->default(false);
+            // $table->string('nama', 250);
+            // $table->integer('no_induk');
+            // $table->integer('NISN');
+            // $table->date('tanggal_lahir');
+            // $table->string('jenis_kelamin');
+            // $table->string('alamat', 250);
+            // $table->string('nama_ayah', 250);
+            // $table->string('nama_ibu', 250);
+            // $table->string('pekerjaan_ayah', 250);
+            // $table->string('pekerjaan_ibu', 250);
+            // $table->string('alamat_ibu', 250);
+            // $table->string('alamat_ayah', 250);
+            // $table->integer('no_telp');
+            // $table->string('jenjang_pendidikan');
+            // $table->string('kategori_santri');
+            $table->string('akte');
+            // $table->string('kk')->nullable();
+            // $table->string('ijazah')->nullable();
+            // $table->string('ktp')->nullable();
+            // $table->string('bpjs')->nullable();
             $table->timestamps();
         });
     }

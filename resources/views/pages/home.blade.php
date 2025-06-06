@@ -166,50 +166,45 @@
     </section>
     <!-- /profile Section -->
 
-    <!-- artikel Section -->
-    <section id="services" class=" services section">
-      <!-- Section Title -->
-      <div class="container section-title judul-artikel" data-aos="fade-up">
-        <div><span>Artikel</span></div>
-      </div>
+    <section id="services" class="services section">
+          <!-- <a href="{{ route('artikel.create') }}" method="GET"></a> -->
+       @if($allArtikel->isEmpty())
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="judul ">
+                <h1>Artikel</h1>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <h4>Artikel Belum Tersedia</h4>
+              </table>
+            </div>
+          </div>
+      @else
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="judul ">
+          <h1>Artikel</h1>
+        </div>
         <div class="row gy-4">
+          @foreach ($allArtikel as $key => $r)
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-card">
-              <img class="gambar" src="{{ asset('images/logo.png') }}" alt="">
-              <span class="span">April 15, 2025</span>
-              <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, officiis?</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-              <a href="service-details.html" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
+              <img class="gambar" src="{{ asset('storage/' . $r->gambar) }}" alt="">
+              <span class="span">{{$r->tanggal}}</span>
+              <h3>{{$r->judul}}</h3>
+              <p>{{$r->content}}</p>
+              <a href="/detailArtikel" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-              <img class="gambar" src="{{ asset('images/logo.png') }}" alt="">
-              <span class="span">April 15, 2025</span>
-              <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, officiis?</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-              <a href="service-details.html" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-              <img class="gambar" src="{{ asset('images/logo.png') }}" alt="">
-              <span class="span">April 15, 2025</span>
-              <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, officiis?</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-              <a href="service-details.html" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
+          @endforeach
         </div>
         <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="800">
-          <a href="/artikel" class="btn btn-primary">Lihat Semua Artikel</a>
+          <a href="/artikelPage" class="btn btn-primary">Lihat Semua Artikel</a>
         </div>
       </div>
+      @endif
     </section>
-    <!-- /artikel Section -->
   </main>
 
 @endsection
+
+

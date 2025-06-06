@@ -21,8 +21,10 @@ class DonasiController extends Controller
      */
     public function create()
     {
-        $metode = ['bankTransfer', 'creditCard', 'eWalet'];
-        return view('donasi.create', compact('metode'));
+        $metode = ['Bank Transfer', 'Credit Card', 'E Walet'];
+
+        $alldonasi = Donasi::all();
+        return view('donasi.create', compact('metode', 'alldonasi'));
     }
 
     /**
@@ -41,6 +43,7 @@ class DonasiController extends Controller
             'pesan' => 'required|string',
         ]);
 
+        dd($validData);
         // simpan data 
         Donasi::create($validData);
 

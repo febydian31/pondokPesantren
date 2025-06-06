@@ -9,9 +9,6 @@
                     </div>
 
                     <div class="card shadow mb-4" style="max-width: 750px; margin: 30px auto;">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Form Edit Prestasi</h6>
-                        </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <form action="{{ route('prestasi.update', $prestasi->id) }}" method="POST">

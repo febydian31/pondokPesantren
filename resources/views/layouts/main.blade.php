@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Pondok Pesantren Zuhriyah</title>
+  <title>Panti Asuhan dan Pondok Pesantren Zuhriyah</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -50,7 +50,7 @@
 
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
          <img class="logo" src="{{ asset('images/logo.png') }}" alt="">
-        <h5 class="sitename">Pondok Pesantren Zuhriyah</h1>
+        <h5 class="sitename">Panti Asuhan dan Pondok Pesantren Zuhriyah</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -82,7 +82,7 @@
         <div class="col-lg-3 col-md-6 ">
             <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
                 <img class="logo" src="{{ asset('images/logo.png') }}" alt="">
-                <h5 class="sitename">Pondok Pesantren Zuhriyah.</h1>
+                <h5 class="sitename">Panti Asuhan dan Pondok Pesantren Zuhriyah.</h1>
             </a>
             <p>SK Menkumham RI No: AHU-0012559. AH.01.04 Tahun 2018 No.2 Tgl. 07 September 2018 NSP: 510034041047 IJOP No.24925/2022</p>
 
@@ -125,7 +125,7 @@
           <div class="donasi">
             <div class="d-flex">
                 <i class="bi bi-geo-alt-fill icon2" ></i>
-                <p>Rejodani I RT/RW 03/02 Sariharjo ngaglik Sleman Yogyakrta</p>
+                <a href="https://maps.app.goo.gl/6EyAMZnhFg4bN8x56"><p>Rejodani I RT/RW 03/02 Sariharjo ngaglik Sleman Yogyakrta</p></a>
             </div>
             <div class="d-flex">
                 <i class="bi bi-whatsapp icon2" ></i>

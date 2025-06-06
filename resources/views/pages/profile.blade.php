@@ -5,7 +5,8 @@
         <div class="artikel">
             <div class="judul container">
                 <h1>Pondok Pesantren Zuhriyah</h1>
-                <p>Pelajari tentang sejarah, misi, visi, dan orang-orang berdedikasi yang menjadikan pesantren kami sebagai pusat keunggulan dalam pendidikan Islam. </p>
+                <p>Sesuai Amanah dari Alm.  H. Moh. Djamhuri Bin H. Moh Fadhil keinginanannya  mendirikan Pondok Pesantren di daearah kelarihan beliau di  Rejodani,Ngaglik, Sleman, D I Yogyakarta, agar di daerah tersebut seperti suasana pada zaman beliau masih muda di daerah tersebut kegiatan keagamaan berupa Peasntren yang cukup makmur, tetapai pada zaman beliau sudah tua kegiatan tersebut mulai surut dan  keinginan tersebut belum dapat teralisasi sampai wafat, maka para ahli waris beliau merealisasikan amanah tersebut dengan mendirikan Panti Asuhan dan Pondok Pesantren .  yang berwawasan Islami. Kemudian pada Tahun 2000 di dirikan Yayasan Fadhilatul Djamhuriyah yang berorganisasikan anggota keluarga Bani Djamhuri. Pada Tahun 2000 itu juga Yayasan Fadhilatul Djamhuriyah mewakafkan tanah untuk mendirikan Panti Asuhan dan Pondok Pesantren Zuhriyyah yang di Asuh dan dikelola oleh Ibu Ustajah Dra. Hj. Syamsiyah, M.Pd. I. Yang sekaligus cucu mantu dari Alm.H. Moh. Djamhoeri.</p>
+                <p>Pada Tahun 2001 PAPP ZUHRIYAH telah terdaftar di Kementrian Sosial dan Kementrian Agama sampai saat ini, dan sudah beberapa kali menjadi juara I lomba kebersihan Pondok Pesantren  se Kabupaten Sleman dan D I Yogyakarta.</p>
             </div>
         </div>
     </section>  

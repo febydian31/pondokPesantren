@@ -63,41 +63,42 @@
                         <p>Kontribusi Anda membantu kami menyediakan pendidikan Islam yang berkualitas kepada para Santri.</p>
                     </div>
                     <form action="{{ route('donasi.store') }}" method="POST">
-                      @csrf
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                            <label for="inputPassword4">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" placeholder="Nama Legkap" required >
-                            </div>
-                            <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">No Telp</label>
-                            <input type="number" class="form-control" id="noTelp" placeholder="No Telp" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress2">Nominal</label>
-                            <input type="Number" class="form-control" id="nominal" placeholder="Rp. " required>
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="donation-amount">Metode Pembayaran</label>
-                            <select class="form-select" aria-label="Default select example" required>
-                                <option selected>Bank Transfer</option>
-                                <option value="1">Credit Card</option>
-                                <option value="2">E-Wallet</option>
-                            </select>
-                        </div> -->
-                        <div class="form-group">
-                            <label for="donation-amount">Pesan</label>
-                            <textarea class="form-control" placeholder="Pesan" id="pesan" style="height: 100px" required></textarea>
-                        </div>
-                        
-                        <!-- <button type="submit" class="donasi btn">Donasi</button> -->
-                        <button type="submit" onclick="openWhatsApp()" class="donasi btn">Donasi</button>
-                    </form>
+                                    @csrf
+
+                                    <div class="">
+                                        <div class="row">
+                                        <div class="form-group col-md-6">
+                                        <label for="">Nama Lengkap</label>
+                                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Legkap" required >
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                        <label for="">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">No Telp</label>
+                                        <input type="number" class="form-control" id="noTelp" name="noTelp" placeholder="No Telp" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Nominal</label>
+                                        <input type="Number" class="form-control" id="nominal" name="nominal" placeholder="Rp. " required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Metode Pembayaran</label>
+                                        <select class="form-select" name="metodePembayaran" aria-label="Default select example" required>
+                                             
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Pesan</label>
+                                        <textarea class="form-control" name="pesan" placeholder="Pesan" style="height: 100px" required></textarea>
+                                    </div> 
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px; ">
+                                    <a href="/kegiatan" class="button btn btn-info">Kembali</a>
+                                    <button class="btn btn-primary" type="submit">Kirim</button>
+                                </div>
                 </div>
             </div>
             <div class="form col-lg-6 col-md-6">
@@ -117,24 +118,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Hamba Allah</td>
-                <td>20 maret 2013</td>
-                <td>200.000</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, alias? Tenetur velit illo ipsum provident maiores! Laborum iusto natus nobis.</td>
-              </tr>
-              <tr>
-                <td>Hamba Allah</td>
-                <td>20 maret 2013</td>
-                <td>200.000</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, alias? Tenetur velit illo ipsum provident maiores! Laborum iusto natus nobis.</td>
-              </tr>
-              <tr>
-                <td>Hamba Allah</td>
-                <td>20 maret 2013</td>
-                <td>200.000</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, alias? Tenetur velit illo ipsum provident maiores! Laborum iusto natus nobis.</td>
-              </tr>
+              
             </tbody>
           </table> 
           <!-- <nav aria-label="Page navigation example">

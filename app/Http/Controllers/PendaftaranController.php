@@ -23,8 +23,9 @@ class PendaftaranController extends Controller
     {
          $jenisKelamin = ['Laki Laki', 'Perempuan'];
          $jenjangPendidikan = ['MTS', 'MA','KULIAH', 'LULUS'];
-        //  $syaratLain = ['Reguler', 'Dhuafa','Yatim / Piatu'];
-        return view('pendaftaran.create', compact('jenisKelamin', 'jenjangPendidikan', ));
+         $kategoriSantri = ['Reguler', 'Dhuafa','Yatim / Piatu'];
+        return view('pendaftaran.create', compact('jenisKelamin', 'jenjangPendidikan','kategoriSantri' ));
+        return view('pendaftaran.create');
     }
 
     /**
@@ -36,51 +37,32 @@ class PendaftaranController extends Controller
         // validasi 
         $validData = $request->validate([
             'nama' => 'required',
-            'noInduk' => 'required',
+            'no_induk' => 'required',
             'NISN' => 'required',
-            'tanggalLahir' => 'required',
-            'jenisKelamin' => 'required|in:lakilaki,perempuan',
+            'tanggal_lahir' => 'required',
+            'jenis_kelamin' => 'required|in:Laki Laki,Perempuan',
             'alamat' => 'required',
-            // 'namaAyah' => 'required',
-            // 'namaIbu' => 'required',
-            // 'pekerjaanAyah' => 'required',
-            // 'pekerjaanIbu' => 'required',
-            // 'alamatIbu' => 'required',
-            // 'alamatAyah' => 'required',
-            // 'noTelp' => 'required',
-            // 'jenjangPendidikan' => 'required|in:mts,ma,kuliah,lulus',
-            // 'akte' => 'sometimes|accepted',
-            // 'ijazah' => 'sometimes|accepted',
-            // 'kk' => 'sometimes|accepted',
-            // 'ktp' => 'sometimes|accepted',
-            // 'bpjs' => 'sometimes|accepted',
+            'nama_ayah' => 'required',
+            'nama_ibu' => 'required',
+            'pekerjaan_ayah' => 'required',
+            'pekerjaan_ibu' => 'required',
+            'alamat_ibu' => 'required',
+            'alamat_ayah' => 'required',
+            'no_telp' => 'required',
+            'jenjang_pendidikan' => 'required|in:MTS,MA,KULIAH,LULUS',
+            'kategori_santri' => 'required|in:Reguler,Dhuafa,Yatim / Piatu',
+            // 'akte' => 'required|file|mimes:pdf,jpg,png|max:2048',
+            // 'ijazah' => 'required|file|mimes:pdf,jpg,png|max:2048',
+            // 'kk' => 'required|file|mimes:pdf,jpg,png|max:2048',
+            // 'ktp' => 'required|file|mimes:pdf,jpg,png|max:2048',
+            // 'bpjs' => 'required|file|mimes:pdf,jpg,png|max:2048',
 
         ]);
-        // $pendaftaran = new pendaftaran();
-        // // simpan data 
-        // $pendaftaran->nama = $validData['nama'];
-        // $pendaftaran->noInduk = $validData['noInduk'];
-        // $pendaftaran->NISN = $validData['NISN'];
-        // $pendaftaran->tanggalLahir = $validData['tanggalLahir'];
-        // $pendaftaran->alamat = $validData['alamat'];
-        // $pendaftaran->jenisKelamin = $validData['jenisKelamin'];
-        // $pendaftaran->namaAyah = $validData['namaAyah'];
-        // $pendaftaran->namaIbu = $validData['namaIbu'];
-        // $pendaftaran->pekerjaanAyah = $validData['pekerjaanAyah'];
-        // $pendaftaran->pekerjaanIbu = $validData['pekerjaanIbu'];
-        // $pendaftaran->alamatIbu = $validData['alamatIbu'];
-        // $pendaftaran->alamatAyah = $validData['alamatAyah'];
-        // $pendaftaran->noTelp = $validData['noTelp'];
-        // $pendaftaran->jenjangPendidikan = $validData['jenjangPendidikan'];
 
-        // $pendaftaran->akte = $request->has('akte');
-        // $pendaftaran->ijazah = $request->has('ijazah');
-        // $pendaftaran->kk = $request->has('kk');
-        // $pendaftaran->ktp = $request->has('ktp');
-        // $pendaftaran->bpjs = $request->has('bpjs');
-        // ddd('$pendaftaran');
-        // $pendaftaran->save();
+        
+
         dd($validData);
+        
         Pendaftaran::create($validData);
 
         return redirect()->route('pendaftaran.index');
