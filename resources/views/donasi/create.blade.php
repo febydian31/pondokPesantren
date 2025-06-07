@@ -27,7 +27,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">No Telp</label>
-                                            <input type="number" class="form-control" id="noTelp" name="noTelp" placeholder="No Telp" required>
+                                            <input type="number" class="form-control" id="noTelp" name="no_telp" placeholder="No Telp" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Nominal</label>
@@ -35,7 +35,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Metode Pembayaran</label>
-                                            <select class="form-select" name="metodePembayaran" aria-label="Default select example" required>
+                                            <select class="form-select" name="metode_Pembayaran" aria-label="Default select example" required>
                                                 @foreach($metode as $met)
                                                     <option value="{{ $met }}" {{ old('metodePembayaran') == $met ? 'selected' : '' }}>
                                                         {{ $met }}
@@ -50,7 +50,7 @@
                                     </form>
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px; ">
-                                    <a href="/kegiatan" class="button btn btn-info">Kembali</a>
+                                    <a href="/donasi" class="button btn btn-info">Kembali</a>
                                     <button class="btn btn-primary" type="submit">Kirim</button>
                                 </div>
                             </div>

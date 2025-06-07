@@ -45,10 +45,10 @@
                                             <th rowspan="1" colspan="1">No Telpn</th>
                                             <th rowspan="1" colspan="1">Jenjang Pendidikan</th>
                                             <th rowspan="1" colspan="1">Akte Kelahiran</th>
-                                            <th rowspan="1" colspan="1">Kartu Keluarga</th>
+                                            <!-- <th rowspan="1" colspan="1">Kartu Keluarga</th>
                                             <th rowspan="1" colspan="1">Ijazah Terakhir</th>
                                             <th rowspan="1" colspan="1">KTP Ortu / Wali</th>
-                                            <th rowspan="1" colspan="1">BPJS / KIP</th>
+                                            <th rowspan="1" colspan="1">BPJS / KIP</th> -->
                                         </tr>
                                     </div>
                                     <tbody>      
@@ -61,6 +61,15 @@
                                             <td>{{$r->tanggal_lahir}}</td>
                                             <td>{{$r->jenis_kelamin}}</td>
                                             <td>{{$r->alamat}}</td>
+                                            <td>{{$r->nama_ayah}}</td>
+                                            <td>{{$r->nama_ibu}}</td>
+                                            <td>{{$r->pekerjaan_ayah}}</td>
+                                            <td>{{$r->pekerjaan_ibu}}</td>
+                                            <td>{{$r->alamat_ayah}}</td>
+                                            <td>{{$r->alamat_ibu}}</td>
+                                            <td>{{$r->no_telp}}</td>
+                                            <td>{{$r->jenjang_pendidikan}}</td>
+                                            <td>{{$r->kategori_santri}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

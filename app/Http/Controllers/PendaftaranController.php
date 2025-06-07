@@ -14,6 +14,7 @@ class PendaftaranController extends Controller
     {
         $allpendaftaran = Pendaftaran::all();
         return view('pendaftaran.index', compact('allpendaftaran'));
+        
     }
 
     /**
@@ -24,8 +25,9 @@ class PendaftaranController extends Controller
          $jenisKelamin = ['Laki Laki', 'Perempuan'];
          $jenjangPendidikan = ['MTS', 'MA','KULIAH', 'LULUS'];
          $kategoriSantri = ['Reguler', 'Dhuafa','Yatim / Piatu'];
+        // return view('pages.pendaftaran', compact('jenisKelamin', 'jenjangPendidikan','kategoriSantri' ));
         return view('pendaftaran.create', compact('jenisKelamin', 'jenjangPendidikan','kategoriSantri' ));
-        return view('pendaftaran.create');
+        
     }
 
     /**
@@ -61,7 +63,7 @@ class PendaftaranController extends Controller
 
         
 
-        dd($validData);
+        // dd($validData);
         
         Pendaftaran::create($validData);
 

@@ -6,7 +6,7 @@
         <div class="artikel">
             <div class="judul container">
                 <h1>Pendaftaran</h1>
-                <p>Mulailah perjalanan pendidikan Anda bersama Pondok Pesantren Zuhriyah. </p>
+                <p>Mulailah perjalanan pendidikan Anda bersama Panti Asuhan dan Pondok Pesantren Zuhriyah. </p>
                 <p>Daftarkan diri Anda pada program-program kami dan bergabunglah dengan komunitas pembelajaran dan pertumbuhan kami.</p>
             </div>
         </div>
@@ -18,114 +18,89 @@
         </div>
             <form id="pendaftaran" class="pendaftaran">
                     <div class="">
-                        <h2>Data Santri </h2>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="nama" placeholder="Nama Legkap">
-                            </div>
-                            <div class="form-group col-md-6">
-                            <label for="noInduk">No Induk Santri </label>
-                                <input type="number" class="form-control" id="noInduk" placeholder="noInduk">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="number">NISN</label>
-                                <input type="number" class="form-control" id="number" placeholder="NISN">
-                            </div>
-                            <div class="form-group col-md-6">
-                            <label for="date">Tanggl Lahir</label>
-                                <input type="date" class="form-control" id="date" placeholder="Tanggal Lahir">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="donation-amount">Jenis Kelamin</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Pilih Jenis Kelamin</option>
-                                <option value="1">Laki - Laki</option>
-                                <option value="2">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="donation-amount">Alamat</label>
-                            <textarea class="form-control" placeholder="alamat" id="alamat" style="height: 100px"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="donation-amount">Jenjang Pendidikan</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Pilih Jenjang Pendidikan</option>
-                                <option value="1">MTS</option>
-                                <option value="2">MA</option>
-                                <option value="3">KULIAH</option>
-                                <option value="4">LULUS</option>
-                            </select>
-                        </div>
-                        <h2>Data Orang Tua / Wali</h2>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="nama">Nama Ayah </label>
-                                <input type="text" class="form-control" id="nama" placeholder="Nama Ayah">
-                            </div>
-                            <div class="form-group col-md-6">
-                            <label for="noInduk">Nama Ibu  </label>
-                                <input type="text" class="form-control" id="noInduk" placeholder="Nama Ibu">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="number">Pekerjaan Ayah </label>
-                                <input type="date" class="form-control" id="number" placeholder="Pekerjaan Ayah">
-                            </div>
-                            <div class="form-group col-md-6">
-                            <label for="date">Pekerjaan Ibu</label>
-                                <input type="date" class="form-control" id="date" placeholder="Pekerjaan Ibu">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="donation-amount">Alamat Ayah </label>
-                            <textarea class="form-control" placeholder="alamat" id="alamat" style="height: 100px"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="donation-amount">Alamat Ibu </label>
-                            <textarea class="form-control" placeholder="alamat" id="alamat" style="height: 100px"></textarea>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="nama">No Telp </label>
-                            <input type="number" class="form-control" id="nama" placeholder="No Telp">
-                        </div>
-                        <h2>Persyaratan Lainnya </h2>
-                        <div class="form-group">
-                            <label for="donation-amount">Jenjang Pendidikan</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Pilih Jenjang Pendidikan</option>
-                                <option value="1">REGULER</option>
-                                <option value="2">DHUAFA</option>
-                                <option value="3">TATIM / PIATU</option>
-                            </select>
-                        </div>
-                        <div class="check">
-                            <label>
-                                <input type="checkbox" name="terms" required> Akte Kelahiran
-                            </label>
-                            <label>
-                                <input type="checkbox" name="newsletter" required>Kartu Keluarga
-                            </label>
-                            <label>
-                                <input type="checkbox" name="terms" required> Ijazah Terakhir
-                            </label>
-                            <label>
-                                <input type="checkbox" name="newsletter" required>KTP Ortu / Wali
-                            </label>
-                            <label>
-                                <input type="checkbox" name="newsletter" required>BPJS / KIP
-                            </label>
-                        </div>   
+                        <form action="{{ route('pendaftaran.store') }}" method="POST" id="pendaftaran" class="pendaftaran">
+                                        @csrf
+                                        <div class="">
+                                            <h2>Data Santri </h2>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="nama">Nama</label>
+                                                    <input type="text" class="form-control" name="nama" placeholder="Nama Legkap">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                <label for="noInduk">No Induk Santri </label>
+                                                    <input type="number" class="form-control" name="no_induk" placeholder="noInduk">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="NISN">NISN</label>
+                                                    <input type="number" class="form-control" name="NISN" placeholder="NISN">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                <label for="date">Tanggl Lahir</label>
+                                                    <input type="date" class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="donation-amount">Alamat</label>
+                                                <textarea class="form-control" placeholder="alamat" name="alamat" style="height: 100px"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                            
+                                            <h2>Data Orang Tua / Wali</h2>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="nama_ayah">Nama Ayah </label>
+                                                    <input type="text" class="form-control" name="nama_ayah" placeholder="Nama Ayah">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                <label for="nama_ibu">Nama Ibu  </label>
+                                                    <input type="text" class="form-control" name="nama_ibu" placeholder="Nama Ibu">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="pekerjaan_ayah">Pekerjaan Ayah </label>
+                                                    <input type="text" class="form-control" name="pekerjaan_ayah" placeholder="Pekerjaan Ayah">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                <label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+                                                    <input type="text" class="form-control" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="alamat_ayah">Alamat Ayah </label>
+                                                <textarea class="form-control" placeholder="alamat" name="alamat_ayah" style="height: 100px"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="alamat_ibu">Alamat Ibu </label>
+                                                <textarea class="form-control" placeholder="alamat" name="alamat_ibu" style="height: 100px"></textarea>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="no_telp">No Telp </label>
+                                                <input type="number" class="form-control" name="no_telp" placeholder="No Telp">
+                                            </div>
+                                            <h2>Persyaratan Lainnya </h2>
+                                            
+                                            <!-- <label for="akte">Akte Kelahiran :</label><br />
+                                            <input type="file" id="akte" name="akte" accept=".pdf,.jpg,.png" required><br /><br /> -->
+                                            <!-- <label for="ijazah">Ijazah :</label><br />
+                                            <input type="file" id="ijazah" name="ijazah" accept=".pdf,.jpg,.png" required><br /><br />
+                                            <label for="kk">Kartu Keluarga :</label><br />
+                                            <input type="file" id="kk" name="kk" accept=".pdf,.jpg,.png" required><br /><br />
+                                            <label for="ktp">KTP :</label><br />
+                                            <input type="file" id="ktp" name="ktp" accept=".pdf,.jpg,.png" required><br /><br />
+                                            <label for="bpjs">BPJS / KIP :</label><br />
+                                            <input type="file" id="bpjs" name="bpjs" accept=".pdf,.jpg,.png" required><br /><br /> -->
+                                            
+                                        </div>
+                                    </form> 
                     </div>
                     <div class="button">
                         <button type="submit">Kirim</button>
                     </div>
-                    <!-- <button type="submit" id="submitBtn" style="">Submit</button> -->
             </form>
 
     </section>

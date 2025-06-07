@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nama', 100);
             $table->string('email', 250);
-            $table->integer('noTelp');
+            $table->integer('no_telp');
             $table->integer('nominal');
-            $table->string('metodePembayaran', 250);
+            $table->string('metode_pembayaran', 250);
             $table->text('pesan', 250);
             $table->timestamps();
         });

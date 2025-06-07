@@ -37,9 +37,9 @@ class DonasiController extends Controller
         $validData = $request->validate([
             'nama' => 'required|string',
             'email' => 'required|email',
-            'noTelp' => 'required',
+            'no_telp' => 'required',
             'nominal' => 'required',
-            'metodePembayaran' => 'required|string|in:bankTransfer,creditCard,eWalet',
+            'metode_Pembayaran' => 'required|string|in:bankTransfer,creditCard,eWalet',
             'pesan' => 'required|string',
         ]);
 
@@ -72,24 +72,7 @@ class DonasiController extends Controller
     public function update(Request $request, Kegiatan $kegiatan)
     {
          // validasi 
-        $validData = $request->validate([
-            'hari' => 'required',
-            'waktu' => 'required',
-            'kegiatan' => 'required',
-            'pembimbing' => 'required',
-            'lokasi' => 'required',
-            ], [
-            'hari.required' => 'judul harus di isi',
-            'waktu.required' => 'waktu harus di isi',
-            'kegiatan.required' => 'kegiatan harus di isi',
-            'pembimbing.required' => 'pembimbing harus di isi',
-            'lokasi.required' => 'lokasi harus di isi',
-        ]);
-
-        // simpan data 
-        $kegiatan->update($validData);
-
-        return redirect()->route('kegiatan.index');
+       
     }
 
     /**

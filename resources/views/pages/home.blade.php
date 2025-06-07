@@ -9,9 +9,9 @@
           <div class="col-lg-6 col-md-12">
             <div class="hero-content " data-aos="fade-up" data-aos-delay="200">
               <p>Selamat Datang di</p>
-              <h2>Pondok Pesantren Zuhriyah</h2>
+              <h2>Panti Asuhan dan Pondok Pesantren Zuhriyah</h2>
               <div class="hero-btns">
-                <a href="/pendaftaran" class="btn btn-primary">Daftar</a>
+                <a href="/pendaftaranPage" class="btn btn-primary">Daftar</a>
               </div>
             </div>
           </div>

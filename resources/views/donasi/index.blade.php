@@ -45,9 +45,9 @@
                                             <td>{{$key + 1}}</td>
                                             <td>{{$r->nama}}</td>
                                             <td>{{$r->email}}</td>
-                                            <td>{{$r->noTelp}}</td>
+                                            <td>{{$r->no_telp}}</td>
                                             <td>{{$r->nominal}}</td>
-                                            <td>{{$r->metodePembayaran}}</td>
+                                            <td>{{$r->metode_Pembayaran}}</td>
                                             <td>{{$r->pesan}}</td>
                                         </tr>
                                         @endforeach

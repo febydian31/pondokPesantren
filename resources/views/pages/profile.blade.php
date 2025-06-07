@@ -4,7 +4,7 @@
     <section class="top">
         <div class="artikel">
             <div class="judul container">
-                <h1>Pondok Pesantren Zuhriyah</h1>
+                <h1>Panti Asuhan dan Pondok Pesantren Zuhriyah</h1>
                 <p>Sesuai Amanah dari Alm.  H. Moh. Djamhuri Bin H. Moh Fadhil keinginanannya  mendirikan Pondok Pesantren di daearah kelarihan beliau di  Rejodani,Ngaglik, Sleman, D I Yogyakarta, agar di daerah tersebut seperti suasana pada zaman beliau masih muda di daerah tersebut kegiatan keagamaan berupa Peasntren yang cukup makmur, tetapai pada zaman beliau sudah tua kegiatan tersebut mulai surut dan  keinginan tersebut belum dapat teralisasi sampai wafat, maka para ahli waris beliau merealisasikan amanah tersebut dengan mendirikan Panti Asuhan dan Pondok Pesantren .  yang berwawasan Islami. Kemudian pada Tahun 2000 di dirikan Yayasan Fadhilatul Djamhuriyah yang berorganisasikan anggota keluarga Bani Djamhuri. Pada Tahun 2000 itu juga Yayasan Fadhilatul Djamhuriyah mewakafkan tanah untuk mendirikan Panti Asuhan dan Pondok Pesantren Zuhriyyah yang di Asuh dan dikelola oleh Ibu Ustajah Dra. Hj. Syamsiyah, M.Pd. I. Yang sekaligus cucu mantu dari Alm.H. Moh. Djamhoeri.</p>
                 <p>Pada Tahun 2001 PAPP ZUHRIYAH telah terdaftar di Kementrian Sosial dan Kementrian Agama sampai saat ini, dan sudah beberapa kali menjadi juara I lomba kebersihan Pondok Pesantren  se Kabupaten Sleman dan D I Yogyakarta.</p>
             </div>
@@ -70,7 +70,7 @@
     <!-- Pengurus unggulan  -->
     <section id="services" class="services pengurus section">
         <div class="container section-title judul-artikel" data-aos="fade-up">
-            <div><span>Pengurus Pondok Pesantren Zuhriah</span></div>
+            <div><span>Pengurus Panti Asuhan dan  Pondok Pesantren Zuhriah</span></div>
         </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4">

@@ -64,7 +64,6 @@
                     </div>
                     <form action="{{ route('donasi.store') }}" method="POST">
                                     @csrf
-
                                     <div class="">
                                         <div class="row">
                                         <div class="form-group col-md-6">
@@ -95,10 +94,10 @@
                                         <textarea class="form-control" name="pesan" placeholder="Pesan" style="height: 100px" required></textarea>
                                     </div> 
                                 </div>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px; ">
-                                    <a href="/kegiatan" class="button btn btn-info">Kembali</a>
-                                    <button class="btn btn-primary" type="submit">Kirim</button>
+                                <div class="pendaftaran">
+                                  <button class="btn btn-primary" type="submit">Kirim</button>
                                 </div>
+                                
                 </div>
             </div>
             <div class="form col-lg-6 col-md-6">
