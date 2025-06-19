@@ -115,6 +115,10 @@
                 <i class="bi bi-bank icon2"> </i> <strong>BPD DIY</strong><br>
                 <span>No. Rekening: 005221039170 a/n Muhammad Adam Ilhami</span>
                 </p>
+                <p>
+                <i class="bi bi-bank icon2"> </i> <strong>BNI</strong><br>
+                <span>No. Rekening: 0038847205 a/n ibu Karomah Achmad Doeri</span>
+                </p>
             </div>
             
           </div>

@@ -31,50 +31,18 @@
       <div class="container section-title judul-artikel" data-aos="fade-up">
         <div><span>Pondok Pesantren Zuhriyah</span></div>
       </div>
-        <!-- <div class="align-items-center">
-          <div class="video-section" data-aos="zoom-out" data-aos-delay="200">
-              <div class="container video-section">
-                <div class="video-wrapper">
-                  <video id="demo-video" preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail" >
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                  </video>
-                <div class="play-button" id="play-btn"></div>
-              </div>
-          </div>
-        </div> -->
-          
+     
             <div class="container video-section" data-aos="zoom-out" data-aos-delay="200">
                 <div class="video-wrapper">
-                  <video id="demo-video" preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail" >
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                  </video>
-                <div class="play-button" id="play-btn"></div>
+                   <iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/4PKBBJ6qv5w?si=9pJFFxflBY2-EW5z/VIDEO_ID?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+      </iframe>
             </div>
     </section>
     <!-- /artikel Section -->
 
-    <!-- vidio Section -->
-    <!-- <section id="contact" class="vidio2">
-       <div class="lol">
-            <h3>Pondok Pesantren Zuhriyah</h3>
-            <div class="container video-section">
-                <div class="video-wrapper">
-                  <video id="demo-video" preload="metadata" poster="https://via.placeholder.com/800x450?text=Video+Thumbnail" >
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
-                      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                  </video>
-                <div class="play-button" id="play-btn"></div>
-            </div>
-        </div>
-       </div>
-      
-    </section> -->
-    <!-- /vidio Section -->
+ 
 
     <!-- sumber dana Section -->
     <section id="services" class=" sumber-dana services section">
