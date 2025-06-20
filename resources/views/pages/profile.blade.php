@@ -103,44 +103,13 @@
     </section>
     <!-- pengurus unggulan end  -->
 
-    <!-- struktur unggulan  -->
+    <!-- struktur   -->
     <section id="services" class="services section">
         <div class="container section-title judul-artikel" data-aos="fade-up">
             <div><span>Struktur Organisasi</span></div>
         </div>
         <div class="container card struktur col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card1 bg1">
-                <h2>Ketua Yayasan</h2>
-                <h3>Miftakhurrohmad Sidik Wahyudi</h3>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-6 col-md-12">
-                    <div class="card1 bg2">
-                        <h2>Pengasuh Pondok</h2>
-                        <h3>H. Muhammad Adam Ilhami, M.Pd.</h3>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card1 bg2">
-                        <h2>Kepala Panti Asuhan</h2>
-                        <h3>Shohiba Mazaya Mubaroka, S.H., M.Kn.</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row gy-4">
-                <div class="col-lg-6 col-md-12">
-                    <div class="card1 bg3">
-                        <h2>Staff & Tenaga Pengajar</h2>
-                        <h3>27 Orang</h3>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card1 bg3">
-                        <h2>Santri dan Anak Asuh</h2>
-                        <h3>60 Orang</h3>
-                    </div>
-                </div>
-            </div>
+            <img src="{{ asset('images/struktur_organisasi.jpg') }}" alt="">
         </div>
     </section>
     <!-- struktur  end  -->
