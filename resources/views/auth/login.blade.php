@@ -43,7 +43,7 @@
               </div>
               <div class="d-flex mb-5 align-items-center">
               </div>
-              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+              <input type="submit" value="Log In" class="btn btn-block btn-success">
             </form>
           </div>
         </div>
