@@ -11,12 +11,32 @@
                     @csrf
                     <div class="form-group first">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email">
+                        <input type="email"
+                            name="email"
+                            id="email"
+                            class="form-control @error('email') is-invalid @enderror"
+                            value="{{ old('email') }}"
+                            required >
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
 
                     </div>
                     <div class="form-group last mb-3">
                         <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control" id="password">
+                        <input type="password"
+                            name="password"
+                            id="password"
+                            class="form-control @error('password') is-invalid @enderror"
+                            required
+                        >
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="d-flex mb-5 align-items-center">
                     </div>
