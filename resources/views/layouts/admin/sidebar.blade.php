@@ -4,13 +4,19 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 
-                <h6 style="font-weight: 700; margin-top:10px; font-size:12px;">PAPS Zuhriyah</h6>
+                <h6 style="font-weight: 700; margin-top:10px; font-size:12px;">PAPP Zuhriyah</h6>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">
+                    <i class="bi bi-book-half"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
             <li class="nav-item active">
                 <a class="nav-link" href="/pendaftaran">
                     <i class="bi bi-book-half"></i>

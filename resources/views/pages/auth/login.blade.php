@@ -11,12 +11,12 @@
                     @csrf
                     <div class="form-group first">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" name="email" class="form-control" id="email">
 
                     </div>
                     <div class="form-group last mb-3">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password">
+                        <input type="password" name="password" class="form-control" id="password">
                     </div>
                     <div class="d-flex mb-5 align-items-center">
                     </div>
