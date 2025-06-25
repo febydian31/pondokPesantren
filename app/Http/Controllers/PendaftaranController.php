@@ -13,7 +13,7 @@ class PendaftaranController extends Controller
     public function index()
     {
         $allpendaftaran = Pendaftaran::all();
-        return view('pendaftaran.index', compact('allpendaftaran'));
+        return view('pages.backend.pendaftaran.index', compact('allpendaftaran'));
         
     }
 
@@ -26,7 +26,7 @@ class PendaftaranController extends Controller
          $jenjangPendidikan = ['MTS', 'MA','KULIAH', 'LULUS'];
          $kategoriSantri = ['Reguler', 'Dhuafa','Yatim / Piatu'];
         // return view('pages.pendaftaran', compact('jenisKelamin', 'jenjangPendidikan','kategoriSantri' ));
-        return view('pendaftaran.create', compact('jenisKelamin', 'jenjangPendidikan','kategoriSantri' ));
+        return view('pages.backend.pendaftaran.create', compact('jenisKelamin', 'jenjangPendidikan','kategoriSantri' ));
         
     }
 
@@ -67,7 +67,7 @@ class PendaftaranController extends Controller
         
         Pendaftaran::create($validData);
 
-        return redirect()->route('pendaftaran.index');
+        return redirect()->route('pages.backend.pendaftaran.index');
     }
 
     /**
@@ -75,7 +75,7 @@ class PendaftaranController extends Controller
      */
     public function show(Pendaftaran $pendaftaran)
     {
-        return view('pendaftaran.show', compact('pendaftaran'));
+        return view('pages.backend.pendaftaran.show', compact('pendaftaran'));
     }
 
     /**
@@ -83,7 +83,7 @@ class PendaftaranController extends Controller
      */
     public function edit(Pendaftaran $prestasi)
     {
-        return view('pendaftaran.edit', compact('pendaftaran'));
+        return view('pages.backend.pendaftaran.edit', compact('pendaftaran'));
     }
 
     /**
@@ -104,7 +104,7 @@ class PendaftaranController extends Controller
         // simpan data 
         $prestasi->update($validData);
 
-        return redirect()->route('pendaftaran.index');
+        return redirect()->route('pages.backend.pendaftaran.index');
     }
 
     /**

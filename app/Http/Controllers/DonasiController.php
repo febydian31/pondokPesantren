@@ -13,7 +13,7 @@ class DonasiController extends Controller
     public function index()
     {
         $alldonasi = Donasi::all();
-        return view('donasi.index', compact('alldonasi'));
+        return view('pages.backend.donasi.index', compact('alldonasi'));
     }
 
     /**
@@ -24,7 +24,7 @@ class DonasiController extends Controller
         $metode = ['Bank Transfer', 'Credit Card', 'E Walet'];
 
         $alldonasi = Donasi::all();
-        return view('donasi.create', compact('metode', 'alldonasi'));
+        return view('pages.backend.donasi.create', compact('metode', 'alldonasi'));
     }
 
     /**
@@ -47,7 +47,7 @@ class DonasiController extends Controller
         // simpan data 
         Donasi::create($validData);
 
-        return redirect()->route('donasi.index');
+        return redirect()->route('pages.backend.donasi.index');
     }
 
     /**
@@ -55,7 +55,7 @@ class DonasiController extends Controller
      */
     public function show(Kegiatan $kegiatan)
     {
-        return view('kegiatan.show', compact('kegiatan'));
+        return view('pages.backend.kegiatan.show', compact('kegiatan'));
     }
 
     /**
@@ -63,7 +63,7 @@ class DonasiController extends Controller
      */
     public function edit(Kegiatan $kegiatan)
     {
-        return view('kegiatan.edit', compact('kegiatan'));
+        return view('pages.backend.kegiatan.edit', compact('kegiatan'));
     }
 
     /**
@@ -82,6 +82,6 @@ class DonasiController extends Controller
     {
         $kegiatan->delete();
 
-        return redirect()->route('kegiatan.index');
+        return redirect()->route('pages.backend.kegiatan.index');
     }
 }

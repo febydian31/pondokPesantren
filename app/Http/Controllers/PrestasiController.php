@@ -14,7 +14,7 @@ class PrestasiController extends Controller
     public function index()
     {
         $allPrestasi = Prestasi::all();
-        return view('prestasi.index', compact('allPrestasi'));
+        return view('pages.backend.prestasi.index', compact('allPrestasi'));
     }
 
     /**
@@ -22,7 +22,7 @@ class PrestasiController extends Controller
      */
     public function create()
     {
-        return view('prestasi.create');
+        return view('pages.backend.prestasi.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class PrestasiController extends Controller
         // simpan data 
         Prestasi::create($validData);
 
-        return redirect()->route('prestasi.index');
+        return redirect()->route('pages.backend.prestasi.index');
     }
 
     /**
@@ -52,7 +52,7 @@ class PrestasiController extends Controller
      */
     public function show(Prestasi $prestasi)
     {
-        return view('prestasi.show', compact('prestasi'));
+        return view('pages.backend.prestasi.show', compact('prestasi'));
     }
 
     /**
@@ -60,7 +60,7 @@ class PrestasiController extends Controller
      */
     public function edit(Prestasi $prestasi)
     {
-        return view('prestasi.edit', compact('prestasi'));
+        return view('pages.backend.prestasi.edit', compact('prestasi'));
     }
 
     /**
@@ -81,7 +81,7 @@ class PrestasiController extends Controller
         // simpan data 
         $prestasi->update($validData);
 
-        return redirect()->route('prestasi.index');
+        return redirect()->route('pages.backend.prestasi.index');
     }
 
     /**

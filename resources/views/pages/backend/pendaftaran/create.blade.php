@@ -1,24 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('content')
+                <!-- Begin Page Content -->
+                <div class="container-fluid " >
 
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Tambah Data</h1>
+                    </div>
 
-    <section class="top">
-        <div class="artikel">
-            <div class="judul container">
-                <h1>Pendaftaran</h1>
-                <p>Mulailah perjalanan pendidikan Anda bersama Panti Asuhan dan Pondok Pesantren Zuhriyah. </p>
-                <p>Daftarkan diri Anda pada program-program kami dan bergabunglah dengan komunitas pembelajaran dan pertumbuhan kami.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="container pendaftaran-form">
-        <div class="head-pendaftaran">
-            <h2>Form Pendaftaran</h2>
-        </div>
-            <form id="pendaftaran" class="pendaftaran">
-                    <div class="">
-                        <form action="{{ route('pendaftaran.store') }}" method="POST" id="pendaftaran" class="pendaftaran">
+                    <div class="card shadow mb-4" style="max-width: 750px; margin: 30px auto;">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <form action="{{ route('pendaftaran.store') }}" method="POST" id="pendaftaran" class="pendaftaran">
                                         @csrf
                                         <div class="">
                                             <h2>Data Santri </h2>
@@ -42,7 +35,16 @@
                                                     <input type="date" class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir">
                                                 </div>
                                             </div>
-                                            
+                                            <div class="form-group">
+                                                <label for="donation-amount">Jenis Kelamin</label>
+                                                <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
+                                                    @foreach($jenisKelamin as $gender)
+                                                        <option value="{{ $gender }}" {{ old('jenisKelamin') == $gender ? 'selected' : '' }}>
+                                                            {{ $gender }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="donation-amount">Alamat</label>
                                                 <textarea class="form-control" placeholder="alamat" name="alamat" style="height: 100px"></textarea>
@@ -83,7 +85,26 @@
                                                 <input type="number" class="form-control" name="no_telp" placeholder="No Telp">
                                             </div>
                                             <h2>Persyaratan Lainnya </h2>
-                                            
+                                            <div class="form-group">
+                                                <label for="donation-amount">Jenjang Pendidikan</label>
+                                                <select class="form-select" name="jenjang_pendidikan" aria-label="Default select example">
+                                                    @foreach($jenjangPendidikan as $pendidikan)
+                                                        <option value="{{ $pendidikan }}" {{ old('jenjangPendidikan') == $pendidikan ? 'selected' : '' }}>
+                                                            {{ $pendidikan }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="donation-amount">Kategori Santri</label>
+                                                <select class="form-select" name="kategori_santri" aria-label="Default select example">
+                                                    @foreach($kategoriSantri as $kategori)
+                                                        <option value="{{ $kategori }}" {{ old('kategoriSantri') == $kategori ? 'selected' : '' }}>
+                                                            {{ $kategori }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                             <!-- <label for="akte">Akte Kelahiran :</label><br />
                                             <input type="file" id="akte" name="akte" accept=".pdf,.jpg,.png" required><br /><br /> -->
                                             <!-- <label for="ijazah">Ijazah :</label><br />
@@ -96,13 +117,17 @@
                                             <input type="file" id="bpjs" name="bpjs" accept=".pdf,.jpg,.png" required><br /><br /> -->
                                             
                                         </div>
-                                    </form> 
+                                        <!-- <button type="submit" id="submitBtn" style="">Submit</button> -->
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px; ">
+                                            <a href="/prestasi" class="button btn btn-info">Kembali</a>
+                                            <button class="btn btn-primary" type="submit">Kirim</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                     </div>
-                    <div class="button">
-                        <button type="submit">Kirim</button>
-                    </div>
-            </form>
 
-    </section>
+                </div>
+                <!-- /.container-fluid -->
 
-  @endsection
+ @endsection

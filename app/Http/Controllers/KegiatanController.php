@@ -13,7 +13,7 @@ class KegiatanController extends Controller
     public function index()
     {
         $allKegiatan = Kegiatan::all();
-        return view('kegiatan.index', compact('allKegiatan'));
+        return view('pages.backend.kegiatan.index', compact('allKegiatan'));
     }
 
     /**
@@ -21,7 +21,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        return view('kegiatan.create');
+        return view('pages.backend.kegiatan.create');
     }
 
     /**
@@ -48,7 +48,7 @@ class KegiatanController extends Controller
         // simpan data 
         Kegiatan::create($validData);
 
-        return redirect()->route('kegiatan.index');
+        return redirect()->route('pages.backend.kegiatan.index');
     }
 
     /**
@@ -56,7 +56,7 @@ class KegiatanController extends Controller
      */
     public function show(Kegiatan $kegiatan)
     {
-        return view('kegiatan.show', compact('kegiatan'));
+        return view('pages.backend.kegiatan.show', compact('kegiatan'));
     }
 
     /**
@@ -64,7 +64,7 @@ class KegiatanController extends Controller
      */
     public function edit(Kegiatan $kegiatan)
     {
-        return view('kegiatan.edit', compact('kegiatan'));
+        return view('pages.backend.kegiatan.edit', compact('kegiatan'));
     }
 
     /**
@@ -90,7 +90,7 @@ class KegiatanController extends Controller
         // simpan data 
         $kegiatan->update($validData);
 
-        return redirect()->route('kegiatan.index');
+        return redirect()->route('pages.backend.kegiatan.index');
     }
 
     /**
@@ -100,6 +100,6 @@ class KegiatanController extends Controller
     {
         $kegiatan->delete();
 
-        return redirect()->route('kegiatan.index');
+        return redirect()->route('pages.backend.kegiatan.index');
     }
 }

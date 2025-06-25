@@ -32,7 +32,7 @@ Route::resource('/', HomepageController::class);
 // Route::POST('/prestasi', [prestasiController::class,  'store'])->name('prestasi.store');
 
 Route::get('/dashboard', function () {
-    return view('admin/dashboard');
+    return view('pages/backend/dashboard');
 });
 
 // Route::get('/', function () {

@@ -14,7 +14,7 @@ class ArtikelController extends Controller
      public function index()
     {
         $allArtikel = artikel::all();
-        return view('artikel.index', compact('allArtikel'));
+        return view('pages.backend.artikel.index', compact('allArtikel'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ArtikelController extends Controller
      */
     public function create()
     {
-        return view('artikel.create');
+        return view('pages.backend.artikel.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class ArtikelController extends Controller
        }
        // Include tanggal in the create method
        Artikel::create($validated);
-       return redirect()->route('artikel.index')->with('success', 'Article created successfully!');
+       return redirect()->route('pages.backend.artikel.index')->with('success', 'Article created successfully!');
    }
 
     /**
@@ -50,7 +50,7 @@ class ArtikelController extends Controller
      */
     public function show(Artikel $artikel)
     {
-        return view('artikel.show', compact('artikel'));
+        return view('pages.backend.artikel.show', compact('artikel'));
     }
 
     /**
@@ -58,7 +58,7 @@ class ArtikelController extends Controller
      */
     public function edit(Artikel $artikel)
     {
-        return view('artikel.edit', compact('artikel'));
+        return view('pages.backend.artikel.edit', compact('artikel'));
     }
 
     /**
@@ -87,7 +87,7 @@ class ArtikelController extends Controller
             $artikel->gambar = $path;
         }
         $artikel->save();
-        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diperbarui!');
+        return redirect()->route('pages.backend.artikel.index')->with('success', 'Artikel berhasil diperbarui!');
     }
 
     /**
@@ -97,6 +97,6 @@ class ArtikelController extends Controller
     {
         $artikel->delete();
 
-        return redirect()->route('artikel.index');
+        return redirect()->route('pages.backend.artikel.index');
     }
 }
