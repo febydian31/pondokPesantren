@@ -1,56 +1,47 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\prestasiController;
-use App\Http\Controllers\KegiatanController;
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\KegiatanpageController;
-use App\Http\Controllers\PrestasipageController;
-use App\Http\Controllers\ArtikelpageController;
-use App\Http\Controllers\DonasiController;
-use App\Http\Controllers\PendaftaranController;
-use App\Http\Controllers\HomepageController;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\RegistrationController;
 
-// login 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+use App\Http\Controllers\LoginController;
 
+use App\Http\Controllers\Backend\DashboardArticleController;
+use App\Http\Controllers\Backend\DashboardAchievementController;
+use App\Http\Controllers\Backend\DashboardActivityController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\DashboardDonationController;
+use App\Http\Controllers\Backend\DashboardStudentController;
 
-Route::resource('/prestasi', PrestasiController::class);
-Route::resource('/kegiatan', KegiatanController::class);
-Route::resource('/artikel', ArtikelController::class);
-Route::resource('/donasi', DonasiController::class);
-Route::resource('/pendaftaran', PendaftaranController::class);
-Route::resource('/kegiatanPage', KegiatanpageController::class);
-Route::resource('/prestasiPage', PrestasipageController::class);
-Route::resource('/artikelPage', ArtikelpageController::class);
-Route::resource('/', HomepageController::class);
+Route::get('/', HomeController::class)->name('home');
+Route::get('/about', AboutController::class)->name(name: 'about');
+Route::get('/article', ArticleController::class)->name(name: 'article');
+Route::get('/activity', ActivityController::class)->name(name: 'activity');
+Route::get('/achievement', AchievementController::class)->name(name: 'achievement');
+Route::get('/donation', DonationController::class)->name(name: 'donation');
+Route::get('/registration', RegistrationController::class)->name(name: 'registration');
 
-// Route::POST('/prestasi', [prestasiController::class,  'store'])->name('prestasi.store');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.post');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/dashboard', function () {
-    return view('pages/backend/dashboard');
-});
-
-// Route::get('/', function () {
-//     return view('pages/home');
-// });
-
-Route::get('/profilePage', function () {
-    return view('pages/profile');
-});
-
-Route::get('/detailArtikelPage', function () {
-    return view('pages/detailArtikel');
-});
-
-Route::get('/donaturPage', function () {
-    return view('pages/donatur');
-});
-
-Route::get('/pendaftaranPage', function () {
-    return view('pages/Pendaftaran');
-});
+Route::prefix('admin')
+  // ->middleware('auth')
+  ->group(function () {
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    Route::resources([
+      'article' => DashboardArticleController::class,
+      'activity' => DashboardActivityController::class,
+      'achievement' => DashboardAchievementController::class,
+      'donation' => DashboardDonationController::class,
+      'student' => DashboardStudentController::class
+    ]);
+  });
