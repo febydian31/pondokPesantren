@@ -10,14 +10,15 @@
                     <h3>Halaman Masuk</strong></h3>
                     <p class="mb-4">Selamat datang di halaman masuk. Silakan masukkan email dan password anda.
                     </p>
-                    <form action="#" method="post">
+                    <form action="{{ route('login') }}" method="post">
+                        @csrf
                         <div class="form-group first">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group last mb-3">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password">
+                            <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <button class="btn btn-block btn-success" type="submit">Masuk</button>
                     </form>

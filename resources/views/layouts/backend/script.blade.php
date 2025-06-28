@@ -1,3 +1,28 @@
+<!-- allert disapear  -->
+<script>
+    // Hilangkan alert setelah 3 detik
+    setTimeout(function () {
+        let alert = document.getElementById('flash-alert');
+        if (alert) {
+            alert.style.transition = "opacity 0.5s ease";
+            alert.style.opacity = 0;
+            setTimeout(() => alert.remove(), 500); // hapus dari DOM
+        }
+    }, 3000); // 3000 ms = 3 detik
+</script>
+
+<!-- CKE editor  -->
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('von');
+</script>
+
+<!-- aktivasi cke editor  -->
+<script>
+    CKEDITOR.replace('editor');
+</script>
+
+
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

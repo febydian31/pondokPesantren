@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prestasis', function (Blueprint $table) {
+        Schema::create('achievements', function (Blueprint $table) {
             $table->id();
-            $table->integer('tahun');
-            $table->string('prestasi', 250);
-            $table->string('tingkat', 250);
-            $table->string('penyelenggara', 250);
-            $table->string('peraih', 250);
+            $table->date('date');
+            $table->string('achievement');
+            $table->string('level');
+            $table->string('organizer');
+            $table->string('winner');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prestasis');
+        Schema::dropIfExists('achievements');
     }
 };

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Activity;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\ActivityRequest;
 
 class DashboardActivityController extends Controller
 {
@@ -12,7 +14,8 @@ class DashboardActivityController extends Controller
      */
     public function index()
     {
-        return view('pages.backend.activity.index');
+        $activities = Activity::all();
+        return view('pages.backend.activity.index', compact('activities'));
     }
 
     /**
@@ -20,15 +23,16 @@ class DashboardActivityController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.backend.activity.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ActivityRequest $request)
     {
-        //
+        activity::create($request->validated());
+        return redirect()->route('activity.index')->with('success', 'Berhasil Menambah Kegiatan');
     }
 
     /**
@@ -36,7 +40,7 @@ class DashboardActivityController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // return view('pages.backend.activity.edit', compact('activity'));
     }
 
     /**
@@ -44,15 +48,17 @@ class DashboardActivityController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $activity = Activity::findOrFail($id);
+        return view('pages.backend.activity.edit', compact('activity'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ActivityRequest $request, Activity $activity)
     {
-        //
+        $activity->update($request->validated());
+        return redirect()->route('activity.index')->with('success', 'Data Kegiatan Diperbarui.');
     }
 
     /**
@@ -60,6 +66,8 @@ class DashboardActivityController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $activity = Activity::findOrFail($id); // Ambil data berdasarkan ID
+        $activity->delete();
+        return redirect()->route('activity.index')->with('success', 'Data Kegiatan Dihapus.');
     }
 }
