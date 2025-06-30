@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Registration;
 
 class DashboardStudentController extends Controller
 {
@@ -12,7 +13,8 @@ class DashboardStudentController extends Controller
      */
     public function index()
     {
-        return view('pages.backend.student.index');
+        $registration = Registration::all();
+        return view('pages.backend.student.index', compact('registration'));
     }
 
     /**
@@ -60,6 +62,8 @@ class DashboardStudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $registration = Registration::findOrFail($id); // Ambil data berdasarkan ID
+        $activity->delete();
+        return redirect()->route('student.index')->with('success', 'Data Santri Dihapus.');
     }
 }

@@ -4,7 +4,8 @@
     <section id="services" class="programs services section">
         <a href="" method="GET"></a>
         {{-- @if ($allPrestasi->isEmpty()) --}}
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+@if ($achievements->isEmpty())
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="judul ">
                 <h1>Prestasi Pesantren</h1>
             </div>
@@ -12,7 +13,6 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">No</th>
                             <th scope="col">Tahun</th>
                             <th scope="col">Nama Prestasi</th>
                             <th scope="col">Tingkat</th>
@@ -26,7 +26,7 @@
                 <h5>Prestasi Belum Tersedia</h5>
             </div>
         </div>
-        {{-- @else
+@else
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="judul ">
                 <h1>Daftar Prestasi</h1>
@@ -35,8 +35,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Tahun</th>
+                            <th scope="col">Tanggal</th>
                             <th scope="col">Nama Prestasi</th>
                             <th scope="col">Tingkat</th>
                             <th scope="col">Penyelenggara</th>
@@ -44,14 +43,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($allPrestasi as $key => $r)
+                        @foreach ($achievements as $achievement)
                             <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td>{{ $r->tahun }}</td>
-                                <td>{{ $r->prestasi }}</td>
-                                <td>{{ $r->tingkat }}</td>
-                                <td>{{ $r->penyelenggara }}</td>
-                                <td>{{ $r->peraih }}</td>
+                                <td>{{ $achievement->date }}</td>
+                                <td>{{ $achievement->achievement }}</td>
+                                <td>{{ $achievement->level }}</td>
+                                <td>{{ $achievement->organizer }}</td>
+                                <td>{{ $achievement->winner }}</td>
+                                
                             </tr>
                         @endforeach
                     </tbody>

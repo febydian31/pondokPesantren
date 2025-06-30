@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Donation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class DashboardDonationController extends Controller
      */
     public function index()
     {
-        return view('pages.backend.donation.index');
+        $donation = Donation::all();
+        return view('pages.backend.donation.index', compact('donation'));
     }
 
     /**
@@ -60,6 +62,8 @@ class DashboardDonationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $activity = donation::findOrFail($id); // Ambil data berdasarkan ID
+        $activity->delete();
+        return redirect()->route('donation.index')->with('success', 'Data Kegiatan Dihapus.');
     }
 }

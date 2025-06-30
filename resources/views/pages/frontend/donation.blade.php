@@ -59,22 +59,17 @@
                         <p>Kontribusi Anda membantu kami menyediakan pendidikan Islam yang berkualitas kepada para Santri.
                         </p>
                     </div>
-                    <form action="" method="POST">
+                    <form action="{{ route('frontend.donation.store') }}" method="POST">
                         @csrf
                         <div class="">
                             <div class="form-group">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" class="form-control" name="nama" id="nama"
+                                <input type="text" class="form-control" name="name" placeholder="Nama"
                                     placeholder="Nama Legkap" required>
                             </div>
                             <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                    required>
-                            </div>
-                            <div class="form-group">
                                 <label for="">No Telp</label>
-                                <input type="number" class="form-control" id="noTelp" name="noTelp"
+                                <input type="number" class="form-control" id="no_telp" name="no_telp"
                                     placeholder="No Telp" required>
                             </div>
                             <div class="form-group">
@@ -84,7 +79,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Pesan</label>
-                                <textarea class="form-control" name="pesan" placeholder="Pesan" style="height: 100px" required></textarea>
+                                <textarea class="form-control" name="message" placeholder="Pesan" style="height: 100px"></textarea>
                             </div>
                         </div>
                         <div class="pendaftaran">
@@ -103,28 +98,22 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Donatur</th>
-                                    <th scope="col">Tanggal</th>
+                                    <!-- <th scope="col">Tanggal</th> -->
                                     <th scope="col">Nominal</th>
                                     <th scope="col">Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($donation as $donation)
+                                    <tr>
+                                        <td>{{ $donation->name }}</td>
+                                        <td>{{ $donation->nominal }}</td>
+                                        <td>{{ $donation->message }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
-                        <!-- <nav aria-label="Page navigation example">
-                                                                                    <ul class="pagination justify-content-center">
-                                                                                      <li class="page-item">
-                                                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                                                      </li>
-                                                                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                                                      <li class="page-item">
-                                                                                        <a class="page-link" href="#">Next</a>
-                                                                                      </li>
-                                                                                    </ul>
-                                                                                  </nav> -->
+                        
                     </div>
                 </div>
             </div>

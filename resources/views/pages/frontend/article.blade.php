@@ -13,7 +13,7 @@
                 </table>
             </div>
         </div>
-        {{-- @if ($allArtikel->isEmpty())
+        {{-- @if ($articles->isEmpty())
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="judul ">
                     <h1>Artikel</h1>
@@ -30,16 +30,14 @@
                     <h1>Artikel</h1>
                 </div>
                 <div class="row gy-4">
-                    @foreach ($allArtikel as $key => $r)
+                    @foreach ($articles as $key => $r)
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="service-card">
-                                <img class="gambar" src="{{ asset('storage/' . $r->gambar) }}" alt="">
-                                <span class="span">{{ $r->tanggal }}</span>
-                                <h4>{{ $r->judul }}</h4>
+                                <img class="gambar" src="{{ asset('storage/' . $r->image) }}" alt="">
+                                <span class="span">{{ $r->date }}</span>
+                                <h3>{{ $r->title }}</h3>
                                 <p>{{ $r->content }}</p>
-
-                                <a href="{{ route('artikelPage.show', $r->id) }}" class="read-more">Read More<i
-                                        class="bi bi-arrow-right"></i></a>
+                                <a href="/detailArtikel" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     @endforeach

@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achievement;
 use Illuminate\Http\Request;
+
 
 class AchievementController extends Controller
 {
     public function __invoke()
     {
-        return view('pages.frontend.achievement');
+    
+        $achievements = Achievement::all();
+
+        return view('pages.frontend.achievement', compact('achievements'));
     }
 }

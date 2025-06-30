@@ -12,7 +12,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">No</th>
+                            <!-- <th scope="col">No</th> -->
                             <th scope="col">Hari</th>
                             <th scope="col">Waktu</th>
                             <th scope="col">Kegiaan</th>
@@ -21,9 +21,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($activities as $activity)
+                            <tr>
+                                <td>{{ $activity->day }}</td>
+                                <td>{{ $activity->time }}</td>
+                                <td>{{ $activity->activity }}</td>
+                                <td>{{ $activity->mentor }}</td>
+                                <td>{{ $activity->location }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
-                <h5>Kegiatan Belum Tersedia</h5>
+                <!-- <h5>Kegiatan Belum Tersedia</h5> -->
             </div>
         </div>
     </section>

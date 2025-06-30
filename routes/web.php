@@ -26,8 +26,14 @@ Route::get('/about', AboutController::class)->name(name: 'about');
 Route::get('/article', ArticleController::class)->name(name: 'article');
 Route::get('/activity', ActivityController::class)->name(name: 'activity');
 Route::get('/achievement', AchievementController::class)->name(name: 'achievement');
-Route::get('/donation', DonationController::class)->name(name: 'donation');
-Route::get('/registration', RegistrationController::class)->name(name: 'registration');
+Route::resource('/donation', DonationController::class)->names([
+    'index' => 'frontend.donation.index',
+    'store' => 'frontend.donation.store',
+]);
+Route::resource('/registration', RegistrationController::class)->names([
+    'index' => 'frontend.registration.index',
+    'store' => 'frontend.registration.store',
+]);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.post');
