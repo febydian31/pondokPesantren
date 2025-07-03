@@ -51,13 +51,30 @@
     <section class="container donatur">
         <div class="container row ">
             <div class="form col-lg-6 col-md-6">
+                <div class="wrap rounded-b-md bg-gray-200 " style="margin-bottom: 5px;">
+                    <div class="header-form-rek">
+                            <div class="donasi">
+                                <p>
+                                    <i class="bi bi-bank icon2"> </i> <strong>BRI</strong><br>
+                                    <span>No. Rekening: 105601004767509 a/n Muhammad Adam Ilhami</span>
+                                </p>
+                                <p>
+                                    <i class="bi bi-bank icon2"> </i> <strong>BPD DIY</strong><br>
+                                    <span>No. Rekening: 005221039170 a/n Muhammad Adam Ilhami</span>
+                                </p>
+                                <p>
+                                    <i class="bi bi-bank icon2"> </i> <strong>BNI</strong><br>
+                                    <span>No. Rekening: 0038847205 a/n ibu Karomah Achmad Doeri</span>
+                                </p>
+                            </div>
+                    </div>
+                </div>
                 <div class="wrap">
                     <div class="header-form">
                         <div class="icon d-flex">
                             <h2>Donasi Kepada Pondok Pesantren Zuhriah</h2>
                         </div>
-                        <p>Kontribusi Anda membantu kami menyediakan pendidikan Islam yang berkualitas kepada para Santri.
-                        </p>
+                        <p>Kontribusi Anda membantu kami menyediakan pendidikan Islam yang berkualitas kepada para Santri.</p>
                     </div>
                     <form action="{{ route('frontend.donation.store') }}" method="POST">
                         @csrf
@@ -85,6 +102,7 @@
                         <div class="pendaftaran">
                             <button class="btn btn-primary" type="submit">Kirim</button>
                         </div>
+                    </form>
                 </div>
             </div>
             <div class="form col-lg-6 col-md-6">
@@ -107,8 +125,8 @@
                                 @foreach ($donation as $donation)
                                     <tr>
                                         <td>{{ $donation->name }}</td>
-                                        <td>{{ $donation->nominal }}</td>
-                                        <td>{{ $donation->message }}</td>
+                                        <td>{{ 'Rp ' . number_format($donation->nominal, 0, ',', '.') }}</td>
+                                        <td>{!! $donation->message !!}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

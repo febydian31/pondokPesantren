@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('no_induk');
-            $table->string('NISN');
+            $table->string('nisn');
             $table->date('birth');
-            $table->enum('gender', ['male', 'female']);
+            $table->enum('gender', ['laki-laki', 'perempuan']);
             $table->text('address');
             $table->string('father_name');
             $table->string('mother_name');
@@ -26,10 +26,8 @@ return new class extends Migration
             $table->string('father_job');
             $table->string('mother_job');
             $table->string('no_telp');
-            $table->string('education_level');
-            $table->string('student_category');
-            $table->string('file_upload')->nullable();
-            // $table->string('file_name')->nullable();
+            $table->enum('education_level', ['mts', 'ma', 'kuliah', 'lulus']);
+            $table->enum('student_category', ['reguler', 'dhuafa', 'yatim_piatu']);
             $table->timestamps();
         });
     }

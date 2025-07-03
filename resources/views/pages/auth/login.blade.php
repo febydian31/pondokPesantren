@@ -1,6 +1,7 @@
 @extends('layouts.auth.app', ['title' => 'Halaman Masuk'])
 
 @section('content')
+
     <img src="{{ asset('images/cover.jpg') }}" alt="Gambar Login" class="bg order-1 order-md-2 img-fluid">
 
     <div class="contents order-2 order-md-1">
@@ -12,13 +13,20 @@
                     </p>
                     <form action="{{ route('login') }}" method="post">
                         @csrf
-                        <div class="form-group first">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                            @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
-                        <div class="form-group last mb-3">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+
+                        <div class="form-group mt-2">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
+                            @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <button class="btn btn-block btn-success" type="submit">Masuk</button>
                     </form>

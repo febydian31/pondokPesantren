@@ -91,7 +91,7 @@ class DashboardArticleController extends Controller
         // Update data artikel
         $article->update($data);
 
-        return redirect()->route('article.index')->with('success', 'Artikel berhasil diperbarui.');
+        return redirect()->route('article.index')->with('info', 'Artikel berhasil diperbarui.');
     }
 
     /**
@@ -101,6 +101,6 @@ class DashboardArticleController extends Controller
     {
         $activity = Article::findOrFail($id); // Ambil data berdasarkan ID
         $activity->delete();
-        return redirect()->route('article.index')->with('success', 'Data Artikel Dihapus.');
+        return redirect()->route('article.index')->with('warning', 'Data Artikel Dihapus.');
     }
 }

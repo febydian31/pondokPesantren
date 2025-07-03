@@ -13,6 +13,7 @@
 
 <body>
     <div class="d-lg-flex half">
+        
         @yield('content')
     </div>
 

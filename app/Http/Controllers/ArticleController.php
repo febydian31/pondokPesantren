@@ -7,9 +7,17 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
-        $articles = Article::all();
-        return view('pages.frontend.article', compact('articles'));
+        $allArtikel = Article::all();
+        return view('pages.frontend.article', compact('allArtikel'));
     }
+
+    public function show($id)
+{
+    
+    $artikel = Article::findOrFail($id);
+    return view('pages.frontend.detailArticle', compact('artikel'));
+}
+
 }

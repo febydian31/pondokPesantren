@@ -59,7 +59,7 @@ class DashboardAchievementController extends Controller
     public function update(AchievementRequest $request, achievement $achievement)
     {
         $achievement->update($request->validated());
-        return redirect()->route('achievement.index')->with('success', 'Data Prestasi Diperbarui.');
+        return redirect()->route('achievement.index')->with('info', 'Data Prestasi Diperbarui.');
     }
 
     /**
@@ -69,6 +69,6 @@ class DashboardAchievementController extends Controller
     {
         $achievement = achievement::findOrFail($id); // Ambil data berdasarkan ID
         $achievement->delete();
-        return redirect()->route('achievement.index')->with('success', 'Data Prestasi Dihapus.');
+        return redirect()->route('achievement.index')->with('warning', 'Data Prestasi Dihapus.');
     }
 }

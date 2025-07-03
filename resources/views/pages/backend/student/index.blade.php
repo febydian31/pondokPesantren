@@ -4,13 +4,11 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">List Santri</h1>
+        <a class="btn btn-success" href="{{ route('student.create') }}" method="GET">
+            <i class="fas fa-plus"></i> Tambah
+        </a>
     </div>
 
-        @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-alert">
-            {{ session('success') }}
-        </div>
-        @endif
     
     <!-- Content Row -->
     <!-- DataTales Example -->
@@ -27,16 +25,8 @@
                             <th>Tanggal Lahir</th>
                             <th>Jenis Kelamin</th>
                             <th>Alamat</th>
-                            <th>Nama Ayah</th>
-                            <th>Nama Ibu</th>
-                            <th>Alamat Ayah</th>
-                            <th>Alamat Ibu</th>
-                            <th>Pekerjaan Ayah</th>
-                            <th>Pekerjaan Ibu</th>
-                            <th>No Telp</th>
                             <th>Jenjang Pendidikan</th>
                             <th>Kategori Santri</th>
-                            <th>Berkas</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -46,25 +36,20 @@
                                 <td>{{$key + 1}}</td>
                                 <td>{{$r->name}}</td>
                                 <td>{{$r->no_induk}}</td>
-                                <td>{{$r->NISN}}</td>
+                                <td>{{$r->nisn}}</td>
                                 <td>{{$r->birth}}</td>
                                 <td>{{$r->gender}}</td>
-                                <td>{{$r->address}}</td>
-                                <td>{{$r->father_name}}</td>
-                                <td>{{$r->mother_name}}</td>
-                                <td>{{$r->father_address}}</td>
-                                <td>{{$r->mother_address}}</td>
-                                <td>{{$r->father_job}}</td>
-                                <td>{{$r->mother_job}}</td>
-                                <td>{{$r->no_telp}}</td>
+                                <td>{!! $r->address !!}</td>
                                 <td>{{$r->education_level}}</td>
                                 <td>{{$r->student_category}}</td>
-                                <td>{{$r->file_upload}}</td>
+                                
                                 <td>
-                                    <form action="{{ route('registration.destroy', $r->id) }}" method="POST">
-                                        @csrf 
-                                        @method('delete')
-                                        <button id="delete" type="submit" class="button btn btn-danger" >Delete</button>
+                                    <a href="{{ route('student.edit', $r) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
+                                    <a href="{{ route('student.show', $r) }}" class="btn btn-sm btn-info mb-1">Detail</a>
+                                    <form action="{{ route('student.destroy', $r) }}" method="POST" class="d-inline form-hapus">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-sm btn-danger mb-1">Delete</button>
                                     </form>
                                 </td>
                             </tr>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Donation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\DonationRequest;
 
 class DashboardDonationController extends Controller
 {
@@ -22,15 +23,16 @@ class DashboardDonationController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.backend.donation.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(DonationRequest $request)
     {
-        //
+        Donation::create($request->validated());
+        return redirect()->route('donation.index')->with('success', 'Berhasil Menambah Kegiatan');
     }
 
     /**
@@ -38,7 +40,7 @@ class DashboardDonationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // return view('pages.backend.activity.edit', compact('activity'));
     }
 
     /**
@@ -46,16 +48,19 @@ class DashboardDonationController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $donation = Donation::findOrFail($id);
+        return view('pages.backend.donation.edit', compact('donation'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(DonationRequest $request, Donation $donation)
     {
-        //
+        $donation->update($request->validated());
+        return redirect()->route('donation.index')->with('info', 'Data Donation Diperbarui.');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -64,6 +69,6 @@ class DashboardDonationController extends Controller
     {
         $activity = donation::findOrFail($id); // Ambil data berdasarkan ID
         $activity->delete();
-        return redirect()->route('donation.index')->with('success', 'Data Kegiatan Dihapus.');
+        return redirect()->route('donation.index')->with('warning', 'Data Kegiatan Dihapus.');
     }
 }

@@ -20,6 +20,7 @@
                 @include('layouts.backend.navbar')
 
                 <div class="container-fluid">
+                    @include('layouts.backend.toast')
                     @yield('content')
                 </div>
             </div>

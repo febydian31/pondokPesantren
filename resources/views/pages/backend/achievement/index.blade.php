@@ -9,12 +9,6 @@
         </a>
     </div>
 
-    @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-alert">
-        {{ session('success') }}
-    </div>
-    @endif
-
 
     <!-- Content Row -->
     <!-- DataTales Example -->
@@ -42,7 +36,7 @@
                                 <td>{{ $achievement->winner }}</td>
                                 <td>
                                     <a href="{{ route('achievement.edit', $achievement) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <form action="{{ route('achievement.destroy', $achievement) }}" method="POST" class="d-inline" onsubmit="return confirm('Hapus Data Prestasi ?')">
+                                    <form action="{{ route('achievement.destroy', $achievement) }}" method="POST" class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger mb-1">Delete</button>

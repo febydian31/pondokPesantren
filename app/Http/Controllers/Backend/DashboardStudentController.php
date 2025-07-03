@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Registration;
+use App\Http\Requests\RegistrationRequest;
 
 class DashboardStudentController extends Controller
 {
@@ -22,15 +23,16 @@ class DashboardStudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.backend.student.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(RegistrationRequest $request)
     {
-        //
+        Registration::create($request->validated());
+        return redirect()->route('student.index')->with('success', 'Berhasil Menambah Data Santri');
     }
 
     /**
@@ -38,7 +40,9 @@ class DashboardStudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
+        $registration = Registration::findOrFail($id);
+        return view('pages.backend.student.show', compact('registration'));
     }
 
     /**
@@ -46,15 +50,19 @@ class DashboardStudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $registration = Registration::findOrFail($id);
+        return view('pages.backend.student.edit', compact('registration'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(RegistrationRequest $request, $id)
+{
+    $registration = Registration::findOrFail($id);
+    $registration->update($request->validated());
+
+        return redirect()->route('student.index')->with('info', 'Data Santri Diperbarui.');
     }
 
     /**
@@ -63,7 +71,7 @@ class DashboardStudentController extends Controller
     public function destroy(string $id)
     {
         $registration = Registration::findOrFail($id); // Ambil data berdasarkan ID
-        $activity->delete();
-        return redirect()->route('student.index')->with('success', 'Data Santri Dihapus.');
+        $registration->delete();
+        return redirect()->route('student.index')->with('warning', 'Data Santri Dihapus.');
     }
 }

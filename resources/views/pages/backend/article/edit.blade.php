@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label>Content</label>
-                            <textarea name="content" class="form-control @error('content') is-invalid @enderror" id="von" required>{{ old('content', $article->content) }}</textarea>
+                            <textarea name="content" id="konten" class="form-control @error('content') is-invalid @enderror" id="von" required>{{ old('content', strip_tags($article->content)) }}</textarea>
                             @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
                         <div class="form-group col-md-6">

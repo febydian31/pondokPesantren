@@ -15,13 +15,11 @@ class RegistrationController extends Controller
     }
 
     public function store(RegistrationRequest $request)
-    {
+    { 
         $data = $request->validated();
         Registration::create($request->validated());
 
-        if ($request->hasFile('file_upload')) {
-            $data['file_upload'] = $request->file('file_upload')->store('uploads', 'public');
-        }
+
         $pesan = "Halo, saya *{$data['name']}* ingin menginformasikan bahwa sudah mengisi form pendaftaran santri, di Panti Asuhan dan Pondok Pesantren Zuhriah";
 
         // konfirm wa 
@@ -34,4 +32,6 @@ class RegistrationController extends Controller
         // return redirect()->route('frontend.registration.index')->with('success', 'Registration created successfully.');
 
     }
+
+    
 }

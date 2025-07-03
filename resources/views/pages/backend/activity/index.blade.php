@@ -8,13 +8,7 @@
             <i class="fas fa-plus"></i> Tambah
         </a>
     </div>
-
-    @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-alert">
-        {{ session('success') }}
-    </div>
-    @endif
-
+    
     <!-- Content Row -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -34,13 +28,13 @@
                         @foreach ($activities as $activity)
                             <tr>
                                 <td>{{ $activity->day }}</td>
-                                <td>{{ $activity->time }}</td>
+                                <td>{{ \Carbon\Carbon::parse($activity->time)->format('H:i') }}</td>
                                 <td>{{ $activity->activity }}</td>
                                 <td>{{ $activity->mentor }}</td>
                                 <td>{{ $activity->location }}</td>
                                 <td>
                                     <a href="{{ route('activity.edit', $activity) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <form action="{{ route('activity.destroy', $activity) }}" method="POST" class="d-inline" onsubmit="return confirm('Hapus Data Kegiatan ?')">
+                                    <form action="{{ route('activity.destroy', $activity) }}" method="POST" class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger mb-1">Delete</button>

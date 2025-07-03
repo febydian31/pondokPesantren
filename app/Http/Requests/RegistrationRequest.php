@@ -24,9 +24,9 @@ class RegistrationRequest extends FormRequest
             return [
             'name' => 'required|string|max:255',
             'no_induk' => 'required|string|max:50',
-            'NISN' => 'required|string|max:50',
+            'nisn' => 'required|string|max:50',
             'birth' => 'required|date',
-            'gender' => 'required|in:male,female',
+            'gender' => 'required|in:laki-laki,perempuan',
             'address' => 'required|string',
             'father_name' => 'required|string|max:255',
             'mother_name' => 'required|string|max:255',
@@ -35,9 +35,8 @@ class RegistrationRequest extends FormRequest
             'father_job' => 'required|string|max:100',
             'mother_job' => 'required|string|max:100',
             'no_telp' => 'required|string|max:20',
-            'education_level' => 'required|string|max:50',
-            'student_category' => 'required|string|max:100',
-            'file_upload' => 'nullable|file|mimes:pdf,jpg,jpeg,png|max:2048',
+            'education_level' => 'required|in:mts,ma,kuliah,lulus',
+            'student_category' => 'required|in:reguler,dhuafa,yatim_piatu',
         ];
         
     }

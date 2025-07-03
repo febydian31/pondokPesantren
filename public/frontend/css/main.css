@@ -44,6 +44,16 @@
   --background-color: #f1f8f7;
   --surface-color: #ffffff;
 }
+/* 
+@media (max-width: 991) {
+    .hero-one {
+        margin-top: 80px;
+        background-color: red;
+    }
+} */
+
+
+
 
 .dark-background {
     height: 100vh;
@@ -75,6 +85,16 @@
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -879,22 +899,20 @@ section,
 
 .hero .top {
   position: absolute;
-      top: 20px;
+      top: 50px;
       left: 20px;
-      background-color: rgba(255, 0, 0, 0.5);
       color: white;
       padding: 10px 15px;
       font-weight: bold;
       font-size: 18px;
-      z-index: 10; /* lebih besar, jadi di atas gambar */
       border-radius: 5px;
       pointer-events: none; 
+      margin-bottom: 20px;
 }
 
 .hero .img {
   opacity: black 90%;
   width: 100%;
-  /* height: auto; */
       display: block;
       z-index: 1;
       position: relative;
@@ -930,7 +948,7 @@ section,
 .hero .hero-content .hero-btns {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 576px) {
@@ -1012,7 +1030,7 @@ section,
   width: 100%;
   
   margin-top: 30px;
-  height: auto;
+  height: 400px;
   border-radius: 10px;
   transition: transform 0.5s ease;
 
@@ -3153,15 +3171,23 @@ border-radius: 3px solid;
   /* margin-bottom: 20px; */
 }
 
-.isi_detail  .images span {
+.isi_detail  .detail .span {
   font-weight: 600;
+  margin-bottom: 900px;
 }
-
+.detail-judul h3 {
+font-weight: 800;
+margin-top: 15px;
+color: #ffffff;
+}
 .isi_detail  .images h3 {
 font-weight: 800;
+margin-top: 10px;
 color: #005751;
 }
-
+.isi_detail .detail {
+  padding: 50px;
+}
 .isi_detail  .images p {
 font-weight: 600;
 /* margin-bottom: 20px; */
@@ -3201,6 +3227,13 @@ align-items: start;
 background-color: var(--accent-color);
 padding: 25px;
 border-radius: 10px 10px 0px 0px;
+color: white;
+}
+
+.donatur .header-form-rek {
+background-color: var(--accent-color);
+padding: 25px;
+border-radius: 10px 10px 10px 10px;
 color: white;
 }
 

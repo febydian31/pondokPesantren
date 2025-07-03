@@ -10,9 +10,9 @@ class Registration extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'no_induk', 'NISN', 'birth', 'gender', 'address',
+        'name', 'no_induk', 'nisn', 'birth', 'gender', 'address',
         'father_name', 'mother_name', 'father_address', 'mother_address',
         'father_job', 'mother_job', 'no_telp', 'education_level',
-        'student_category', 'file_upload'
+        'student_category'
     ];
 }

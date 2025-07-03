@@ -9,12 +9,6 @@
         </a>
     </div>
 
-    @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-alert">
-        {{ session('success') }}
-    </div>
-    @endif
-
     <!-- Content Row -->
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -40,7 +34,7 @@
                                 <td>
                                     <a href="{{ route('article.edit', $article) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
                                     <a href="{{ route('article.show', $article) }}" class="btn btn-sm btn-info mb-1">Detail</a>
-                                    <form action="{{ route('article.destroy', $article) }}" method="POST" class="d-inline" onsubmit="return confirm('Hapus Data Artikel ?')">
+                                    <form action="{{ route('article.destroy', $article) }}" method="POST" class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger mb-1">Delete</button>

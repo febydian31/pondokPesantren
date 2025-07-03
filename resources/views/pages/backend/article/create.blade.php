@@ -26,8 +26,12 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label>Content</label>
-                            <textarea name="content" id="editor" class="form-control  @error('content') is-invalid @enderror" placeholder="Content">{{ old('content') }}</textarea>
-                            @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                            <textarea  id="konten" class="form-control @error('content') is-invalid @enderror" placeholder="kontent" name="content" style="height: 100px">{{ old('content') }}</textarea>
+                                @error('content')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label>Gambar</label>

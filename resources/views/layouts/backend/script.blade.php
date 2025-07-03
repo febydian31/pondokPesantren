@@ -1,27 +1,60 @@
-<!-- allert disapear  -->
+<!-- sweet alert  -->
+
 <script>
-    // Hilangkan alert setelah 3 detik
-    setTimeout(function () {
-        let alert = document.getElementById('flash-alert');
-        if (alert) {
-            alert.style.transition = "opacity 0.5s ease";
-            alert.style.opacity = 0;
-            setTimeout(() => alert.remove(), 500); // hapus dari DOM
-        }
-    }, 3000); // 3000 ms = 3 detik
+    // Tangkap event submit form
+    document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('.form-hapus');
+
+        forms.forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Cegah submit default
+
+                Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Data akan dihapus secara permanen!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, hapus!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit(); // Submit form jika konfirmasi
+                    }
+                });
+            });
+        });
+    });
 </script>
 
-<!-- CKE editor  -->
-<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<!-- CKEditor CDN -->
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
 <script>
-    CKEDITOR.replace('von');
+    ClassicEditor
+        .create(document.querySelector('#konten'))
+        .catch(error => {
+            console.error(error);
+        });
+        
+    ClassicEditor
+        .create(document.querySelector('#konten_father'))
+        .catch(error => {
+            console.error(error);
+        });
+
+    ClassicEditor
+        .create(document.querySelector('#konten_mother'))
+        .catch(error => {
+            console.error(error);
+        });
+
 </script>
 
-<!-- aktivasi cke editor  -->
-<script>
-    CKEDITOR.replace('editor');
-</script>
 
+
+<!-- Load core RTE terlebih dahulu -->
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>

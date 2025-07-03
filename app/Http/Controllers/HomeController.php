@@ -9,7 +9,15 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        $articles = Article::all();
-        return view('pages.frontend.index', compact('articles'));
+        $allArtikel = Article::all();
+        return view('pages.frontend.index', compact('allArtikel'));
     }
+
+    public function show($id) 
+    {
+    $article = Article::findOrFail($id);
+    return view('pages.frontend.show', compact('article'));
+    }
+
+
 }

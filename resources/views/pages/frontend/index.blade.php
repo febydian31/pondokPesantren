@@ -3,7 +3,7 @@
 @section('content')
     <section id="hero" class="hero section dark-background">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row align-items-center">
+            <div class="row top align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="hero-content " data-aos="fade-up" data-aos-delay="200">
                         <p>Selamat Datang di</p>
@@ -13,7 +13,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12   b-img">
+                <div class="col-lg-6 col-md-12 b-img">
                     <div class="hero-image " data-aos="zoom-out" data-aos-delay="300">
                         <img src="{{ asset('images/cover.jpg') }}" alt="Consulting Services" class="img-fluid">
                     </div>
@@ -115,15 +115,7 @@
     <!-- /profile Section -->
 
     <section id="services" class="services section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="judul ">
-                <h1>Artikel</h1>
-            </div>
-            <div class="table-responsive">
-                <h4>Artikel belum tersedia</h4>
-            </div>
-        </div>
-        {{-- @if ($allArtikel->isEmpty())
+        @if ($allArtikel->isEmpty())
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="judul ">
                     <h1>Artikel</h1>
@@ -138,22 +130,23 @@
                     <h1>Artikel</h1>
                 </div>
                 <div class="row gy-4">
-                    @foreach ($articles as $key => $r)
+                    @foreach ($allArtikel as $key => $r)
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="service-card">
                                 <img class="gambar" src="{{ asset('storage/' . $r->image) }}" alt="">
                                 <span class="span">{{ $r->date }}</span>
                                 <h3>{{ $r->title }}</h3>
-                                <p>{{ $r->content }}</p>
-                                <a href="/detailArtikel" class="read-more">Read More<i class="bi bi-arrow-right"></i></a>
+                                <p>{!! $r->content !!}</p>
+                                
+                                <a href="{{ route('frontend.article.show', $r->id) }}" class="read-more">Read More</a>
                             </div>
                         </div>
                     @endforeach
                 </div>
                 <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="800">
-                    <a href="/artikelPage" class="btn btn-primary">Lihat Semua Artikel</a>
+                    <a href="/article" class="btn btn-primary">Lihat Semua Artikel</a>
                 </div>
             </div>
-        @endif --}}
+        @endif
     </section>
 @endsection

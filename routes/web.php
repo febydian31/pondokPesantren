@@ -21,9 +21,13 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DashboardDonationController;
 use App\Http\Controllers\Backend\DashboardStudentController;
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', HomeController::class)->name('frontend.index.index');
+
 Route::get('/about', AboutController::class)->name(name: 'about');
-Route::get('/article', ArticleController::class)->name(name: 'article');
+Route::resource('/article', ArticleController::class)->names([
+    'index' => 'frontend.article.index',
+    'show' => 'frontend.article.show',
+]);
 Route::get('/activity', ActivityController::class)->name(name: 'activity');
 Route::get('/achievement', AchievementController::class)->name(name: 'achievement');
 Route::resource('/donation', DonationController::class)->names([

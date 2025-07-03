@@ -4,13 +4,11 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">List Donasi</h1>
+        <a class="btn btn-success" href="{{ route('donation.create') }}" method="GET">
+            <i class="fas fa-plus"></i> Tambah
+        </a>
     </div>
 
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert" id="flash-alert">
-            {{ session('success') }}
-        </div>
-    @endif
     
     <!-- Content Row -->
     <!-- DataTales Example -->
@@ -32,10 +30,11 @@
                             <tr>
                                 <td>{{ $donation->name }}</td>
                                 <td>{{ $donation->no_telp }}</td>
-                                <td>{{ $donation->nominal }}</td>
-                                <td>{{ $donation->message }}</td>
+                                <td>{{ 'Rp ' . number_format($donation->nominal, 0, ',', '.') }}</td>
+                                <td>{!! $donation->message !!}</td>
                                 <td>
-                                    <form action="{{ route('donation.destroy', $donation) }}" method="POST" class="d-inline" onsubmit="return confirm('Hapus Data Donasi ?')">
+                                    <a href="{{ route('donation.edit', $donation) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
+                                    <form action="{{ route('donation.destroy', $donation) }}" method="POST" class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger mb-1">Delete</button>

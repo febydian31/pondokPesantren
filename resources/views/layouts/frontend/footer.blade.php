@@ -45,7 +45,6 @@
                             <span>No. Rekening: 0038847205 a/n ibu Karomah Achmad Doeri</span>
                         </p>
                     </div>
-
                 </div>
             </div>
 
