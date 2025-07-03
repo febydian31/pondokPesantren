@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('no_telp');
             $table->decimal('nominal', 15, 2);
             $table->text('message')->nullable();
+            $table->enum('category', ['internal', 'external']);
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Tanggal</th>
                             <th>Prestasi</th>
                             <th>Tingkat</th>
@@ -27,8 +28,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($Achievements as $achievement)
+                        @foreach ($Achievements as $key => $achievement)
                             <tr>
+                                <td>{{$key + 1}}</td>
                                 <td>{{ $achievement->date }}</td>
                                 <td>{{ $achievement->achievement }}</td>
                                 <td>{{ $achievement->level }}</td>

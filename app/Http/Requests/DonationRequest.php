@@ -26,6 +26,8 @@ class DonationRequest extends FormRequest
             'no_telp' => 'required|string|max:15',
             'nominal' => 'required|numeric|min:1000',
             'message' => 'nullable|string|max:1000',
+            'category' => 'nullable|in:internal,external',
+
         ];
     }
 }

@@ -30,8 +30,15 @@
                             @error('nominal') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
                         <div class="form-group col-md-6">
+                            <label>Kategori</label>
+                            <select name="category" class="form-control">
+                                <option value="internal" {{ old('category', $donation->category) == 'mts' ? 'selected' : '' }}>Internal</option>
+                                <option value="external" {{ old('category', $donation->category) == 'ma' ? 'selected' : '' }}>External</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
                             <label>Pesan</label>
-                            <textarea name="message" class="form-control @error('message') is-invalid @enderror" id="von" required>{{ old('message', strip_tags($donation->message)) }}</textarea>                        
+                            <textarea name="message" id="konten" class="form-control @error('message') is-invalid @enderror" id="von" required>{{ old('message', strip_tags($donation->message)) }}</textarea>                        
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">

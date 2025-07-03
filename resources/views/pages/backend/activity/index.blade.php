@@ -16,6 +16,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Hari</th>
                             <th>Waktu</th>
                             <th>Kegiatan</th>
@@ -25,8 +26,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($activities as $activity)
+                        @foreach ($activities as $key => $activity)
                             <tr>
+                                <td>{{$key + 1}}</td>
                                 <td>{{ $activity->day }}</td>
                                 <td>{{ \Carbon\Carbon::parse($activity->time)->format('H:i') }}</td>
                                 <td>{{ $activity->activity }}</td>

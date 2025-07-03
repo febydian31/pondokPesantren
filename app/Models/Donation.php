@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Donation extends Model
 {
     protected $fillable = [
-        'name', 'no_telp', 'nominal', 'message',
+        'name', 'no_telp', 'nominal', 'message','category'
     ];
 }

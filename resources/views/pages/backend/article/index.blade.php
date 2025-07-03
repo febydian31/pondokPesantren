@@ -17,6 +17,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Tanggal</th>
                             <th>Judul</th>
                             <th>Content</th>
@@ -25,8 +26,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($articles as $article)
+                        @foreach ($articles as $key => $article)
                             <tr>
+                                <td>{{ $key + 1 }}</td>
                                 <td>{{ $article->date }}</td>
                                 <td>{{ $article->title }}</td>
                                 <td>{!! $article->content !!}</td>

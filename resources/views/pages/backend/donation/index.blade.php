@@ -18,19 +18,23 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Nama</th>
                             <th>No Telp</th>
                             <th>Nominal</th>
+                            <th>Kategori</th>
                             <th>Pesan</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($donation as $donation)
+                        @foreach ($donation as $key => $donation)
                             <tr>
+                                <td>{{$key + 1}}</td>
                                 <td>{{ $donation->name }}</td>
                                 <td>{{ $donation->no_telp }}</td>
                                 <td>{{ 'Rp ' . number_format($donation->nominal, 0, ',', '.') }}</td>
+                                <td>{{ $donation->category }}</td>
                                 <td>{!! $donation->message !!}</td>
                                 <td>
                                     <a href="{{ route('donation.edit', $donation) }}" class="btn btn-sm btn-warning mb-1">Edit</a>

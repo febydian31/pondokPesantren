@@ -98,6 +98,8 @@
                                 <label for="">Pesan</label>
                                 <textarea class="form-control" name="message" placeholder="Pesan" style="height: 100px"></textarea>
                             </div>
+                            <input type="hidden" name="category" value="external">
+
                         </div>
                         <div class="pendaftaran">
                             <button class="btn btn-primary" type="submit">Kirim</button>

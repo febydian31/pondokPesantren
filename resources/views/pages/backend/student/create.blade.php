@@ -145,24 +145,24 @@
 
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                    <label>Jenjang Pendidikan</label>
-                                    <select name="education_level">
-                                        <option value="mts">Mts</option>
-                                        <option value="ma">Ma</option>
-                                        <option value="kuliah">Kuliah</option>
-                                        <option value="lulus">Lulus</option>
-                                    </select>
+                                        <label>Jenjang Pendidikan</label>
+                                        <select name="education_level">
+                                            <option value="mts">Mts</option>
+                                            <option value="ma">Ma</option>
+                                            <option value="kuliah">Kuliah</option>
+                                            <option value="lulus">Lulus</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Kategori Santri</label>
+                                        <select name="student_category">
+                                            <option value="reguler">Reguler</option>
+                                            <option value="dhuafa">Dhuafa</option>
+                                            <option value="yatim_piatu">Yatim / Piatu</option>
+                                        </select>
+                                    </div>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label>Kategori Santri</label>
-                                    <select name="student_category">
-                                        <option value="reguler">Reguler</option>
-                                        <option value="dhuafa">Dhuafa</option>
-                                        <option value="yatim_piatu">Yatim / Piatu</option>
-                                    </select>
-                                </div>
-                                </div>
-                            </div>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
                                 <a href="/admin/student" class="button btn btn-info">Kembali</a>
                                 <button class="btn btn-success" type="submit">Tambah</button>

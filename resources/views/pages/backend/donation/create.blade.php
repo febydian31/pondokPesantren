@@ -28,9 +28,16 @@
                             <input type="number" name="nominal" class="form-control @error('nominal') is-invalid @enderror" value="{{ old('nominal') }}">
                             @error('nominal') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
+                            <div class="form-group col-md-6">
+                                <label>Kategori</label>
+                                <select name="category">
+                                    <option value="internal">Internal</option>
+                                    <option value="external">External</option>
+                                </select>
+                            </div>
                         <div class="form-group col-md-12">
                             <label>Pesan</label>
-                            <textarea name="message" id="editor" class="form-control  @error('message') is-invalid @enderror" placeholder="Content">{{ old('message') }}</textarea>
+                            <textarea name="message" id="konten" class="form-control  @error('message') is-invalid @enderror" placeholder="Content">{{ old('message') }}</textarea>
                             @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
                     </div>
