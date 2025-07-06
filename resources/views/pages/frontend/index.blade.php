@@ -1,9 +1,9 @@
 @extends('layouts.frontend.app', ['title' => 'Halaman Beranda'])
 
 @section('content')
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero top section dark-background">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row top align-items-center">
+            <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="hero-content " data-aos="fade-up" data-aos-delay="200">
                         <p>Selamat Datang di</p>

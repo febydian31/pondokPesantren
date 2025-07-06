@@ -892,7 +892,7 @@ section,
 .hero {
   /* padding-top: 150px; */
   position: relative;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   overflow: hidden;
   /* padding-bottom: 120px; */
 }
@@ -901,6 +901,7 @@ section,
   position: absolute;
       top: 50px;
       left: 20px;
+      /* background-color: red; */
       color: white;
       padding: 10px 15px;
       font-weight: bold;
@@ -3138,8 +3139,7 @@ border-radius: 3px solid;
 
 
 .top {
-  margin-top: 75px;
-  background-color: #005751;
+  margin-top: 80px;
 }
 .top-detail {
   margin-top: 75px;
