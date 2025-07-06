@@ -1,8 +1,7 @@
 <!-- sweet alert  -->
-
 <script>
     // Tangkap event submit form
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const forms = document.querySelectorAll('.form-hapus');
 
         forms.forEach(function(form) {
@@ -37,7 +36,7 @@
         .catch(error => {
             console.error(error);
         });
-        
+
     ClassicEditor
         .create(document.querySelector('#konten_father'))
         .catch(error => {
@@ -49,7 +48,6 @@
         .catch(error => {
             console.error(error);
         });
-
 </script>
 
 

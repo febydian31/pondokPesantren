@@ -29,9 +29,13 @@
         </div>
     </div>
 
+
+    @stack('prepend-script')
+
     @include('layouts.backend.script')
 
-    @stack('scripts')
+    @stack('addon-script')
+
 </body>
 
 </html>

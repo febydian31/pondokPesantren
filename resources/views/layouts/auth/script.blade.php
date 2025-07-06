@@ -1,5 +1,5 @@
 <!-- sweet alert  -->
- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (session('error'))
 <script>
@@ -11,7 +11,7 @@
         timer: 4000
     });
 </script>
-@endif
+@endif --}}
 
 <script src="{{ asset('auth/js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('auth/js/popper.min.js') }}"></script>

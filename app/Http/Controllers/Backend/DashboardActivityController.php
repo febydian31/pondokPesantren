@@ -23,8 +23,11 @@ class DashboardActivityController extends Controller
      */
     public function create()
     {
-        return view('pages.backend.activity.create');
+        $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+
+        return view('pages.backend.activity.create', compact('days'));
     }
+
 
     /**
      * Store a newly created resource in storage.
