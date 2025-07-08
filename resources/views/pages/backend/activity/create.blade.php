@@ -32,7 +32,7 @@
                 <div class="form-group mb-3">
                     <label for="time">Waktu</label>
                     <input type="time" name="time" id="time"
-                        class="form-control @error('time') is-invalid @enderror" value="{{ old('time') }}">
+                        class="form-control @error('time') is-invalid @enderror" value="{{ old('time') }}" pattern="^([01]\d|2[0-3]):([0-5]\d)$">
                     @error('time')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

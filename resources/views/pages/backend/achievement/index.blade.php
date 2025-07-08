@@ -31,7 +31,7 @@
                         @foreach ($Achievements as $key => $achievement)
                             <tr>
                                 <td>{{$key + 1}}</td>
-                                <td>{{ $achievement->date }}</td>
+                                <td>{{ \Carbon\Carbon::parse($achievement->date)->translatedFormat('d F Y') }}</td>
                                 <td>{{ $achievement->achievement }}</td>
                                 <td>{{ $achievement->level }}</td>
                                 <td>{{ $achievement->organizer }}</td>

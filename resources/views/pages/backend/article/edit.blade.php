@@ -26,14 +26,33 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label>Content</label>
-                            <textarea name="content" id="konten" class="form-control @error('content') is-invalid @enderror" id="von" required>{{ old('content', strip_tags($article->content)) }}</textarea>
+                            <input id="x" type="hidden" name="content" class="form-control @error('content') is-invalid @enderror" value="{{ old('content', $article->content) }}">
+                            <trix-editor input="x"></trix-editor>
                             @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label>Gambar</label>
-                            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" value="{{ old('content', $article->image) }}">
-                            @error('image') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                        </div>
+                        <label for="image">Gambar</label>
+                        {{-- Tampilkan gambar lama jika ada --}}
+                        @if ($article->image)
+                            <img id="preview" src="{{ asset('storage/' . $article->image) }}" 
+                                alt="Gambar Sebelumnya" 
+                                style="max-width: 200px; margin-bottom: 10px; display: block;">
+                        @else
+                            <img id="preview" src="#" 
+                                alt="Preview Gambar" 
+                                style="max-width: 200px; margin-bottom: 10px; display: none;">
+                        @endif
+
+                        {{-- Input file untuk upload gambar baru --}}
+                        <input type="file" name="image" id="image"
+                            class="form-control @error('image') is-invalid @enderror"
+                            accept="image/*" onchange="previewImage(event)">
+                        
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
                         <a href="/admin/article" class="button btn btn-info">Kembali</a>

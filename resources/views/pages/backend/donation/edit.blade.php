@@ -32,17 +32,19 @@
                         <div class="form-group col-md-6">
                             <label>Kategori</label>
                             <select name="category" class="form-control">
-                                <option value="internal" {{ old('category', $donation->category) == 'mts' ? 'selected' : '' }}>Internal</option>
-                                <option value="external" {{ old('category', $donation->category) == 'ma' ? 'selected' : '' }}>External</option>
+                                <option value="internal" {{ old('category', $donation->category) == 'internal' ? 'selected' : '' }}>Internal</option>
+                                <option value="external" {{ old('category', $donation->category) == 'external' ? 'selected' : '' }}>External</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Pesan</label>
-                            <textarea name="message" id="konten" class="form-control @error('message') is-invalid @enderror" id="von" required>{{ old('message', strip_tags($donation->message)) }}</textarea>                        
+                            <input id="x" type="hidden" name="message" class="form-control @error('message') is-invalid @enderror" value="{{ old('message', $donation->message) }}">
+                            <trix-editor input="x"></trix-editor>
+                            @error('message') <div class="invalid-feedback">{{ $message }}</div> @enderror                    
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
-                        <a href="/admin/article" class="button btn btn-info">Kembali</a>
+                        <a href="/admin/donation" class="button btn btn-info">Kembali</a>
                         <button class="btn btn-success" type="submit">Edit</button>
                     </div>
                 </form>

@@ -39,7 +39,7 @@
                                 <td>{{$r->nisn}}</td>
                                 <td>{{$r->birth}}</td>
                                 <td>{{$r->gender}}</td>
-                                <td>{!! $r->address !!}</td>
+                                <td>{!! \Illuminate\Support\Str::limit($r->address, 100) !!}</td>
                                 <td>{{$r->education_level}}</td>
                                 <td>{{$r->student_category}}</td>
                                 

@@ -103,4 +103,6 @@ class DashboardArticleController extends Controller
         $activity->delete();
         return redirect()->route('article.index')->with('warning', 'Data Artikel Dihapus.');
     }
+
+    
 }

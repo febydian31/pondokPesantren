@@ -63,12 +63,9 @@
 
                             <div class="form-group">
                                 <label for="address">Alamat</label>
-                                <textarea id="konten" class="form-control @error('address') is-invalid @enderror" placeholder="Alamat" name="address" style="height: 100px">{{ old('address', $registration->address) }}</textarea>
-                                @error('address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                @enderror
+                                <input id="x" type="hidden" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address', $registration->address) }}">
+                                <trix-editor input="x"></trix-editor>
+                                @error('address') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
                             <div class="form-group">
                                 <div class="row">
@@ -115,21 +112,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="father_address">Alamat Ayah </label>
-                                    <textarea id="konten_father" class="form-control @error('father_address') is-invalid @enderror" placeholder="alamat" name="father_address" style="height: 100px">{{ old('father_address', $registration->father_address) }}</textarea>
-                                    @error('father_address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                    <input id="father_address" type="hidden" name="father_address" class="form-control @error('father_address') is-invalid @enderror" value="{{ old('father_address', $registration->father_address) }}">
+                                    <trix-editor input="father_address"></trix-editor>
+                                    @error('father_address') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="mother_address">Alamat Ibu </label>
-                                    <textarea id="konten_mother" class="form-control @error('mother_address') is-invalid @enderror" placeholder="alamat" name="mother_address" style="height: 100px">{{ old('mother_address', $registration->mother_address) }}</textarea>
-                                    @error('mother_address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror  
+                                    <input id="mother_address" type="hidden" name="mother_address" class="form-control @error('mother_address') is-invalid @enderror" value="{{ old('mother_address', $registration->mother_address) }}">
+                                    <trix-editor input="mother_address"></trix-editor>
+                                    @error('mother_address') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">

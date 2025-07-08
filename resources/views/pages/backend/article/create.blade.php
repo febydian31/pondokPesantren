@@ -1,6 +1,13 @@
 @extends('layouts.backend.app', ['title' => 'Tambah Artikel'])
 
 @section('content')
+<style>
+    .ck-content img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">Tambah Artikel</h1>
@@ -13,7 +20,7 @@
 
                 <div class="mb-3">
                     <label for="date" class="form-label">Tanggal</label>
-                    <input type="text" name="date" id="date"
+                    <input type="date" name="date" id="date"
                         class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}"
                         placeholder="Pilih tanggal">
                     @error('date')
@@ -33,8 +40,8 @@
 
                 <div class="mb-3">
                     <label for="content" class="form-label">Konten</label>
-                    <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror"
-                        placeholder="Tulis konten artikel di sini" rows="5">{{ old('content') }}</textarea>
+                    <input id="x" type="hidden" name="content" class="form-control @error('content') is-invalid @enderror" value="{{ old('content') }}">
+                    <trix-editor input="x" ></trix-editor>
                     @error('content')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -42,9 +49,10 @@
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Gambar</label>
-                    <img class="img-preview img-fluid mb-3 col-md-12" style="display:none">
+                    <img class="mb-3" id="preview" src="#" alt="Preview Gambar" style="max-width: 200px; margin-top: 10px; display: none;">
                     <input type="file" name="image" id="image"
-                        class="form-control @error('image') is-invalid @enderror">
+                        class="form-control @error('image') is-invalid @enderror" accept="image/*"
+                        onchange="previewImage(event)">
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -58,7 +66,7 @@
         </div>
     </div>
 
-    @push('addon-script')
+    <!-- @push('addon-script')
         <script>
             function imagePreview() {
                 const image = document.querySelector('#image');
@@ -74,5 +82,5 @@
                 }
             }
         </script>
-    @endpush
+    @endpush -->
 @endsection

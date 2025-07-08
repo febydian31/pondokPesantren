@@ -16,7 +16,7 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" name="name" placeholder="Nama Legkap">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" name="name" placeholder="Contoh : Ahmad Ibrahim">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="no_induk">No Induk Santri </label>
-                                    <input type="number" class="form-control @error('no_induk') is-invalid @enderror" value="{{ old('no_induk') }}" name="no_induk" placeholder="no Induk">
+                                    <input type="number" class="form-control @error('no_induk') is-invalid @enderror" value="{{ old('no_induk') }}" name="no_induk" placeholder="Contoh : 129334834343423">
                                     @error('no_induk')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -36,7 +36,7 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="nisn">NISN</label>
-                                    <input type="number" class="form-control @error('nisn') is-invalid @enderror" value="{{ old('nisn') }}" name="nisn" placeholder="NISN">
+                                    <input type="number" class="form-control @error('nisn') is-invalid @enderror" value="{{ old('nisn') }}" name="nisn" placeholder="Contoh : 004322864">
                                     @error('nisn')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -63,18 +63,17 @@
 
                             <div class="form-group">
                                 <label for="address">Alamat</label>
-                                <textarea id="konten" class="form-control @error('address') is-invalid @enderror" placeholder="Alamat" name="address" style="height: 100px">{{ old('address') }}</textarea>
+                                <input id="x" type="hidden" name="address" class="form-control @error('address') is-invalid @enderror" value="{{ old('address') }}">
+                                <trix-editor input="x" ></trix-editor>
                                 @error('address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
+                                    <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for="father_name">Nama Ayah </label>
-                                        <input type="text" class="form-control @error('father_name') is-invalid @enderror" value="{{ old('father_name') }}" name="father_name" placeholder="Nama Ayah">
+                                        <input type="text" class="form-control @error('father_name') is-invalid @enderror" value="{{ old('father_name') }}" name="father_name" placeholder="Contoh : Paijo">
                                         @error('father_name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -83,7 +82,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="mother_name">Nama Ibu </label>
-                                        <input type="text" class="form-control @error('mother_name') is-invalid @enderror" value="{{ old('mother_name') }}" name="mother_name" placeholder="Nama Ibu">
+                                        <input type="text" class="form-control @error('mother_name') is-invalid @enderror" value="{{ old('mother_name') }}" name="mother_name" placeholder="Contoh : Sumina">
                                         @error('mother_name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -95,7 +94,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="father_job">Pekerjaan Ayah </label>
                                         <input type="text" class="form-control @error('father_job') is-invalid @enderror" value="{{ old('father_job') }}" name="father_job"
-                                            placeholder="Pekerjaan Ayah">
+                                            placeholder="Contoh : Jl.Cendrawasih">
                                     @error('father_job')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -105,7 +104,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="mother_job">Pekerjaan Ibu</label>
                                         <input type="text" class="form-control @error('mother_job') is-invalid @enderror" value="{{ old('mother_job') }}" name="mother_job"
-                                            placeholder="Pekerjaan Ibu">
+                                            placeholder="Contoh : Jl.Cendrawasih">
                                     @error('mother_job')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -115,26 +114,24 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="father_address">Alamat Ayah </label>
-                                    <textarea id="konten_father" class="form-control @error('father_address') is-invalid @enderror" placeholder="alamat" name="father_address" style="height: 100px">{{ old('father_address') }}</textarea>
+                                    <input id="father_address" type="hidden" name="father_address" class="form-control @error('father_address') is-invalid @enderror" value="{{ old('father_address') }}">
+                                    <trix-editor input="father_address" ></trix-editor>
                                     @error('father_address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
+                                        <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="mother_address">Alamat Ibu </label>
-                                    <textarea id="konten_mother" class="form-control @error('mother_address') is-invalid @enderror" placeholder="alamat" name="mother_address" style="height: 100px">{{ old('mother_address') }}</textarea>
+                                    <input id="mother_address" type="hidden" name="mother_address" class="form-control @error('mother_address') is-invalid @enderror" value="{{ old('mother_address') }}">
+                                    <trix-editor input="mother_address" ></trix-editor>
                                     @error('mother_address')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror                                    
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label for="no_telp">No Telp</label>
-                                        <input type="number" class="form-control @error('no_telp') is-invalid @enderror" value="{{ old('no_telp') }}" name="no_telp" placeholder="No Telp">
+                                        <input type="number" class="form-control @error('no_telp') is-invalid @enderror" value="{{ old('no_telp') }}" name="no_telp" placeholder="Contoh : 0812">
                                         @error('no_telp')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

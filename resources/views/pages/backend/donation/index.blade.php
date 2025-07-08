@@ -35,7 +35,7 @@
                                 <td>{{ $donation->no_telp }}</td>
                                 <td>{{ 'Rp ' . number_format($donation->nominal, 0, ',', '.') }}</td>
                                 <td>{{ $donation->category }}</td>
-                                <td>{!! $donation->message !!}</td>
+                                <td>{!! \Illuminate\Support\Str::limit($donation->message, 100) !!}</td>
                                 <td>
                                     <a href="{{ route('donation.edit', $donation) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
                                     <form action="{{ route('donation.destroy', $donation) }}" method="POST" class="d-inline form-hapus">

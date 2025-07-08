@@ -37,8 +37,11 @@
                             </div>
                         <div class="form-group col-md-12">
                             <label>Pesan</label>
-                            <textarea name="message" id="konten" class="form-control  @error('message') is-invalid @enderror" placeholder="Content">{{ old('message') }}</textarea>
-                            @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                            <input id="x" type="hidden" name="message" class="form-control @error('message') is-invalid @enderror" value="{{ old('message') }}">
+                                    <trix-editor input="x" ></trix-editor>
+                                    @error('message')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror 
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
