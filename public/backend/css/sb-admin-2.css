@@ -10,6 +10,27 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ .datepicker .datepicker-switch, 
+.datepicker .prev, 
+.datepicker .next {
+    display: none !important;
+}
+
+/* Pusatkan dan sejajarkan bulan & tahun */
+.datepicker .datepicker-days table thead tr:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Select bulan & tahun (jika manual select tersedia di versi ini) */
+.datepicker select {
+    display: inline-block;
+    width: auto;
+    margin: 0 5px;
+}
 :root {
   --blue: #4e73df;
   --indigo: #6610f2;

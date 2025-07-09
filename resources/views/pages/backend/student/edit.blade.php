@@ -46,19 +46,26 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="birth">Tanggl Lahir</label>
-                                    <input type="date" class="form-control @error('birth') is-invalid @enderror" value="{{ old('birth', $registration->birth) }}" name="birth" placeholder="Tanggal Lahir">
+                                    <input type="text" id="datepicker" class="form-control @error('birth') is-invalid @enderror" value="{{ old('birth', $registration->birth) }}" name="birth" placeholder="Tanggal Lahir">
                                     @error('birth')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <label for="gender">Jenis Kelamin</label>
-                                <select name="gender" class="form-control" id="gender">
-                                    <option value="laki-laki" {{ old('gender', $registration->gender) == 'laki-laki' ? 'selected' : '' }}>Laki - Laki</option>
-                                    <option value="perempuan" {{ old('gender', $registration->gender) == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
-                                </select>
+                                
 
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="gender">Jenis Kelamin</label>
+                                        <select name="gender" class="form-control" id="gender">
+                                            <option value="laki-laki" {{ old('gender', $registration->gender) == 'laki-laki' ? 'selected' : '' }}>Laki - Laki</option>
+                                            <option value="perempuan" {{ old('gender', $registration->gender) == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -138,20 +145,22 @@
                                     <div class="form-group col-md-6">
                                     <label>Jenjang Pendidikan</label>
                                     <select name="education_level" class="form-control">
-                                        <option value="mts" {{ old('education_level', $registration->education_level) == 'mts' ? 'selected' : '' }}>Mts</option>
-                                        <option value="ma" {{ old('education_level', $registration->education_level) == 'ma' ? 'selected' : '' }}>Ma</option>
-                                        <option value="kuliah" {{ old('education_level', $registration->education_level) == 'kuliah' ? 'selected' : '' }}>Kuliah</option>
-                                        <option value="lulus" {{ old('education_level', $registration->education_level) == 'lulus' ? 'selected' : '' }}>Lulus</option>
+                                        @php $selected = old('education_level', $registration->education_level); @endphp
+                                        <option value="mts" {{ $selected == 'mts' ? 'selected' : '' }}>Mts</option>
+                                        <option value="ma" {{ $selected == 'ma' ? 'selected' : '' }}>Ma</option>
+                                        <option value="kuliah" {{ $selected == 'kuliah' ? 'selected' : '' }}>Kuliah</option>
+                                        <option value="lulus" {{ $selected == 'lulus' ? 'selected' : '' }}>Lulus</option>
                                     </select>
 
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Kategori Santri</label>
                                     <select name="student_category" class="form-control">
-                                        <option value="reguler" {{ old('student_category', $registration->student_category) == 'reguler' ? 'selected' : '' }}>Reguler</option>
-                                        <option value="dhufa" {{ old('student_category', $registration->student_category) == 'dhufa' ? 'selected' : '' }}>Dhufa</option>
-                                        <option value="yatim_piatu" {{ old('student_category', $registration->student_category) == 'yatim_piatu' ? 'selected' : '' }}>Yatim / Piatu</option>
-                                    </select>                   
+                                        @php $selectedCat = old('student_category', $registration->student_category); @endphp
+                                        <option value="reguler" {{ $selectedCat == 'reguler' ? 'selected' : '' }}>Reguler</option>
+                                        <option value="dhufa" {{ $selectedCat == 'dhufa' ? 'selected' : '' }}>Dhufa</option>
+                                        <option value="yatim_piatu" {{ $selectedCat == 'yatim_piatu' ? 'selected' : '' }}>Yatim / Piatu</option>
+                                    </select>              
                                 </div>
                                 </div>
                             </div>

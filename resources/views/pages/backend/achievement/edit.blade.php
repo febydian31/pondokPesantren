@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label>Tanggal</label>
-                            <input type="date" name="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date', $achievement->date) }}" required>
+                            <input type="text" id="datepicker" name="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date', $achievement->date) }}" required>
                             @error('date') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
 

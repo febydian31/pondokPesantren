@@ -20,7 +20,7 @@
 
                 <div class="mb-3">
                     <label for="date" class="form-label">Tanggal</label>
-                    <input type="date" name="date" id="date"
+                    <input type="text" name="date" id="datepicker"
                         class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}"
                         placeholder="Pilih tanggal">
                     @error('date')

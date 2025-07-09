@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="birth">Tanggl Lahir</label>
-                                    <input type="date" class="form-control @error('birth') is-invalid @enderror" value="{{ old('birth') }}" name="birth" placeholder="Tanggal Lahir">
+                                    <input type="text" id="datepicker" class="form-control @error('birth') is-invalid @enderror" value="{{ old('birth') }}" name="birth" placeholder="Tanggal Lahir">
                                     @error('birth')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -94,7 +94,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="father_job">Pekerjaan Ayah </label>
                                         <input type="text" class="form-control @error('father_job') is-invalid @enderror" value="{{ old('father_job') }}" name="father_job"
-                                            placeholder="Contoh : Jl.Cendrawasih">
+                                            placeholder="Contoh : Guru">
                                     @error('father_job')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -104,7 +104,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="mother_job">Pekerjaan Ibu</label>
                                         <input type="text" class="form-control @error('mother_job') is-invalid @enderror" value="{{ old('mother_job') }}" name="mother_job"
-                                            placeholder="Contoh : Jl.Cendrawasih">
+                                            placeholder="Contoh : Guru">
                                     @error('mother_job')
                                         <div class="invalid-feedback">
                                             {{ $message }}

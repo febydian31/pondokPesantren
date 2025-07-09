@@ -12,8 +12,8 @@
 
                 <div class="mb-3">
                     <label for="date" class="form-label">Tanggal</label>
-                    <input type="date" name="date" id="date"
-                        class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}">
+                    <input type="text" id="datepicker" name="date"
+                        class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}" placeholder="Pilih tanggal">
                     @error('date')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
