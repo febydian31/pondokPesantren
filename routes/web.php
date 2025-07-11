@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\DashboardActivityController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DashboardDonationController;
 use App\Http\Controllers\Backend\DashboardStudentController;
+use App\Http\Controllers\Backend\DashboardProfileController;
 
 Route::get('/', HomeController::class)->name('frontend.index.index');
 
@@ -52,6 +53,7 @@ Route::prefix('admin')
       'activity' => DashboardActivityController::class,
       'achievement' => DashboardAchievementController::class,
       'donation' => DashboardDonationController::class,
-      'student' => DashboardStudentController::class
+      'student' => DashboardStudentController::class,
+      'profile' => DashboardProfileController::class
     ]);
   });

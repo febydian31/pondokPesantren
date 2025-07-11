@@ -1,12 +1,6 @@
 @extends('layouts.backend.app', ['title' => 'Tambah Artikel'])
 
 @section('content')
-<style>
-    .ck-content img {
-        max-width: 100%;
-        height: auto;
-    }
-</style>
 
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -17,17 +11,6 @@
         <div class="card-body">
             <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-
-                <div class="mb-3">
-                    <label for="date" class="form-label">Tanggal</label>
-                    <input type="text" name="date" id="datepicker"
-                        class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}"
-                        placeholder="Pilih tanggal">
-                    @error('date')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
                 <div class="mb-3">
                     <label for="title" class="form-label">Judul</label>
                     <input type="text" name="title" id="title"
@@ -49,7 +32,7 @@
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Gambar</label>
-                    <img class="mb-3" id="preview" src="#" alt="Preview Gambar" style="max-width: 200px; margin-top: 10px; display: none;">
+                    <img class="mb-3" id="preview" src="#" alt="Preview Gambar" style="max-width: 550px; margin-top: 10px; display: none;">
                     <input type="file" name="image" id="image"
                         class="form-control @error('image') is-invalid @enderror" accept="image/*"
                         onchange="previewImage(event)">

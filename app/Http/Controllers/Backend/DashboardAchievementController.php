@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Achievement;
 use App\Http\Requests\AchievementRequest;
+use Carbon\Carbon;
 
 
 class DashboardAchievementController extends Controller
@@ -32,9 +33,16 @@ class DashboardAchievementController extends Controller
      */
     public function store(AchievementRequest $request)
     {
-        achievement::create($request->validated());
-        return redirect()->route('achievement.index')->with('success', 'Prestasi berhasil ditambahkan');
+        $data = $request->validated();
+
+        // Format tanggal dari d/m/Y → Y-m-d (untuk MySQL)
+        $data['date'] = Carbon::createFromFormat('d/m/Y', $request->date)->format('Y-m-d');
+
+        Achievement::create($data);
+
+        return redirect()->route('achievement.index')->with('success', 'Prestasi berhasil ditambahkan.');
     }
+
 
     /**
      * Display the specified resource.
@@ -56,10 +64,17 @@ class DashboardAchievementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(AchievementRequest $request, achievement $achievement)
+    public function update(AchievementRequest $request, Achievement $achievement)
     {
-        $achievement->update($request->validated());
-        return redirect()->route('achievement.index')->with('info', 'Data Prestasi Diperbarui.');
+        $request->all();
+        $data = $request->validated();
+
+        // Format tanggal dari d/m/Y → Y-m-d (untuk MySQL)
+        $data['date'] = Carbon::createFromFormat('d/m/Y', $request->date)->format('Y-m-d');
+
+        $achievement->update($data);
+
+        return redirect()->route('achievement.index')->with('success', 'Data prestasi diperbarui.');
     }
 
     /**
@@ -69,6 +84,6 @@ class DashboardAchievementController extends Controller
     {
         $achievement = achievement::findOrFail($id); // Ambil data berdasarkan ID
         $achievement->delete();
-        return redirect()->route('achievement.index')->with('warning', 'Data Prestasi Dihapus.');
+        return redirect()->route('achievement.index')->with('success', 'Data Prestasi Dihapus.');
     }
 }

@@ -14,33 +14,28 @@
                     @csrf
                     @method('PUT')
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label>Tanggal</label>
-                            <input type="text" id="datepicker" name="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date', $article->date) }}" required>
-                            @error('date') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                        </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label>Judul</label>
                             <input type="text" name="title" class="form-control @error('text') is-invalid @enderror" value="{{ old('title', $article->title) }}" required>
                             @error('title') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label>Content</label>
                             <input id="x" type="hidden" name="content" class="form-control @error('content') is-invalid @enderror" value="{{ old('content', $article->content) }}">
                             <trix-editor input="x"></trix-editor>
                             @error('content') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                         <label for="image">Gambar</label>
                         {{-- Tampilkan gambar lama jika ada --}}
                         @if ($article->image)
                             <img id="preview" src="{{ asset('storage/' . $article->image) }}" 
                                 alt="Gambar Sebelumnya" 
-                                style="max-width: 200px; margin-bottom: 10px; display: block;">
+                                style="max-width: 550px; margin-bottom: 10px; display: block;">
                         @else
                             <img id="preview" src="#" 
                                 alt="Preview Gambar" 
-                                style="max-width: 200px; margin-bottom: 10px; display: none;">
+                                style="max-width: 550px; margin-bottom: 10px; display: none;">
                         @endif
 
                         {{-- Input file untuk upload gambar baru --}}

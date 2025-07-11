@@ -29,7 +29,7 @@
                         @foreach ($articles as $key => $article)
                             <tr>
                                 <td>{{ $key + 1 }}</td>
-                                <td>{{ $article->date }}</td>
+                                <td>{{ \Carbon\Carbon::parse($article->date)->translatedFormat('d F Y') }}</td>
                                 <td>{{ $article->title }}</td>
                                 <td>{!! $article->content !!}</td>
                                 <td><img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" width="100"></td>

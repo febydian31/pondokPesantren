@@ -14,6 +14,7 @@ class ArticleRequest extends FormRequest
         return true;
     }
 
+    
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,7 +23,7 @@ class ArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date' => 'required|date',
+            'date'    => 'nullable|date_format:d-m-Y',
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',

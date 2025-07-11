@@ -23,7 +23,7 @@
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="service-card">
                                 <img class="gambar" src="{{ asset('storage/' . $r->image) }}" alt="">
-                                <span class="span">{{ $r->date }}</span>
+                                <span class="span">{{ \Carbon\Carbon::parse($r->date)->translatedFormat('d F Y') }}</span>
                                 <h3>{{ $r->title }}</h3>
                                 <p>{!! $r->content !!}</p>
                                 <a href="{{ route('frontend.article.show', $r->id) }}" class="read-more">Read More</a>

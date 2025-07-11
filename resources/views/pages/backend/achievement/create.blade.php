@@ -13,12 +13,13 @@
                 <div class="mb-3">
                     <label for="date" class="form-label">Tanggal</label>
                     <input type="text" id="datepicker" name="date"
-                        class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}" placeholder="Pilih tanggal">
+                        class="form-control @error('date') is-invalid @enderror"
+                        value="{{ old('date', isset($achievement) ? \Carbon\Carbon::parse($achievement->date)->format('d/m/Y') : '') }}"
+                        placeholder="Pilih tanggal">
                     @error('date')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-
                 <div class="mb-3">
                     <label for="achievement" class="form-label">Prestasi</label>
                     <input type="text" name="achievement" id="achievement"

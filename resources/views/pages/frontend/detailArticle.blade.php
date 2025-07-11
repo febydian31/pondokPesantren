@@ -15,7 +15,7 @@
         <div class="images">
             <img class="gambar" src="{{ asset('storage/' . $artikel->image) }}" alt="">
             <div class="detail">
-                <span class="span">{{ $artikel->date }}</span>
+                <span class="span">{{ \Carbon\Carbon::parse($artikel->date)->translatedFormat('d F Y') }}</span>
                 <h3>{{ $artikel->title }}</h3>
                 <p>{!! $artikel->content !!}</p>      
             </div>

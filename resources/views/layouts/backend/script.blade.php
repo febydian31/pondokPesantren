@@ -6,6 +6,53 @@
 <script src="{{ asset('backend/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+<!-- form array  -->
+<script>
+function addField(fieldName) {
+    const container = document.getElementById(`${fieldName}-container`);
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = `${fieldName}[]`;
+    input.className = 'form-control mb-2';
+    container.appendChild(input);
+}
+</script>
+<!-- end form array  -->
+
+<!-- hapus form array  -->
+<script>
+    function addField(fieldName) {
+        const container = document.getElementById(`${fieldName}-container`);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'input-group mb-2';
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `${fieldName}[]`;
+        input.className = 'form-control';
+
+        const btn = document.createElement('button');
+        btn.className = 'btn btn-danger';
+        btn.type = 'button';
+        btn.textContent = '×';
+        btn.onclick = function () {
+            wrapper.remove();
+        };
+
+        wrapper.appendChild(input);
+        wrapper.appendChild(btn);
+        container.appendChild(wrapper);
+    }
+
+    function removeField(button) {
+        button.parentElement.remove();
+    }
+</script>
+
+<!-- hapus form array end -->
+
+
 <script>
     // DataTable init
     $(document).ready(function() {
@@ -13,14 +60,14 @@
     });
 
     // Datepicker init
-   $(document).ready(function() {
     $('#datepicker').datepicker({
-        format: 'yyyy-mm-dd',
-        autoclose: true,
-        todayHighlight: true,
-        orientation: "bottom auto"
-    });
+    dateFormat:'dd/mm/yy', 
+    autoclose: true,
+    todayHighlight: true,
+    orientation: "bottom auto"
 });
+
+
 
 
     // Sweet alert delete

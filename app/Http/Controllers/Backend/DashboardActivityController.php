@@ -51,8 +51,9 @@ class DashboardActivityController extends Controller
      */
     public function edit(string $id)
     {
+        $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
         $activity = Activity::findOrFail($id);
-        return view('pages.backend.activity.edit', compact('activity'));
+        return view('pages.backend.activity.edit', compact('activity', 'days'));
     }
 
     /**
@@ -60,8 +61,9 @@ class DashboardActivityController extends Controller
      */
     public function update(ActivityRequest $request, Activity $activity)
     {
+          dd($request->all());
         $activity->update($request->validated());
-        return redirect()->route('activity.index')->with('info', 'Data Kegiatan Diperbarui.');
+        return redirect()->route('activity.index')->with('success', 'Data Kegiatan Diperbarui.');
     }
 
     /**
@@ -71,6 +73,6 @@ class DashboardActivityController extends Controller
     {
         $activity = Activity::findOrFail($id); // Ambil data berdasarkan ID
         $activity->delete();
-        return redirect()->route('activity.index')->with('warning', 'Data Kegiatan Dihapus.');
+        return redirect()->route('activity.index')->with('success', 'Data Kegiatan Dihapus.');
     }
 }
