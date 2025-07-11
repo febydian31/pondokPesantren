@@ -15,7 +15,7 @@ class RegistrationController extends Controller
     }
 
     public function store(RegistrationRequest $request)
-    { 
+    {
         $data = $request->validated();
         Registration::create($request->validated());
 
@@ -25,13 +25,11 @@ class RegistrationController extends Controller
         // konfirm wa 
         $no_wa = '6209633487327'; // ganti dengan nomor WA tujuan
         $link = "https://wa.me/{$no_wa}?text=" . urlencode($pesan);
-            
+
         return redirect($link);
 
         // Registration::create($data);
         // return redirect()->route('frontend.registration.index')->with('success', 'Registration created successfully.');
 
     }
-
-    
 }

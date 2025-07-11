@@ -40,7 +40,7 @@ class DashboardAchievementController extends Controller
 
         Achievement::create($data);
 
-        return redirect()->route('achievement.index')->with('success', 'Prestasi berhasil ditambahkan.');
+        return redirect()->route('achievement.index')->with('success', 'Data berhasil ditambah !');
     }
 
 
@@ -74,7 +74,7 @@ class DashboardAchievementController extends Controller
 
         $achievement->update($data);
 
-        return redirect()->route('achievement.index')->with('success', 'Data prestasi diperbarui.');
+        return redirect()->route('achievement.index')->with('success', 'Data berhasil diedit !');
     }
 
     /**
@@ -84,6 +84,6 @@ class DashboardAchievementController extends Controller
     {
         $achievement = achievement::findOrFail($id); // Ambil data berdasarkan ID
         $achievement->delete();
-        return redirect()->route('achievement.index')->with('success', 'Data Prestasi Dihapus.');
+        return redirect()->route('achievement.index')->with('success', 'Data berhasil dihapus !');
     }
 }

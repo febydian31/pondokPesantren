@@ -33,26 +33,26 @@ class DashboardArticleController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(ArticleRequest $request)
-{
-    // Ambil data validasi dari FormRequest
-    $data = $request->validated();
+    {
+        // Ambil data validasi dari FormRequest
+        $data = $request->validated();
 
-    // Buat slug dari title
-    $data['slug'] = Str::slug($data['title']);
+        // Buat slug dari title
+        $data['slug'] = Str::slug($data['title']);
 
-    // Set field 'date' ke tanggal hari ini jika tidak dikirim dari form
-    $data['date'] = Carbon::now()->toDateString(); // Format: Y-m-d
+        // Set field 'date' ke tanggal hari ini jika tidak dikirim dari form
+        $data['date'] = Carbon::now()->toDateString(); // Format: Y-m-d
 
-    // Proses upload gambar jika ada
-    if ($request->hasFile('image')) {
-        $data['image'] = $request->file('image')->store('article', 'public');
+        // Proses upload gambar jika ada
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('article', 'public');
+        }
+
+        // Simpan ke database
+        Article::create($data);
+
+        return redirect()->route('article.index')->with('success', 'Data berhasil ditambah !');
     }
-
-    // Simpan ke database
-    Article::create($data);
-
-    return redirect()->route('article.index')->with('success', 'Berhasil Menambah Artikel.');
-}
 
     /**
      * Display the specified resource.
@@ -76,42 +76,42 @@ class DashboardArticleController extends Controller
      * Update the specified resource in storage.
      */
     public function update(ArticleRequest $request, string $id)
-{
-    // Ambil data artikel
-    $article = Article::findOrFail($id);
+    {
+        // Ambil data artikel
+        $article = Article::findOrFail($id);
 
-    // Ambil data validasi dari form
-    $data = $request->validated();
+        // Ambil data validasi dari form
+        $data = $request->validated();
 
-    // Buat slug baru dari judul
-    $data['slug'] = Str::slug($data['title']);
+        // Buat slug baru dari judul
+        $data['slug'] = Str::slug($data['title']);
 
-    // Format ulang tanggal jika ada, atau tetap gunakan yang lama
-    // Jika kamu tidak menggunakan input 'date' dari form, bisa pakai ini:
-    $data['date'] = $article->date ?? Carbon::now()->toDateString();
+        // Format ulang tanggal jika ada, atau tetap gunakan yang lama
+        // Jika kamu tidak menggunakan input 'date' dari form, bisa pakai ini:
+        $data['date'] = $article->date ?? Carbon::now()->toDateString();
 
-    // Jika form input menyertakan tanggal (misal format d/m/Y), gunakan ini:
-    // $data['date'] = Carbon::createFromFormat('d/m/Y', $request->date)->format('Y-m-d');
+        // Jika form input menyertakan tanggal (misal format d/m/Y), gunakan ini:
+        // $data['date'] = Carbon::createFromFormat('d/m/Y', $request->date)->format('Y-m-d');
 
-    // Cek dan proses upload gambar baru
-    if ($request->hasFile('image')) {
-        // Hapus gambar lama dari storage jika ada
-        if ($article->image && Storage::exists('public/' . $article->image)) {
-            Storage::delete('public/' . $article->image);
+        // Cek dan proses upload gambar baru
+        if ($request->hasFile('image')) {
+            // Hapus gambar lama dari storage jika ada
+            if ($article->image && Storage::exists('public/' . $article->image)) {
+                Storage::delete('public/' . $article->image);
+            }
+
+            // Upload dan simpan path baru
+            $data['image'] = $request->file('image')->store('article', 'public');
+        } else {
+            // Jika tidak upload gambar baru, jangan ubah field image
+            unset($data['image']);
         }
 
-        // Upload dan simpan path baru
-        $data['image'] = $request->file('image')->store('article', 'public');
-    } else {
-        // Jika tidak upload gambar baru, jangan ubah field image
-        unset($data['image']);
+        // Update artikel
+        $article->update($data);
+
+        return redirect()->route('article.index')->with('success', 'Data berhasil diedit !');
     }
-
-    // Update artikel
-    $article->update($data);
-
-    return redirect()->route('article.index')->with('info', 'Artikel berhasil diperbarui.');
-}
 
 
     /**
@@ -121,8 +121,6 @@ class DashboardArticleController extends Controller
     {
         $activity = Article::findOrFail($id); // Ambil data berdasarkan ID
         $activity->delete();
-        return redirect()->route('article.index')->with('warning', 'Data Artikel Dihapus.');
+        return redirect()->route('article.index')->with('success', 'Data berhasil dihapus !');
     }
-
-    
 }

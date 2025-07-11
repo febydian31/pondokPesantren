@@ -35,7 +35,7 @@ class DashboardActivityController extends Controller
     public function store(ActivityRequest $request)
     {
         activity::create($request->validated());
-        return redirect()->route('activity.index')->with('success', 'Berhasil Menambah Kegiatan');
+        return redirect()->route('activity.index')->with('success', 'Data berhasil ditambah !');
     }
 
     /**
@@ -61,9 +61,8 @@ class DashboardActivityController extends Controller
      */
     public function update(ActivityRequest $request, Activity $activity)
     {
-          dd($request->all());
         $activity->update($request->validated());
-        return redirect()->route('activity.index')->with('success', 'Data Kegiatan Diperbarui.');
+        return redirect()->route('activity.index')->with('success', 'Data berhasil diedit !');
     }
 
     /**
@@ -73,6 +72,6 @@ class DashboardActivityController extends Controller
     {
         $activity = Activity::findOrFail($id); // Ambil data berdasarkan ID
         $activity->delete();
-        return redirect()->route('activity.index')->with('success', 'Data Kegiatan Dihapus.');
+        return redirect()->route('activity.index')->with('success', 'Data berhasil dihapus !');
     }
 }

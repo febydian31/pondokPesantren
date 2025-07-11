@@ -9,7 +9,7 @@
         </a>
     </div>
 
-    
+
     <!-- Content Row -->
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -33,27 +33,28 @@
                     <tbody>
                         @foreach ($registration as $key => $r)
                             <tr>
-                                <td>{{$key + 1}}</td>
-                                <td>{{$r->name}}</td>
-                                <td>{{$r->no_induk}}</td>
-                                <td>{{$r->nisn}}</td>
-                                <td>{{$r->birth}}</td>
-                                <td>{{$r->gender}}</td>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $r->name }}</td>
+                                <td>{{ $r->no_induk }}</td>
+                                <td>{{ $r->nisn }}</td>
+                                <td>{{ $r->birth }}</td>
+                                <td>{{ $r->gender }}</td>
                                 <td>{!! \Illuminate\Support\Str::limit($r->address, 100) !!}</td>
-                                <td>{{$r->education_level}}</td>
-                                <td>{{$r->student_category}}</td>
-                                
+                                <td>{{ $r->education_level }}</td>
+                                <td>{{ $r->student_category }}</td>
+
                                 <td>
                                     <a href="{{ route('student.edit', $r) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
                                     <a href="{{ route('student.show', $r) }}" class="btn btn-sm btn-info mb-1">Detail</a>
-                                    <form action="{{ route('student.destroy', $r) }}" method="POST" class="d-inline form-hapus">
+                                    <form action="{{ route('student.destroy', $r) }}" method="POST"
+                                        class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-sm btn-danger mb-1">Delete</button>
+                                        <button class="btn btn-sm btn-danger mb-1">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
-                            @endforeach
+                        @endforeach
                     </tbody>
                 </table>
             </div>

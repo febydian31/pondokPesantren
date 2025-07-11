@@ -26,8 +26,7 @@
                                 <span class="span">{{ \Carbon\Carbon::parse($r->date)->translatedFormat('d F Y') }}</span>
                                 <h3>{{ $r->title }}</h3>
                                 <p>{!! $r->content !!}</p>
-                                <a href="{{ route('frontend.article.show', $r->id) }}" class="read-more">Read More</a>
-
+                                <a href="{{ route('frontend.article.show', $r->slug) }}" class="read-more">Selengkapnya</a>
                             </div>
                         </div>
                     @endforeach
@@ -46,6 +45,6 @@
                     </ul>
                 </nav>
             </div>
-        @endif 
+        @endif
     </section>
 @endsection

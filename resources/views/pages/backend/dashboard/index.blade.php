@@ -13,7 +13,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Santri</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{ $male_registrations }}
+                            </div>
                         </div>
                         <i class="fas fa-male fa-2x text-gray-400"></i>
                     </div>
@@ -28,7 +30,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Santriwati</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{ $female_registrations }}
+                            </div>
                         </div>
                         <i class="fas fa-female fa-2x text-gray-400"></i>
                     </div>
@@ -43,7 +47,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Artikel</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{ $articles }}
+                            </div>
                         </div>
                         <i class="fas fa-newspaper fa-2x text-gray-400"></i>
                     </div>
@@ -58,7 +64,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Prestasi</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{ $achievements }}
+                            </div>
                         </div>
                         <i class="fas fa-trophy fa-2x text-gray-400"></i>
                     </div>
@@ -73,7 +81,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Kegiatan</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{ $activities }}
+                            </div>
                         </div>
                         <i class="fas fa-calendar-alt fa-2x text-gray-400"></i>
                     </div>
@@ -88,7 +98,9 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Donasi</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{ $donations }}
+                            </div>
                         </div>
                         <i class="fas fa-hand-holding-usd fa-2x text-gray-400"></i>
                     </div>
@@ -103,9 +115,11 @@
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                                Total Donasi Bulan
+                                Total Donasi Bulan Ini
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                Rp {{ number_format($total_donation_this_month, 0, ',', '.') }}
+                            </div>
                         </div>
                         <i class="fas fa-coins fa-2x text-gray-400"></i>
                     </div>

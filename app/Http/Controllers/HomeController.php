@@ -13,11 +13,9 @@ class HomeController extends Controller
         return view('pages.frontend.index', compact('allArtikel'));
     }
 
-    public function show($id) 
+    public function show($id)
     {
-    $article = Article::findOrFail($id);
-    return view('pages.frontend.show', compact('article'));
+        $article = Article::findOrFail($id);
+        return view('pages.frontend.detail-article', compact('article'));
     }
-
-
 }

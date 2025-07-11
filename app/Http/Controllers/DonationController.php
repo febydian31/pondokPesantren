@@ -16,17 +16,17 @@ class DonationController extends Controller
     }
 
     public function store(DonationRequest $request)
-{
-    $validated = $request->validated();
+    {
+        $validated = $request->validated();
 
-    Donation::create($validated);
+        Donation::create($validated);
 
-    $pesan = "Halo, saya *{$validated['name']}* telah melakukan donasi sebesar *Rp {$validated['nominal']}*.\nPesan: {$validated['message']}";
+        $pesan = "Halo, saya *{$validated['name']}* telah melakukan donasi sebesar *Rp {$validated['nominal']}*.\nPesan: {$validated['message']}";
 
-    // konfirm wa 
-    $no_wa = '6209633487327'; // ganti dengan nomor WA tujuan
-    $link = "https://wa.me/{$no_wa}?text=" . urlencode($pesan);
-        
-    return redirect($link);
-}
+        // konfirm wa 
+        $no_wa = '6209633487327'; // ganti dengan nomor WA tujuan
+        $link = "https://wa.me/{$no_wa}?text=" . urlencode($pesan);
+
+        return redirect($link);
+    }
 }

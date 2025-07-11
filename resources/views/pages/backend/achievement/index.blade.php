@@ -30,18 +30,20 @@
                     <tbody>
                         @foreach ($Achievements as $key => $achievement)
                             <tr>
-                                <td>{{$key + 1}}</td>
+                                <td>{{ $key + 1 }}</td>
                                 <td>{{ \Carbon\Carbon::parse($achievement->date)->translatedFormat('d F Y') }}</td>
                                 <td>{{ $achievement->achievement }}</td>
                                 <td>{{ $achievement->level }}</td>
                                 <td>{{ $achievement->organizer }}</td>
                                 <td>{{ $achievement->winner }}</td>
                                 <td>
-                                    <a href="{{ route('achievement.edit', $achievement) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <form action="{{ route('achievement.destroy', $achievement) }}" method="POST" class="d-inline form-hapus">
+                                    <a href="{{ route('achievement.edit', $achievement) }}"
+                                        class="btn btn-sm btn-warning mb-1">Edit</a>
+                                    <form action="{{ route('achievement.destroy', $achievement) }}" method="POST"
+                                        class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-sm btn-danger mb-1">Delete</button>
+                                        <button class="btn btn-sm btn-danger mb-1">Hapus</button>
                                     </form>
                                 </td>
                             </tr>

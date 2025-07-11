@@ -32,14 +32,18 @@
                                 <td>{{ \Carbon\Carbon::parse($article->date)->translatedFormat('d F Y') }}</td>
                                 <td>{{ $article->title }}</td>
                                 <td>{!! $article->content !!}</td>
-                                <td><img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" width="100"></td>
+                                <td><img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" width="100">
+                                </td>
                                 <td>
-                                    <a href="{{ route('article.edit', $article) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <a href="{{ route('article.show', $article) }}" class="btn btn-sm btn-info mb-1">Detail</a>
-                                    <form action="{{ route('article.destroy', $article) }}" method="POST" class="d-inline form-hapus">
+                                    <a href="{{ route('article.edit', $article) }}"
+                                        class="btn btn-sm btn-warning mb-1">Edit</a>
+                                    <a href="{{ route('article.show', $article) }}"
+                                        class="btn btn-sm btn-info mb-1">Detail</a>
+                                    <form action="{{ route('article.destroy', $article) }}" method="POST"
+                                        class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-sm btn-danger mb-1">Delete</button>
+                                        <button class="btn btn-sm btn-danger mb-1">Hapus</button>
                                     </form>
                                 </td>
                             </tr>

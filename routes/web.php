@@ -25,19 +25,17 @@ use App\Http\Controllers\Backend\DashboardProfileController;
 Route::get('/', HomeController::class)->name('frontend.index.index');
 
 Route::get('/about', AboutController::class)->name(name: 'about');
-Route::resource('/article', ArticleController::class)->names([
-    'index' => 'frontend.article.index',
-    'show' => 'frontend.article.show',
-]);
+Route::get('/article', [ArticleController::class, 'index'])->name('frontend.article.index');
+Route::get('/article/{slug}', [ArticleController::class, 'show'])->name('frontend.article.show');
 Route::get('/activity', ActivityController::class)->name(name: 'activity');
 Route::get('/achievement', AchievementController::class)->name(name: 'achievement');
 Route::resource('/donation', DonationController::class)->names([
-    'index' => 'frontend.donation.index',
-    'store' => 'frontend.donation.store',
+  'index' => 'frontend.donation.index',
+  'store' => 'frontend.donation.store',
 ]);
 Route::resource('/registration', RegistrationController::class)->names([
-    'index' => 'frontend.registration.index',
-    'store' => 'frontend.registration.store',
+  'index' => 'frontend.registration.index',
+  'store' => 'frontend.registration.store',
 ]);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');

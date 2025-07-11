@@ -32,7 +32,7 @@ class DashboardStudentController extends Controller
     public function store(RegistrationRequest $request)
     {
         Registration::create($request->validated());
-        return redirect()->route('student.index')->with('success', 'Berhasil Menambah Data Santri');
+        return redirect()->route('student.index')->with('success', 'Data berhasil ditambah !');
     }
 
     /**
@@ -40,7 +40,7 @@ class DashboardStudentController extends Controller
      */
     public function show(string $id)
     {
-        
+
         $registration = Registration::findOrFail($id);
         return view('pages.backend.student.show', compact('registration'));
     }
@@ -58,11 +58,11 @@ class DashboardStudentController extends Controller
      * Update the specified resource in storage.
      */
     public function update(RegistrationRequest $request, $id)
-{
-    $registration = Registration::findOrFail($id);
-    $registration->update($request->validated());
+    {
+        $registration = Registration::findOrFail($id);
+        $registration->update($request->validated());
 
-        return redirect()->route('student.index')->with('info', 'Data Santri Diperbarui.');
+        return redirect()->route('student.index')->with('success', 'Data berhasil diedit !');
     }
 
     /**
@@ -72,6 +72,6 @@ class DashboardStudentController extends Controller
     {
         $registration = Registration::findOrFail($id); // Ambil data berdasarkan ID
         $registration->delete();
-        return redirect()->route('student.index')->with('warning', 'Data Santri Dihapus.');
+        return redirect()->route('student.index')->with('success', 'Data berhasil dihapus !');
     }
 }
