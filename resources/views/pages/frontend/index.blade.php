@@ -26,17 +26,34 @@
         <div class="container section-title judul-artikel" data-aos="fade-up">
             <div><span>Pondok Pesantren Zuhriyah</span></div>
         </div>
-        <div class="container video-section" data-aos="zoom-out" data-aos-delay="200">
-            <div class="video-wrapper">
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/4PKBBJ6qv5w?si=9pJFFxflBY2-EW5z/VIDEO_ID?rel=0"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
-                </iframe>
-            </div>
+        <div class="container video-section" data-aos="zoom-out" data-aos-delay="200">
+            @php
+                function embedYoutube($url) {
+                    preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/', $url, $matches);
+                    if (!empty($matches[1])) {
+                        return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $matches[1] . '" frameborder="0" allowfullscreen></iframe>';
+                    }
+                    return null;
+                }
+            @endphp
+
+            @forelse ($profiles as $profile)
+                @if (!empty($profile->vidio) && embedYoutube($profile->vidio))
+                    <div class="video-wrapper">
+                        {!! embedYoutube($profile->vidio) !!}
+                    </div>
+                @else
+                    <p style="color: black; font-weight: bold;">Video belum diperbarui</p>
+                @endif
+            @empty
+                <p style="color: black; font-weight: bold;">Video belum tersedia</p>
+            @endforelse
+        </div>
     </section>
+
+
+
 
 
 
@@ -137,9 +154,8 @@
                                 <span
                                     class="span">{{ \Carbon\Carbon::parse($r->date)->translatedFormat('d F Y') }}</span>
                                 <h3>{{ $r->title }}</h3>
-                                <p>{!! $r->content !!}</p>
-
-                                <a href="{{ route('frontend.article.show', $r->id) }}" class="read-more">Selengkapnya</a>
+                                <td>{!! \Illuminate\Support\Str::words(strip_tags($r->content), 25, '...') !!}</td>
+                                <a href="{{ route('frontend.article.show', $r->slug) }}" class="read-more">Selengkapnya</a>
                             </div>
                         </div>
                     @endforeach

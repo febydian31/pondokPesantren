@@ -22,7 +22,7 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('profile.create') }}" method="GET">
+                <a class="dropdown-item" href="{{ route('profile.index') }}" method="GET">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>

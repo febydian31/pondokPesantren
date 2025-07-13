@@ -25,7 +25,7 @@
                                 <img class="gambar" src="{{ asset('storage/' . $r->image) }}" alt="">
                                 <span class="span">{{ \Carbon\Carbon::parse($r->date)->translatedFormat('d F Y') }}</span>
                                 <h3>{{ $r->title }}</h3>
-                                <p>{!! $r->content !!}</p>
+                                <td>{!! \Illuminate\Support\Str::words(strip_tags($r->content), 25, '...') !!}</td>
                                 <a href="{{ route('frontend.article.show', $r->slug) }}" class="read-more">Selengkapnya</a>
                             </div>
                         </div>

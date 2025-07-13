@@ -4,23 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Profile extends Model
 {
     protected $fillable = [
         'history',
         'vision',
         'mission',
-        'organizational_structure',
         'programs',
         'donations',
         'social_media',
+        'organizational_structure',
+        'ig', 'fb', 'email', 'wa', 'location', 'tiktok','vidio'
     ];
 
     protected $casts = [
         'history' => 'array',
         'vision' => 'array',
         'mission' => 'array',
-        'organizational_structure' => 'array',
         'programs' => 'array',
         'donations' => 'array',
         'social_media' => 'array',

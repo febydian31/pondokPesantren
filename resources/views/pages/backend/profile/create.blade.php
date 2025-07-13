@@ -10,7 +10,7 @@
         <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            {{-- History --}}
+            {{-- History (pakai Trix editor, multi text, disimpan JSON) --}}
             <div id="history-container" class="mb-4">
                 <label for="history">History</label>
                 <div class="mb-2">
@@ -18,48 +18,83 @@
                     <trix-editor input="history-0"></trix-editor>
                 </div>
             </div>
-            <button type="button" class="btn btn-sm btn-info mb-3" onclick="addTrixField()">Tambah History</button>
 
             @php
                 $fields = [
                     'vision' => 'Visi',
                     'mission' => 'Misi',
                     'programs' => 'Program',
-                    'donations' => 'Donasi',
-                    'social_media' => 'Media Sosial'
+                    'donations' => 'Rekening',
                 ];
             @endphp
 
             {{-- Field Text Array --}}
             <div class="row">
                 @foreach($fields as $name => $label)
-                <div class="col-md-6 mb-4">
-                    <h5>{{ $label }}</h5>
-                    <div id="{{ $name }}-container">
-                        <div class="input-group mb-2 align-items-center">
-                            <input type="text" name="{{ $name }}[]" class="form-control me-2">
-                            <button type="button" class="btn btn-danger" onclick="removeField(this)">×</button>
+                    <div class="col-md-6 mb-4">
+                        <h5>{{ $label }}</h5>
+                        <div id="{{ $name }}-container">
+                            <div class="input-group mb-2 align-items-center">
+                                <input type="text" name="{{ $name }}[]" class="form-control me-2" value="{{ old($name . '.0') }}">
+                                <button type="button" class="btn btn-danger" onclick="removeField(this)">×</button>
+                            </div>
                         </div>
+                        <button type="button" class="btn btn-sm btn-info" onclick="addField('{{ $name }}')">Tambah {{ $label }}</button>
                     </div>
-                    <button class="btn btn-sm btn-info" type="button" onclick="addField('{{ $name }}')">Tambah {{ $label }}</button>
-                </div>
                 @endforeach
 
-                {{-- Struktur Organisasi (gambar) --}}
+                {{-- Instagram --}}
+                <div class="col-md-6 mb-4">
+                    <label>Instagram</label>
+                    <input type="text" name="ig" value="{{ old('ig', $profile->ig ?? '') }}" class="form-control">
+                </div>
+
+                {{-- Facebook --}}
+                <div class="col-md-6 mb-4">
+                    <label>Facebook</label>
+                    <input type="text" name="fb" value="{{ old('fb', $profile->fb ?? '') }}" class="form-control">
+                </div>
+
+                {{-- Email --}}
+                <div class="col-md-6 mb-4">
+                    <label>Email</label>
+                    <input type="email" name="email" value="{{ old('email', $profile->email ?? '') }}" class="form-control">
+                </div>
+
+                {{-- WhatsApp --}}
+                <div class="col-md-6 mb-4">
+                    <label>WhatsApp</label>
+                    <input type="text" name="wa" value="{{ old('wa', $profile->wa ?? '') }}" class="form-control">
+                </div>
+
+                {{-- Location --}}
+                <div class="col-md-6 mb-4">
+                    <label>Location</label>
+                    <input type="text" name="location" value="{{ old('location', $profile->location ?? '') }}" class="form-control">
+                </div>
+
+                {{-- TikTok --}}
+                <div class="col-md-6 mb-4">
+                    <label>TikTok</label>
+                    <input type="text" name="tiktok" value="{{ old('tiktok', $profile->tiktok ?? '') }}" class="form-control">
+                </div>
+                {{-- vidio --}}
+                <div class="col-md-6 mb-4">
+                    <label>Vidio</label>
+                    <input type="text" name="vidio" value="{{ old('vidio', $profile->vidio ?? '') }}" class="form-control">
+                </div>
+
+                {{-- Struktur Organisasi --}}
                 <div class="col-md-6 mb-4">
                     <h5>Struktur Organisasi</h5>
-                    <div id="organizational_structure-container">
-                        <div class="input-group mb-2 align-items-center">
-                            <input type="file" name="organizational_structure[]" class="form-control me-2" accept="image/*" onchange="previewImage(this)">
-                            <button type="button" class="btn btn-danger" onclick="removeField(this)">×</button>
-                        </div>
-                        <img class="mb-3" id="preview-0" src="#" alt="Preview" style="max-width: 100%; display: none;">
-                    </div>
-                    <button class="btn btn-sm btn-info" type="button" onclick="addImageField()">Tambah Struktur</button>
+                    <input type="file" name="organizational_structure" class="form-control mb-2" accept="image/*" onchange="previewImage(this)">
+                    <img id="preview-structure" src="#" alt="Preview" style="max-width: 100%; display: none;">
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+            </div>
         </form>
     </div>
 </div>
@@ -68,6 +103,25 @@
 @section('scripts')
 <script>
 let trixIndex = 1;
+
+function addTrixField() {
+    const container = document.getElementById('history-container');
+    const index = trixIndex++;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mb-2';
+
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'history[]';
+    input.id = 'history-' + index;
+
+    const editor = document.createElement('trix-editor');
+    editor.setAttribute('input', 'history-' + index);
+
+    wrapper.appendChild(input);
+    wrapper.appendChild(editor);
+    container.insertBefore(wrapper, container.querySelector('button'));
+}
 
 function addField(fieldName) {
     const container = document.getElementById(`${fieldName}-container`);
@@ -90,66 +144,21 @@ function addField(fieldName) {
     container.appendChild(wrapper);
 }
 
-function addImageField() {
-    const container = document.getElementById('organizational_structure-container');
-    const wrapper = document.createElement('div');
-    wrapper.className = 'input-group mb-2 align-items-center';
-
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.name = 'organizational_structure[]';
-    input.className = 'form-control me-2';
-    input.accept = 'image/*';
-    input.onchange = () => previewImage(input);
-
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'btn btn-danger';
-    btn.textContent = '×';
-    btn.onclick = () => wrapper.remove();
-
-    wrapper.appendChild(input);
-    wrapper.appendChild(btn);
-    container.appendChild(wrapper);
-}
-
-function addTrixField() {
-    const container = document.getElementById('history-container');
-    const index = trixIndex++;
-    const wrapper = document.createElement('div');
-    wrapper.className = 'mb-2';
-
-    const input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = 'history[]';
-    input.id = 'history-' + index;
-
-    const editor = document.createElement('trix-editor');
-    editor.setAttribute('input', 'history-' + index);
-
-    wrapper.appendChild(input);
-    wrapper.appendChild(editor);
-    container.appendChild(wrapper);
-}
-
 function removeField(button) {
     button.parentElement.remove();
 }
 
 function previewImage(input) {
     const file = input.files[0];
-    if (file) {
-        const reader = new FileReader();
-        const preview = document.createElement('img');
-        preview.style.maxWidth = '100%';
-        preview.className = 'mb-2 mt-2';
+    const preview = document.getElementById('preview-structure');
 
+    if (file && preview) {
+        const reader = new FileReader();
         reader.onload = function(e) {
             preview.src = e.target.result;
+            preview.style.display = 'block';
         };
-
         reader.readAsDataURL(file);
-        input.parentElement.appendChild(preview);
     }
 }
 </script>

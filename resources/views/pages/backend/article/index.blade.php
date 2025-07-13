@@ -31,7 +31,7 @@
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ \Carbon\Carbon::parse($article->date)->translatedFormat('d F Y') }}</td>
                                 <td>{{ $article->title }}</td>
-                                <td>{!! $article->content !!}</td>
+                                <td>{!! \Illuminate\Support\Str::words(strip_tags($article->content), 30, '...') !!}</td>
                                 <td><img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" width="100">
                                 </td>
                                 <td>

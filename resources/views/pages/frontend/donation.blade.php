@@ -128,7 +128,7 @@
                                     <tr>
                                         <td>{{ $donation->name }}</td>
                                         <td>{{ 'Rp ' . number_format($donation->nominal, 0, ',', '.') }}</td>
-                                        <td>{!! \Illuminate\Support\Str::limit($donation->message, 100) !!}</td>
+                                        <td>{!! \Illuminate\Support\Str::limit($donation->message, 200) !!}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -3146,6 +3146,33 @@ border-radius: 3px solid;
   background-color: #080e2e;
 }
 
+.breadcrumb {
+  margin-top: 65px;
+  padding: 0px 20px;
+}
+.article-title {
+  padding: 0px 20px;
+}
+.article-content {
+margin-bottom: 30px;
+}
+.article-content .featured-image{
+  display: flex;
+justify-content: center;
+}
+.article-content img{
+  border-radius: 2%;
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+}
+
+.article-body .content-text {
+  font-size: 20px;
+  padding: 20px 20px;
+}
+
+
 
 /* detail artikel  */
 .detail-judul {

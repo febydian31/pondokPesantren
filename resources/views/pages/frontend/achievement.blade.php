@@ -69,6 +69,6 @@
                     </li>
                 </ul>
             </nav>
-        @endif --}}
+        @endif 
     </section>
 @endsection

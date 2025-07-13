@@ -33,41 +33,79 @@
                     <hr>
                     <div class="donasi">
                         <p>
-                            <i class="bi bi-bank icon2"> </i> <strong>BRI</strong><br>
-                            <span>No. Rekening: 105601004767509 a/n Muhammad Adam Ilhami</span>
-                        </p>
-                        <p>
-                            <i class="bi bi-bank icon2"> </i> <strong>BPD DIY</strong><br>
-                            <span>No. Rekening: 005221039170 a/n Muhammad Adam Ilhami</span>
-                        </p>
-                        <p>
-                            <i class="bi bi-bank icon2"> </i> <strong>BNI</strong><br>
-                            <span>No. Rekening: 0038847205 a/n ibu Karomah Achmad Doeri</span>
+                            @foreach(json_decode($profile->donations ?? '[]', true) as $item)
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="bi bi-bank icon2 me-2"></i>
+                                    <span>{{ $item }}</span>
+                                </div>
+                            @endforeach
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
-                <h2>Hubungi Kami</h2>
-                <hr>
-                <div class="donasi">
-                    <div class="d-flex">
-                        <i class="bi bi-geo-alt-fill icon2"></i>
-                        <a href="https://maps.app.goo.gl/6EyAMZnhFg4bN8x56">
-                            <p>Rejodani I RT/RW 03/02 Sariharjo ngaglik Sleman Yogyakrta</p>
-                        </a>
-                    </div>
-                    <div class="d-flex">
-                        <i class="bi bi-whatsapp icon2"></i>
-                        <p>0811 1600 17 (Gus Adam) / 0812 2626 7274 (Ning)</p>
-                    </div>
-                    <div class="d-flex">
-                        <i class="bi bi-envelope icon2"></i>
-                        <p>pp.zuhriyah@gmail.com</p>
-                    </div>
-                </div>
+    <h2 class="text-white">Hubungi Kami</h2>
+    <hr>
+    <div class="donasi">
+
+        @if (!empty($profile->location))
+            <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-geo-alt-fill icon2 me-2 text-white"></i>
+                <a href="https://maps.app.goo.gl/6EyAMZnhFg4bN8x56" class="text-decoration-none text-white">
+                    {{ $profile->location }}
+                </a>
             </div>
+        @endif
+
+        @if (!empty($profile->wa))
+            <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-whatsapp icon2 me-2 text-white"></i>
+                <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $profile->wa) }}" class="text-decoration-none text-white">
+                    {{ $profile->wa }}
+                </a>
+            </div>
+        @endif
+
+        @if (!empty($profile->email))
+            <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-envelope icon2 me-2 text-white"></i>
+                <a href="mailto:{{ $profile->email }}" class="text-decoration-none text-white">
+                    {{ $profile->email }}
+                </a>
+            </div>
+        @endif
+
+        @if (!empty($profile->ig))
+            <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-instagram icon2 me-2 text-white"></i>
+                <a href="https://instagram.com/{{ ltrim($profile->ig, '@') }}" class="text-decoration-none text-white" target="_blank">
+                    {{ $profile->ig }}
+                </a>
+            </div>
+        @endif
+
+        @if (!empty($profile->fb))
+            <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-facebook icon2 me-2 text-white"></i>
+                <a href="https://facebook.com/{{ $profile->fb }}" class="text-decoration-none text-white" target="_blank">
+                    {{ $profile->fb }}
+                </a>
+            </div>
+        @endif
+
+        @if (!empty($profile->tiktok))
+            <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-tiktok icon2 me-2 text-white"></i>
+                <a href="https://tiktok.com/@{{ ltrim($profile->tiktok, '@') }}" class="text-decoration-none text-white" target="_blank">
+                    {{ $profile->tiktok }}
+                </a>
+            </div>
+        @endif
+
+    </div>
+</div>
+
 
         </div>
     </div>

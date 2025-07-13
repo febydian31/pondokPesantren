@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
     public function __invoke()
     {
-        return view('pages.frontend.profile');
+        $profiles = Profile::all();
+        return view('pages.frontend.profile', compact('profiles')); 
     }
 }

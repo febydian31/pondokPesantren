@@ -19,30 +19,33 @@ class ProfileRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-        {
-            return [
-                'history' => 'nullable|array',
-                'history.*' => 'nullable|string|max:255',
+    // app/Http/Requests/StoreProfileRequest.php
 
-                'vision' => 'nullable|array',
-                'vision.*' => 'nullable|string|max:255',
-                
-                'mission' => 'nullable|array',
-                'mission.*' => 'nullable|string|max:255',
+    public function rules()
+    {
+        return [
+            'history' => 'nullable|array',
+            'history.*' => 'nullable|string',
+            'vision' => 'nullable|array',
+            'vision.*' => 'nullable|string',
+            'mission' => 'nullable|array',
+            'mission.*' => 'nullable|string',
+            'programs' => 'nullable|array',
+            'programs.*' => 'nullable|string',
+            'donations' => 'nullable|array',
+            'donations.*' => 'nullable|string',
+            'social_media' => 'nullable|array',
+            'social_media.*' => 'nullable|string',
+            'organizational_structure' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'ig'       => 'nullable|string|max:255',
+            'fb'       => 'nullable|string|max:255',
+            'email'    => 'nullable|email|max:255',
+            'wa'       => 'nullable|string|max:100',
+            'location' => 'nullable|string|max:255',
+            'tiktok'   => 'nullable|string|max:255',
+            'vidio'   => 'nullable|string',
+        ];
+    }
 
-            'organizational_structure' => 'nullable|array',
-            'organizational_structure.*' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-
-                'programs' => 'nullable|array',
-                'programs.*' => 'nullable|string|max:255',
-
-                'donations' => 'nullable|array',
-                'donations.*' => 'nullable|string|max:255',
-
-                'social_media' => 'nullable|array',
-                'social_media.*' => 'nullable|string|max:255',
-            ];
-        }
 
 }

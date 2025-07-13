@@ -13,13 +13,20 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->json('history')->nullable();
+            $table->longText('history')->nullable();
             $table->json('vision')->nullable();
             $table->json('mission')->nullable();
-            $table->json('organizational_structure')->nullable();
             $table->json('programs')->nullable();
             $table->json('donations')->nullable();
             $table->json('social_media')->nullable();
+            $table->string('organizational_structure')->nullable(); // untuk file gambar
+            $table->string('ig')->nullable();
+            $table->string('fb')->nullable();
+            $table->string('email')->nullable();
+            $table->string('wa')->nullable();
+            $table->string('location')->nullable();
+            $table->string('tiktok')->nullable();
+            $table->longText('vidio')->nullable();
             $table->timestamps();
         });
     }
