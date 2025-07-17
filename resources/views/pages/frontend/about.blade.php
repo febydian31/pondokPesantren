@@ -8,26 +8,27 @@
             @forelse($profiles as $profile)
                 <p>{!! implode(' ', json_decode($profile->history ?? '[]', true)) !!}</p>
             @empty
-                <p class="text-center">Sejarah belum di isi</p>
+                <div class="text-center text-muted">Sejarah belum diisi</div>
             @endforelse
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="services" class=" services section">
-        <div class="container section-title judul-artikel" data-aos="fade-up">
-            <div><span>Visi & Misi</span></div>
-        </div>
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+<section id="services" class="services section">
+    <div class="container section-title judul-artikel" data-aos="fade-up">
+        <div><span>Visi & Misi</span></div>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        @forelse($profiles as $profile)
             <div class="row gy-4">
                 <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card isi program-card">
                         <h3>Visi</h3>
-                        <p>
+                        <ul>
                             @foreach(json_decode($profile->vision ?? '[]', true) as $item)
                                 <li>{{ $item }}</li>
                             @endforeach
-                        </p>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
@@ -41,36 +42,49 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        @empty
+            <div class="text-center text-muted">Belum ada data profil</div>
+        @endforelse
+    </div>
+</section>
 
-    <section id="services" class="program services section">
-        <div class="container section-title judul-artikel" data-aos="fade-up">
-            <div><span>Program</span></div>
-        </div>
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row gy-4">
-                @foreach(json_decode($profile->programs ?? '[]', true) as $item)
+<section id="services" class="program services section">
+    <div class="container section-title judul-artikel" data-aos="fade-up">
+        <div><span>Program</span></div>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            @forelse($profiles as $profile)
+                @forelse(json_decode($profile->programs ?? '[]', true) as $item)
                     <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
                         <div class="service-card program-card">
                             <h5>{{ $item }}</h5>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                @empty
+                    <div class="text-center text-muted">Belum ada program</div>
+                @endforelse
+            @empty
+                <div class="text-center text-muted">Belum ada data profil</div>
+            @endforelse
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="services" class="services section">
-        <div class="container section-title judul-artikel" data-aos="fade-up">
-            <div><span>Struktur Organisasi</span></div>
-        </div>
+<section id="services" class="services section">
+    <div class="container section-title judul-artikel" data-aos="fade-up">
+        <div><span>Struktur Organisasi</span></div>
+    </div>
+    @forelse($profiles as $profile)
         <div class="container card struktur col-lg-6" data-aos="fade-up" data-aos-delay="100">
             @if ($profile->organizational_structure)
-            <img src="{{ asset('storage/' . $profile->organizational_structure) }}" style="width: 100%; max-width: 800px;" alt="Struktur Organisasi">
+                <img src="{{ asset('storage/' . $profile->organizational_structure) }}" style="width: 100%; max-width: 800px;" alt="Struktur Organisasi">
             @else
-                <span class="text-muted">Belum ada gambar</span>
+                <div class="text-center text-muted">Belum ada gambar</div>
             @endif
         </div>
-    </section>
+    @empty
+        <div class="text-center text-muted">Belum ada data profil</div>
+    @endforelse
+</section>
 @endsection

@@ -3,7 +3,7 @@
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="h3 text-gray-800"> Profil</h1>
-    <!-- <a href="{{ route('profile.create') }}" class="btn btn-primary">Tambah Profil</a> -->
+    <a href="{{ route('profile.create') }}" class="btn btn-primary">Tambah Profil</a>
 </div>
 
 <div class="card shadow mb-4">
