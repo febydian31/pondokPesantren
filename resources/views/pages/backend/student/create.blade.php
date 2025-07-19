@@ -10,7 +10,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <form action="{{ route('student.store') }}" method="POST">
+                <form action="{{ route('admin.student.store') }}" method="POST">
                     @csrf
                     <div class="">
                         <div class="row">
@@ -174,7 +174,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
-                            <a href="/admin/student" class="button btn btn-info">Kembali</a>
+                            <a href="{{ route('admin.student.index') }}" class="button btn btn-info">Kembali</a>
                             <button class="btn btn-success" type="submit">Tambah</button>
                         </div>
                     </div>

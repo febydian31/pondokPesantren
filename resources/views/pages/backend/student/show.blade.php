@@ -94,7 +94,7 @@
                             </tbody>
                         </table>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start" style="margin-bottom:10px; ">
-                            <a href="{{ route('student.index') }}" class="button btn btn-info">Kembali</a>
+                            <a href="{{ route('admin.student.index') }}" class="button btn btn-info">Kembali</a>
                         </div>
                     </div>
                 </div>

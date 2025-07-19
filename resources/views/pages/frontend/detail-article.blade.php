@@ -5,10 +5,10 @@
     <section class="article-hero">
         <div class="container">
             <div class="hero-content">
-                <div class="breadcrumb">
+                <div class="breadcrumb mx-2">
                     <a href="{{ url('/') }}">Beranda</a>
                     <span>/</span>
-                    <a href="{{ route('frontend.article.index') }}">Artikel</a>
+                    <a href="{{ route('article') }}">Artikel</a>
                     <span>/</span>
                     <span>{{ $artikel->title }}</span>
                 </div>
@@ -19,19 +19,19 @@
     <!-- Article Content -->
     <div class="article-content">
         <div class="container">
-                <div class="main-content">
-                    <!-- Featured Image -->
-                    <div class="featured-image">
-                        <img src="{{ asset('storage/' . $artikel->image) }}" alt="{{ $artikel->title }}" class="img-fluid">
-                    </div>
+            <div class="main-content">
+                <!-- Featured Image -->
+                <div class="featured-image">
+                    <img src="{{ asset('storage/' . $artikel->image) }}" alt="{{ $artikel->title }}" class="img-fluid">
+                </div>
 
-                    <!-- Article Body -->
-                    <div class="article-body">
-                        <div class="content-text">
-                            {!! $artikel->content !!}
-                        </div>
+                <!-- Article Body -->
+                <div class="article-body">
+                    <div class="content-text">
+                        {!! $artikel->content !!}
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 @endsection

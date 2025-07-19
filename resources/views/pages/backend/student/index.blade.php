@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">List Santri</h1>
-        <a class="btn btn-success" href="{{ route('student.create') }}" method="GET">
+        <a class="btn btn-success" href="{{ route('admin.student.create') }}">
             <i class="fas fa-plus"></i> Tambah
         </a>
     </div>
@@ -44,9 +44,11 @@
                                 <td>{{ $r->student_category }}</td>
 
                                 <td>
-                                    <a href="{{ route('student.edit', $r) }}" class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <a href="{{ route('student.show', $r) }}" class="btn btn-sm btn-info mb-1">Detail</a>
-                                    <form action="{{ route('student.destroy', $r) }}" method="POST"
+                                    <a href="{{ route('admin.student.edit', $r) }}"
+                                        class="btn btn-sm btn-warning mb-1">Edit</a>
+                                    <a href="{{ route('admin.student.show', $r) }}"
+                                        class="btn btn-sm btn-info mb-1">Detail</a>
+                                    <form action="{{ route('admin.student.destroy', $r) }}" method="POST"
                                         class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')

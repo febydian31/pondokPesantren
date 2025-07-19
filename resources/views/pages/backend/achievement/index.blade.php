@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">List Prestasi</h1>
-        <a class="btn btn-success" href="{{ route('achievement.create') }}" method="GET">
+        <a class="btn btn-success" href="{{ route('admin.achievement.create') }}" method="GET">
             <i class="fas fa-plus"></i> Tambah
         </a>
     </div>
@@ -37,9 +37,9 @@
                                 <td>{{ $achievement->organizer }}</td>
                                 <td>{{ $achievement->winner }}</td>
                                 <td>
-                                    <a href="{{ route('achievement.edit', $achievement) }}"
+                                    <a href="{{ route('admin.achievement.edit', $achievement) }}"
                                         class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <form action="{{ route('achievement.destroy', $achievement) }}" method="POST"
+                                    <form action="{{ route('admin.achievement.destroy', $achievement) }}" method="POST"
                                         class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')

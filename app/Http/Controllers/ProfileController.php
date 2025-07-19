@@ -9,7 +9,8 @@ class ProfileController extends Controller
 {
     public function __invoke()
     {
-        $profiles = Profile::all();
-        return view('pages.frontend.profile', compact('profiles')); 
+        $profile = Profile::first();
+
+        return view('pages.frontend.profile', compact('profile'));
     }
 }

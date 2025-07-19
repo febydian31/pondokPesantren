@@ -8,14 +8,14 @@
 
 <!-- form array  -->
 <script>
-function addField(fieldName) {
-    const container = document.getElementById(`${fieldName}-container`);
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.name = `${fieldName}[]`;
-    input.className = 'form-control mb-2';
-    container.appendChild(input);
-}
+    function addField(fieldName) {
+        const container = document.getElementById(`${fieldName}-container`);
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `${fieldName}[]`;
+        input.className = 'form-control mb-2';
+        container.appendChild(input);
+    }
 </script>
 <!-- end form array  -->
 
@@ -36,7 +36,7 @@ function addField(fieldName) {
         btn.className = 'btn btn-danger';
         btn.type = 'button';
         btn.textContent = '×';
-        btn.onclick = function () {
+        btn.onclick = function() {
             wrapper.remove();
         };
 
@@ -61,11 +61,11 @@ function addField(fieldName) {
 
     // Datepicker init
     $('#datepicker').datepicker({
-    dateFormat:'dd/mm/yy', 
-    autoclose: true,
-    todayHighlight: true,
-    orientation: "bottom auto"
-});
+        dateFormat: 'dd/mm/yy',
+        autoclose: true,
+        todayHighlight: true,
+        orientation: "bottom auto"
+    });
 
 
 

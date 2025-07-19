@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">List Kegiatan</h1>
-        <a class="btn btn-success" href="{{ route('activity.create') }}" method="GET">
+        <a class="btn btn-success" href="{{ route('admin.activity.create') }}" method="GET">
             <i class="fas fa-plus"></i> Tambah
         </a>
     </div>
@@ -35,9 +35,9 @@
                                 <td>{{ $activity->mentor }}</td>
                                 <td>{{ $activity->location }}</td>
                                 <td>
-                                    <a href="{{ route('activity.edit', $activity) }}"
+                                    <a href="{{ route('admin.activity.edit', $activity) }}"
                                         class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <form action="{{ route('activity.destroy', $activity) }}" method="POST"
+                                    <form action="{{ route('admin.activity.destroy', $activity) }}" method="POST"
                                         class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')

@@ -32,7 +32,7 @@ class DashboardStudentController extends Controller
     public function store(RegistrationRequest $request)
     {
         Registration::create($request->validated());
-        return redirect()->route('student.index')->with('success', 'Data berhasil ditambah !');
+        return redirect()->route('admin.student.index')->with('success', 'Data berhasil ditambah !');
     }
 
     /**
@@ -62,7 +62,7 @@ class DashboardStudentController extends Controller
         $registration = Registration::findOrFail($id);
         $registration->update($request->validated());
 
-        return redirect()->route('student.index')->with('success', 'Data berhasil diedit !');
+        return redirect()->route('admin.student.index')->with('success', 'Data berhasil diedit !');
     }
 
     /**
@@ -72,6 +72,6 @@ class DashboardStudentController extends Controller
     {
         $registration = Registration::findOrFail($id); // Ambil data berdasarkan ID
         $registration->delete();
-        return redirect()->route('student.index')->with('success', 'Data berhasil dihapus !');
+        return redirect()->route('admin.student.index')->with('success', 'Data berhasil dihapus !');
     }
 }

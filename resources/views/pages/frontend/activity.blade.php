@@ -20,9 +20,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            </tbody>
-                        </table>
-                        <h5>Kegiatan Belum Tersedia</h5>
+                        </tbody>
+                    </table>
+                    <h5>Kegiatan Belum Tersedia</h5>
                 </div>
             @else
                 <div class="table-responsive mt-3">
@@ -40,7 +40,7 @@
                             @foreach ($activities as $activity)
                                 <tr>
                                     <td>{{ $activity->day }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($activity->time)->format('H:i') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($activity->time)->format('H:i') }} WIB</td>
                                     <td>{{ $activity->activity }}</td>
                                     <td>{{ $activity->mentor }}</td>
                                     <td>{{ $activity->location }}</td>

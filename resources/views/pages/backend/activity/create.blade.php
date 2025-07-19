@@ -9,7 +9,7 @@
     <!-- Content Row -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('activity.store') }}" method="POST">
+            <form action="{{ route('admin.activity.store') }}" method="POST">
                 @csrf
 
                 <div class="form-group mb-3">
@@ -32,7 +32,8 @@
                 <div class="form-group mb-3">
                     <label for="time">Waktu</label>
                     <input type="time" name="time" id="time"
-                        class="form-control @error('time') is-invalid @enderror" value="{{ old('time') }}" pattern="^([01]\d|2[0-3]):([0-5]\d)$">
+                        class="form-control @error('time') is-invalid @enderror" value="{{ old('time') }}"
+                        pattern="^([01]\d|2[0-3]):([0-5]\d)$">
                     @error('time')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -75,7 +76,7 @@
 
                 {{-- Tombol --}}
                 <div class="d-flex justify-content-between mt-4">
-                    <a href="/admin/activity" class="btn btn-info">Kembali</a>
+                    <a href="{{ route('admin.activity.index') }}" class="btn btn-info">Kembali</a>
                     <button class="btn btn-success" type="submit">Tambah</button>
                 </div>
             </form>

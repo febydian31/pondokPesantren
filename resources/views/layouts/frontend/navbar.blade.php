@@ -9,7 +9,7 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="/">Beranda</a></li>
-                <li><a href="/about">Tentang Kami</a></li>
+                <li><a href="/profile">Tentang Kami</a></li>
                 <li><a href="/article">Artikel</a></li>
                 <li><a href="/activity">Kegiatan</a></li>
                 <li><a href="/achievement">Prestasi</a></li>

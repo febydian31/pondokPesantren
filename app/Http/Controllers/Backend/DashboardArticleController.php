@@ -51,7 +51,7 @@ class DashboardArticleController extends Controller
         // Simpan ke database
         Article::create($data);
 
-        return redirect()->route('article.index')->with('success', 'Data berhasil ditambah !');
+        return redirect()->route('admin.article.index')->with('success', 'Data berhasil ditambah !');
     }
 
     /**
@@ -110,7 +110,7 @@ class DashboardArticleController extends Controller
         // Update artikel
         $article->update($data);
 
-        return redirect()->route('article.index')->with('success', 'Data berhasil diedit !');
+        return redirect()->route('admin.article.index')->with('success', 'Data berhasil diedit !');
     }
 
 
@@ -121,6 +121,6 @@ class DashboardArticleController extends Controller
     {
         $activity = Article::findOrFail($id); // Ambil data berdasarkan ID
         $activity->delete();
-        return redirect()->route('article.index')->with('success', 'Data berhasil dihapus !');
+        return redirect()->route('admin.article.index')->with('success', 'Data berhasil dihapus !');
     }
 }

@@ -29,26 +29,26 @@
 
         <div class="container video-section" data-aos="zoom-out" data-aos-delay="200">
             @php
-                function embedYoutube($url) {
+                function embedYoutube($url)
+                {
                     preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/', $url, $matches);
                     if (!empty($matches[1])) {
-                        return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $matches[1] . '" frameborder="0" allowfullscreen></iframe>';
+                        return '<iframe width="560" height="315" src="https://www.youtube.com/embed/' .
+                            $matches[1] .
+                            '" frameborder="0" allowfullscreen></iframe>';
                     }
                     return null;
                 }
             @endphp
 
-            @forelse ($profiles as $profile)
-                @if (!empty($profile->vidio) && embedYoutube($profile->vidio))
-                    <div class="video-wrapper">
-                        {!! embedYoutube($profile->vidio) !!}
-                    </div>
-                @else
-                    <p style="color: black; font-weight: bold;">Video belum diperbarui</p>
-                @endif
-            @empty
-                <p style="color: black; font-weight: bold;">Video belum tersedia</p>
-            @endforelse
+
+            @if (!empty($profile->vidio) && embedYoutube($profile->vidio))
+                <div class="video-wrapper">
+                    {!! embedYoutube($profile->vidio) !!}
+                </div>
+            @else
+                <p style="color: black; font-weight: bold;">Video belum diperbarui</p>
+            @endif
         </div>
     </section>
 
@@ -111,15 +111,8 @@
                         <div class="row features-row">
                             <div class="col-md-6">
                                 <div class="feature-item">
-                                    <h2>30</h2>
-                                    <p>Pengurus Santri</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <H2>60</H2>
-                                    <p>Santri</p>
+                                    <H2>{{ $students }}</H2>
+                                    <p>Total Santri</p>
                                 </div>
                             </div>
                         </div>
@@ -132,14 +125,13 @@
     <!-- /profile Section -->
 
     <section id="services" class="services section">
-        @if ($allArtikel->isEmpty())
+        @if ($articles->isEmpty())
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="judul ">
                     <h1>Artikel</h1>
                 </div>
-                <div class="table-responsive">
-                    <h4>Artikel belum tersedia</h4>
-                </div>
+                <h4>Artikel belum tersedia</h4>
+            </div>
             </div>
         @else
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -147,15 +139,14 @@
                     <h1>Artikel</h1>
                 </div>
                 <div class="row gy-4">
-                    @foreach ($allArtikel as $key => $r)
+                    @foreach ($articles as $key => $r)
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="service-card">
                                 <img class="gambar" src="{{ asset('storage/' . $r->image) }}" alt="">
-                                <span
-                                    class="span">{{ \Carbon\Carbon::parse($r->date)->translatedFormat('d F Y') }}</span>
+                                <span class="span">{{ \Carbon\Carbon::parse($r->date)->translatedFormat('d F Y') }}</span>
                                 <h3>{{ $r->title }}</h3>
                                 <td>{!! \Illuminate\Support\Str::words(strip_tags($r->content), 25, '...') !!}</td>
-                                <a href="{{ route('frontend.article.show', $r->slug) }}" class="read-more">Selengkapnya</a>
+                                <a href="{{ route('detail.article', $r->slug) }}" class="read-more">Selengkapnya</a>
                             </div>
                         </div>
                     @endforeach

@@ -32,7 +32,7 @@ class DashboardDonationController extends Controller
     public function store(DonationRequest $request)
     {
         Donation::create($request->validated());
-        return redirect()->route('donation.index')->with('success', 'Data berhasil ditambah !');
+        return redirect()->route('admin.donation.index')->with('success', 'Data berhasil ditambah !');
     }
 
     /**
@@ -58,7 +58,7 @@ class DashboardDonationController extends Controller
     public function update(DonationRequest $request, Donation $donation)
     {
         $donation->update($request->validated());
-        return redirect()->route('donation.index')->with('success', 'Data berhasil diedit !');
+        return redirect()->route('admin.donation.index')->with('success', 'Data berhasil diedit !');
     }
 
 
@@ -69,6 +69,6 @@ class DashboardDonationController extends Controller
     {
         $activity = donation::findOrFail($id); // Ambil data berdasarkan ID
         $activity->delete();
-        return redirect()->route('donation.index')->with('success', 'Data berhasil dihapus !');
+        return redirect()->route('admin.donation.index')->with('success', 'Data berhasil dihapus !');
     }
 }

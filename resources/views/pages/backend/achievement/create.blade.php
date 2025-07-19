@@ -7,7 +7,7 @@
 
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('achievement.store') }}" method="POST">
+            <form action="{{ route('admin.achievement.store') }}" method="POST">
                 @csrf
 
                 <div class="mb-3">
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between">
-                    <a href="{{ route('achievement.index') }}" class="btn btn-info">Kembali</a>
+                    <a href="{{ route('admin.achievement.index') }}" class="btn btn-info">Kembali</a>
                     <button type="submit" class="btn btn-success">Tambah</button>
                 </div>
 

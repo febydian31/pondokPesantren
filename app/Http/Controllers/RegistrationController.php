@@ -6,12 +6,15 @@ use App\Models\Registration;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegistrationRequest;
+use App\Models\Profile;
 
 class RegistrationController extends Controller
 {
     public function index()
     {
-        return view('pages.frontend.registration');
+        $profile = Profile::first();
+
+        return view('pages.frontend.registration', compact('profile'));
     }
 
     public function store(RegistrationRequest $request)

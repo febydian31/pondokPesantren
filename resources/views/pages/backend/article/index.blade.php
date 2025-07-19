@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">List Artikel</h1>
-        <a class="btn btn-success" href="{{ route('article.create') }}" method="GET" enctype="multipart/form-data">
+        <a class="btn btn-success" href="{{ route('admin.article.create') }}" method="GET" enctype="multipart/form-data">
             <i class="fas fa-plus"></i> Tambah
         </a>
     </div>
@@ -35,11 +35,11 @@
                                 <td><img src="{{ asset('storage/' . $article->image) }}" alt="Article Image" width="100">
                                 </td>
                                 <td>
-                                    <a href="{{ route('article.edit', $article) }}"
+                                    <a href="{{ route('admin.article.edit', $article) }}"
                                         class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <a href="{{ route('article.show', $article) }}"
+                                    <a href="{{ route('admin.article.show', $article) }}"
                                         class="btn btn-sm btn-info mb-1">Detail</a>
-                                    <form action="{{ route('article.destroy', $article) }}" method="POST"
+                                    <form action="{{ route('admin.article.destroy', $article) }}" method="POST"
                                         class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')

@@ -10,7 +10,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <form action="{{ route('donation.update', $donation->id) }}" method="POST">
+                <form action="{{ route('admin.donation.update', $donation->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
-                        <a href="/admin/donation" class="button btn btn-info">Kembali</a>
+                        <a href="{{ route('admin.donation.index') }}" class="button btn btn-info">Kembali</a>
                         <button class="btn btn-success" type="submit">Edit</button>
                     </div>
                 </form>

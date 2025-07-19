@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3 text-gray-800">List Donasi</h1>
-        <a class="btn btn-success" href="{{ route('donation.create') }}" method="GET">
+        <a class="btn btn-success" href="{{ route('admin.donation.create') }}" method="GET">
             <i class="fas fa-plus"></i> Tambah
         </a>
     </div>
@@ -37,9 +37,9 @@
                                 <td>{{ $donation->category }}</td>
                                 <td>{!! \Illuminate\Support\Str::limit($donation->message, 100) !!}</td>
                                 <td>
-                                    <a href="{{ route('donation.edit', $donation) }}"
+                                    <a href="{{ route('admin.donation.edit', $donation) }}"
                                         class="btn btn-sm btn-warning mb-1">Edit</a>
-                                    <form action="{{ route('donation.destroy', $donation) }}" method="POST"
+                                    <form action="{{ route('admin.donation.destroy', $donation) }}" method="POST"
                                         class="d-inline form-hapus">
                                         @csrf
                                         @method('DELETE')

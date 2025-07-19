@@ -13,7 +13,7 @@ class DashboardProfileController extends Controller
     public function index()
     {
         $profiles = Profile::all();
-        return view('pages.backend.profile.index', compact('profiles')); 
+        return view('pages.backend.profile.index', compact('profiles'));
     }
 
     public function create()
@@ -40,7 +40,7 @@ class DashboardProfileController extends Controller
 
         Profile::create($data);
 
-        return redirect()->route('profile.index')->with('success', 'Profile created successfully.');
+        return redirect()->route('admin.profile.index')->with('success', 'Profile created successfully.');
     }
 
     public function edit(Profile $profile)
@@ -70,7 +70,7 @@ class DashboardProfileController extends Controller
 
         $profile->update($data);
 
-        return redirect()->route('profile.index')->with('success', 'Profile berhasil diperbarui');
+        return redirect()->route('admin.profile.index')->with('success', 'Profile berhasil diperbarui');
     }
 
 
@@ -86,11 +86,4 @@ class DashboardProfileController extends Controller
         // Jika bukan URL YouTube yang valid, return teks biasa
         return $url;
     }
-
-
-
-
 }
-
-
-
