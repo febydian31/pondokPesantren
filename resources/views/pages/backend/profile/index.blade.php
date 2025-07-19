@@ -12,7 +12,6 @@
                 Tambah Profil
             </a>
         @endif
-
     </div>
 
     <div class="card shadow mb-4">
