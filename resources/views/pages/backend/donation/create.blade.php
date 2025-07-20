@@ -39,23 +39,27 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label>Kategori</label>
-                            <select name="category">
+                            <select name="category" class="form-control @error('category') is-invalid @enderror">
+                                <option value="" disabled selected>Pilih Kategori</option>
                                 <option value="internal">Internal</option>
                                 <option value="external">External</option>
                             </select>
+                            @error('category')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
+
                         <div class="form-group col-md-12">
                             <label>Pesan</label>
-                            <input id="x" type="hidden" name="message"
-                                class="form-control @error('message') is-invalid @enderror" value="{{ old('message') }}">
-                            <trix-editor input="x"></trix-editor>
+                            <textarea name="message" rows="5" class="form-control @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
                             @error('message')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
-                        <a href="/admin/donation" class="button btn btn-info">Kembali</a>
+                        <a href="{{ route('admin.donation.index') }}" class="button btn btn-info">Kembali</a>
                         <button class="btn btn-success" type="submit">Tambah</button>
                     </div>
                 </form>

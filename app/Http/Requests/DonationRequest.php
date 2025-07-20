@@ -6,28 +6,43 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class DonationRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'no_telp' => 'required|string|max:15',
-            'nominal' => 'required|numeric|min:1000',
-            'message' => 'nullable|string|max:1000',
-            'category' => 'nullable|in:internal,external',
+            'name'      => 'required|string|max:255',
+            'no_telp'   => 'required|string|max:15',
+            'nominal'   => 'required|numeric|min:1000',
+            'message'   => 'required|string|max:255',
+            'category'  => 'required|in:internal,external',
+        ];
+    }
 
+    public function messages(): array
+    {
+        return [
+            'name.required'       => 'Nama tidak boleh kosong.',
+            'name.string'         => 'Nama harus berupa teks.',
+            'name.max'            => 'Nama terlalu panjang. Maksimal 255 karakter.',
+
+            'no_telp.required'    => 'Nomor telepon tidak boleh kosong.',
+            'no_telp.string'      => 'Nomor telepon harus berupa teks.',
+            'no_telp.max'         => 'Nomor telepon terlalu panjang. Maksimal 15 karakter.',
+
+            'nominal.required'    => 'Nominal donasi tidak boleh kosong.',
+            'nominal.numeric'     => 'Nominal donasi harus berupa angka.',
+            'nominal.min'         => 'Nominal donasi minimal Rp 1.000.',
+
+            'message.required'    => 'Pesan tidak boleh kosong.',
+            'message.string'      => 'Pesan harus berupa teks.',
+            'message.max'         => 'Pesan terlalu panjang. Maksimal 255 karakter.',
+
+            'category.required'   => 'Kategori donasi harus dipilih.',
+            'category.in'         => 'Kategori donasi tidak valid. Pilih internal atau external.',
         ];
     }
 }

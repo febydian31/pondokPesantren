@@ -14,7 +14,7 @@ class ArticleRequest extends FormRequest
         return true;
     }
 
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -22,11 +22,10 @@ class ArticleRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules = [
             'date'    => 'nullable|date_format:d-m-Y',
-            'title' => 'required|string|max:255',
+            'title'   => 'required|string|max:255',
             'content' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ];
 
         if ($this->isMethod('post')) {
@@ -36,5 +35,18 @@ class ArticleRequest extends FormRequest
         }
 
         return $rules;
+    }
+
+    public function messages(): array
+    {
+        return [
+            'title.required'   => 'Judul artikel tidak boleh kosong.',
+            'title.max'        => 'Judul artikel terlalu panjang, maksimal 255 karakter.',
+            'content.required' => 'Konten artikel tidak boleh kosong.',
+            'image.required'   => 'Gambar artikel tidak boleh kosong.',
+            'image.image'      => 'Berkas yang diunggah harus berupa gambar.',
+            'image.mimes'      => 'Format gambar harus jpg, jpeg, atau png.',
+            'image.max'        => 'Ukuran gambar maksimal 2 MB.',
+        ];
     }
 }

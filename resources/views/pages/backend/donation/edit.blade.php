@@ -41,6 +41,7 @@
                         <div class="form-group col-md-6">
                             <label>Kategori</label>
                             <select name="category" class="form-control">
+                                <option value="" disabled selected>Pilih Kategori</option>
                                 <option value="internal"
                                     {{ old('category', $donation->category) == 'internal' ? 'selected' : '' }}>Internal
                                 </option>
@@ -48,17 +49,19 @@
                                     {{ old('category', $donation->category) == 'external' ? 'selected' : '' }}>External
                                 </option>
                             </select>
+                            @error('category')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label>Pesan</label>
-                            <input id="x" type="hidden" name="message"
-                                class="form-control @error('message') is-invalid @enderror"
-                                value="{{ old('message', $donation->message) }}">
-                            <trix-editor input="x"></trix-editor>
+                            <textarea name="message" class="form-control @error('message') is-invalid @enderror" rows="5">{{ old('message', $donation->message) }}</textarea>
+
                             @error('message')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-between" style="margin-bottom:10px;">
                         <a href="{{ route('admin.donation.index') }}" class="button btn btn-info">Kembali</a>

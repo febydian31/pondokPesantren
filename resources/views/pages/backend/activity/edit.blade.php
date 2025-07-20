@@ -10,7 +10,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <form action="{{ route('activity.update', $activity->id) }}" method="POST">
+                <form action="{{ route('admin.activity.update', $activity->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
