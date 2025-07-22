@@ -76,21 +76,35 @@
                         <div class="">
                             <div class="form-group">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" class="form-control" name="name" placeholder="Nama"
-                                    placeholder="Nama Legkap">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"name="name"
+                                    placeholder="Nama" placeholder="Nama Legkap">
+                                @error('name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="">No Telp</label>
-                                <input type="number" class="form-control" id="no_telp" name="no_telp"
-                                    placeholder="No Telp">
+                                <input type="number" class="form-control @error('no_telp') is-invalid @enderror"
+                                    id="no_telp" name="no_telp" placeholder="No Telp">
+                                @error('no_telp')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="">Nominal</label>
-                                <input type="Number" class="form-control" id="nominal" name="nominal" placeholder="Rp. ">
+                                <input type="Number" class="form-control @error('nominal') is-invalid @enderror"
+                                    id="nominal" name="nominal" placeholder="Rp. ">
+                                @error('nominal')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="">Pesan</label>
-                                <textarea class="form-control" name="message" placeholder="Pesan" style="height: 100px"></textarea>
+                                <textarea class="form-control @error('message') is-invalid @enderror" name="message" placeholder="Pesan"
+                                    style="height: 100px"></textarea>
+                                @error('message')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <input type="hidden" name="category" value="external">
 
