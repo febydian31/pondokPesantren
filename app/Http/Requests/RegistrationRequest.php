@@ -17,7 +17,7 @@ class RegistrationRequest extends FormRequest
             'name'              => 'required|string|max:255',
             'no_induk'          => 'required|string|max:50',
             'nisn'              => 'required|string|max:50',
-            'birth'             => 'required|date',
+            'birth'             => 'required|string',
             'gender'            => 'required|in:laki-laki,perempuan',
             'address'           => 'required|string',
             'father_name'       => 'required|string|max:255',
@@ -48,7 +48,7 @@ class RegistrationRequest extends FormRequest
             'nisn.max'                 => 'NISN terlalu panjang. Maksimal 50 karakter.',
 
             'birth.required'           => 'Tanggal lahir tidak boleh kosong.',
-            'birth.date'               => 'Tanggal lahir tidak valid.',
+            'birth.string'               => 'Tanggal lahir tidak valid.',
 
             'gender.required'          => 'Jenis kelamin harus dipilih.',
             'gender.in'                => 'Jenis kelamin hanya bisa laki-laki atau perempuan.',
