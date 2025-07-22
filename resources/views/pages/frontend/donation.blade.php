@@ -77,17 +77,16 @@
                             <div class="form-group">
                                 <label for="">Nama Lengkap</label>
                                 <input type="text" class="form-control" name="name" placeholder="Nama"
-                                    placeholder="Nama Legkap" required>
+                                    placeholder="Nama Legkap">
                             </div>
                             <div class="form-group">
                                 <label for="">No Telp</label>
                                 <input type="number" class="form-control" id="no_telp" name="no_telp"
-                                    placeholder="No Telp" required>
+                                    placeholder="No Telp">
                             </div>
                             <div class="form-group">
                                 <label for="">Nominal</label>
-                                <input type="Number" class="form-control" id="nominal" name="nominal" placeholder="Rp. "
-                                    required>
+                                <input type="Number" class="form-control" id="nominal" name="nominal" placeholder="Rp. ">
                             </div>
                             <div class="form-group">
                                 <label for="">Pesan</label>
