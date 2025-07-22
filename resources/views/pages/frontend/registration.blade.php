@@ -66,10 +66,14 @@
                         </div>
                         <div class="form-group col-md-12">
                             <label>Jenis Kelamin</label>
-                            <select name="gender">
+                            <select name="gender" class="form-control @error('gender') is-invalid @enderror">
+                                <option value="" disabled selected>Pilih Jenis Kelamin</option>
                                 <option value="laki-laki">Laki - Laki</option>
                                 <option value="perempuan">Perempuan</option>
                             </select>
+                            @error('gender')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
@@ -164,20 +168,31 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Jenjang Pendidikan</label>
-                                <select name="education_level">
-                                    <option value="mts">Mts</option>
-                                    <option value="ma">Ma</option>
+                                <select name="education_level"
+                                    class="form-control @error('education_level') is-invalid @enderror">
+                                    <option value="" disabled selected>Pilih Jenjang Pendidikan</option>
+                                    <option value="mi">MI</option>
+                                    <option value="mts">MTS</option>
+                                    <option value="ma">MA</option>
                                     <option value="kuliah">Kuliah</option>
                                     <option value="lulus">Lulus</option>
                                 </select>
+                                @error('education_level')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Kategori Santri</label>
-                                <select name="student_category">
+                                <select name="student_category"
+                                    class="form-control @error('student_category') is-invalid @enderror">
+                                    <option value="" disabled selected>Pilih Kategori Santri</option>
                                     <option value="reguler">Reguler</option>
                                     <option value="dhuafa">Dhuafa</option>
                                     <option value="yatim_piatu">Yatim / Piatu</option>
                                 </select>
+                                @error('student_category')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>

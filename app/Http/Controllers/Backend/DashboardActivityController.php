@@ -14,7 +14,8 @@ class DashboardActivityController extends Controller
      */
     public function index()
     {
-        $activities = Activity::all();
+        $activities = Activity::orderBy('id', 'desc')->get();
+
         return view('pages.backend.activity.index', compact('activities'));
     }
 

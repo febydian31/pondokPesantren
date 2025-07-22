@@ -67,7 +67,9 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="gender">Jenis Kelamin</label>
-                                    <select name="gender" class="form-control" id="gender">
+                                    <select name="gender" class="form-control @error('gender') is-invalid @enderror"
+                                        id="gender">
+                                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
                                         <option value="laki-laki"
                                             {{ old('gender', $registration->gender) == 'laki-laki' ? 'selected' : '' }}>Laki
                                             - Laki</option>
@@ -75,6 +77,9 @@
                                             {{ old('gender', $registration->gender) == 'perempuan' ? 'selected' : '' }}>
                                             Perempuan</option>
                                     </select>
+                                    @error('gender')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -175,20 +180,27 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label>Jenjang Pendidikan</label>
-                                    <select name="education_level" class="form-control">
+                                    <select name="education_level"
+                                        class="form-control @error('education_level') is-invalid @enderror">
                                         @php $selected = old('education_level', $registration->education_level); @endphp
-                                        <option value="mts" {{ $selected == 'mts' ? 'selected' : '' }}>Mts</option>
-                                        <option value="ma" {{ $selected == 'ma' ? 'selected' : '' }}>Ma</option>
+                                        <option value="" disabled selected>Pilih Jenjang Pendidikan</option>
+                                        <option value="mi" {{ $selected == 'mi' ? 'selected' : '' }}>MI</option>
+                                        <option value="mts" {{ $selected == 'mts' ? 'selected' : '' }}>MTS</option>
+                                        <option value="ma" {{ $selected == 'ma' ? 'selected' : '' }}>MA</option>
                                         <option value="kuliah" {{ $selected == 'kuliah' ? 'selected' : '' }}>Kuliah
                                         </option>
                                         <option value="lulus" {{ $selected == 'lulus' ? 'selected' : '' }}>Lulus</option>
                                     </select>
-
+                                    @error('education_level')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Kategori Santri</label>
-                                    <select name="student_category" class="form-control">
+                                    <select name="student_category"
+                                        class="form-control @error('student_category') is-invalid @enderror">
                                         @php $selectedCat = old('student_category', $registration->student_category); @endphp
+                                        <option value="" disabled selected>Pilih Kategori Santri</option>
                                         <option value="reguler" {{ $selectedCat == 'reguler' ? 'selected' : '' }}>Reguler
                                         </option>
                                         <option value="dhufa" {{ $selectedCat == 'dhufa' ? 'selected' : '' }}>Dhufa
@@ -196,6 +208,9 @@
                                         <option value="yatim_piatu" {{ $selectedCat == 'yatim_piatu' ? 'selected' : '' }}>
                                             Yatim / Piatu</option>
                                     </select>
+                                    @error('student_category')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>

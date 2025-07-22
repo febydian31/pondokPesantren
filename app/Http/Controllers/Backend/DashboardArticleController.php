@@ -17,9 +17,11 @@ class DashboardArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::orderBy('id', 'desc')->get();
+
         return view('pages.backend.article.index', compact('articles'));
     }
+
 
     /**
      * Show the form for creating a new resource.

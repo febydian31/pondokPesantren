@@ -12,7 +12,7 @@ class AchievementController extends Controller
     public function __invoke()
     {
         $profile = Profile::first();
-        $achievements = Achievement::all();
+        $achievements = Achievement::orderBy('id', 'desc')->paginate(10);
 
         return view('pages.frontend.achievement', compact('profile', 'achievements'));
     }

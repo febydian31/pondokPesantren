@@ -13,7 +13,7 @@ class DonationController extends Controller
     public function index()
     {
         $profile = Profile::first();
-        $donation = Donation::where('category', 'external')->latest()->paginate(10);
+        $donation = Donation::where('category', 'external')->latest()->paginate(50);
 
         return view('pages.frontend.donation', compact('profile', 'donation'));
     }

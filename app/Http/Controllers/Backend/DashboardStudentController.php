@@ -14,7 +14,8 @@ class DashboardStudentController extends Controller
      */
     public function index()
     {
-        $registration = Registration::all();
+        $registration = Registration::orderBy('id', 'desc')->get();
+
         return view('pages.backend.student.index', compact('registration'));
     }
 

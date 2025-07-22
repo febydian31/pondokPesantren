@@ -16,7 +16,8 @@ class DashboardAchievementController extends Controller
      */
     public function index()
     {
-        $Achievements = Achievement::all();
+        $Achievements = Achievement::orderBy('id', 'desc')->get();
+
         return view('pages.backend.achievement.index', compact('Achievements'));
     }
 

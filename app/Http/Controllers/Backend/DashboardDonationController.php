@@ -14,7 +14,8 @@ class DashboardDonationController extends Controller
      */
     public function index()
     {
-        $donation = Donation::all();
+        $donation = Donation::orderBy('id', 'desc')->get();
+
         return view('pages.backend.donation.index', compact('donation'));
     }
 
