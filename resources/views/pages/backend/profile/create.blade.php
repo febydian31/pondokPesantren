@@ -12,7 +12,7 @@
 
                 {{-- History (pakai Trix editor, multi text, disimpan JSON) --}}
                 <div id="history-container" class="mb-4">
-                    <label for="history">History</label>
+                    <label for="history">Sejarah Pondok Pesantren</label>
                     <div class="mb-2">
                         <input type="hidden" name="history[]" id="history-0" value="{{ old('history.0') }}">
                         <trix-editor input="history-0"></trix-editor>

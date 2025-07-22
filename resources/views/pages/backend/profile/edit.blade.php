@@ -12,7 +12,7 @@
                 @method('PUT')
 
                 {{-- History --}}
-                <h5>History</h5>
+                <h5>Sejarah Pondok Pesantren</h5>
                 <div id="history-container" class="mb-4">
                     @foreach (json_decode($profile->history ?? '[]', true) as $index => $item)
                         <div class="mb-2">
