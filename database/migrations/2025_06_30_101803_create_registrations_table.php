@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('father_job');
             $table->string('mother_job');
             $table->string('no_telp');
-            $table->enum('education_level', ['mts', 'ma', 'kuliah', 'lulus']);
+            $table->enum('education_level', ['mi', 'mts', 'ma', 'kuliah', 'lulus']);
             $table->enum('student_category', ['reguler', 'dhuafa', 'yatim_piatu']);
             $table->timestamps();
         });

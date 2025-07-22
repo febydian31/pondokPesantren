@@ -32,7 +32,15 @@ class DashboardStudentController extends Controller
      */
     public function store(RegistrationRequest $request)
     {
-        Registration::create($request->validated());
+        $data = $request->validated();
+
+        // ubah format birth dari dd/mm/yyyy → yyyy-mm-dd
+        if (!empty($data['birth'])) {
+            $data['birth'] = \Carbon\Carbon::createFromFormat('d/m/Y', $data['birth'])->format('Y-m-d');
+        }
+
+        Registration::create($data);
+
         return redirect()->route('admin.student.index')->with('success', 'Data berhasil ditambah !');
     }
 

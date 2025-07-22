@@ -27,7 +27,7 @@ class RegistrationRequest extends FormRequest
             'father_job'        => 'required|string|max:100',
             'mother_job'        => 'required|string|max:100',
             'no_telp'           => 'required|string|max:20',
-            'education_level'   => 'required|in:mts,ma,kuliah,lulus',
+            'education_level'   => 'required|in:mi,mts,ma,kuliah,lulus',
             'student_category'  => 'required|in:reguler,dhuafa,yatim_piatu',
         ];
     }
@@ -83,7 +83,7 @@ class RegistrationRequest extends FormRequest
             'no_telp.max'              => 'Nomor telepon terlalu panjang. Maksimal 20 karakter.',
 
             'education_level.required' => 'Jenjang pendidikan harus dipilih.',
-            'education_level.in'       => 'Jenjang pendidikan tidak valid. Pilih salah satu dari mts, ma, kuliah, atau lulus.',
+            'education_level.in'       => 'Jenjang pendidikan tidak valid. Pilih salah satu dari mi, mts, ma, kuliah, atau lulus.',
 
             'student_category.required' => 'Kategori siswa harus dipilih.',
             'student_category.in'       => 'Kategori siswa tidak valid. Pilih salah satu dari reguler, dhuafa, atau yatim piatu.',
