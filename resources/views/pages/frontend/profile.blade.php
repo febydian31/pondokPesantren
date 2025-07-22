@@ -70,13 +70,14 @@
             <div><span>Struktur Organisasi</span></div>
         </div>
         <div class="container card struktur col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            @if ($profile->organizational_structure)
+            @if ($profile?->organizational_structure)
                 <img src="{{ asset('storage/' . $profile->organizational_structure) }}"
                     style="width: 100%; max-width: 800px;" alt="Struktur Organisasi">
             @else
                 <div class="text-center text-muted">Belum ada gambar</div>
             @endif
         </div>
+
 
     </section>
 @endsection
