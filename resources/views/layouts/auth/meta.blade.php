@@ -5,3 +5,5 @@
 <link rel="stylesheet" href="{{ asset('auth/fonts/icomoon/style.css') }}">
 
 <link rel="stylesheet" href="{{ asset('auth/css/owl.carousel.min.css') }}">
+
+<link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon" />
