@@ -3141,6 +3141,10 @@ border-radius: 3px solid;
 .top {
   margin-top: 80px;
 }
+
+.header-donasi .artikel{
+  margin-top: 140px;
+}
 .top-detail {
   margin-top: 75px;
   background-color: #080e2e;

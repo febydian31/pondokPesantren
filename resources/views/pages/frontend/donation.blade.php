@@ -1,14 +1,14 @@
 @extends('layouts.frontend.app', ['title' => 'Halaman Donasi'])
 
 @section('content')
-<section class="top">
+<div class="header-donasi">
     <div class="artikel">
         <div class="judul container">
             <h1>Donatur</h1>
             <p>Sumber Dana yang digunakan untuk pendanaan pengembangan dan kegiatan pondok pesantren Zuhriyah</p>
         </div>
     </div>
-</section>
+</div>
 
 <section id="services" class="program sumber-dana services section">
 
